@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>客户成功案例 — ETC Sourcing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'deep-blue': '#0F4C81',
+            'vibrant-orange': '#F97316',
+            'light-gray': '#F8FAFC',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2); }
+    .lang-btn { transition: all 0.2s ease; }
+    .lang-btn:hover { background: rgba(255,255,255,0.2); }
+    
+    /* Case card styling */
+    .case-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .case-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Tag styling */
+    .tag {
+      @apply inline-block px-3 py-1 rounded-full text-xs font-medium;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-blue/95 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-vibrant-orange rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <span class="text-white font-bold text-lg">ETC Sourcing</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">首页</a>
+          <a href="network.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">采购网络</a>
+          <a href="shipping.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">出口方案</a>
+          <a href="process.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">服务流程</a>
+          <a href="about.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">关于我们</a>
+          <a href="cases.html" class="text-vibrant-orange text-sm font-medium">成功案例</a>
+          <a href="contact.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors">联系我们</a>
+          <button onclick="toggleLang()" class="lang-btn flex items-center gap-2 px-3 py-1.5 rounded-full text-white text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+            </svg>
+            <span id="lang-text">EN</span>
+          </button>
+        </div>
+        
+        <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-deep-blue border-t border-white/10">
+      <div class="px-6 py-4 space-y-3">
+        <a href="index.html" class="block text-white/80 hover:text-white py-2">首页</a>
+        <a href="network.html" class="block text-white/80 hover:text-white py-2">采购网络</a>
+        <a href="shipping.html" class="block text-white/80 hover:text-white py-2">出口方案</a>
+        <a href="process.html" class="block text-white/80 hover:text-white py-2">服务流程</a>
+        <a href="about.html" class="block text-white/80 hover:text-white py-2">关于我们</a>
+        <a href="cases.html" class="block text-vibrant-orange py-2">成功案例</a>
+        <a href="contact.html" class="block bg-vibrant-orange text-white text-center py-2 rounded-lg">联系我们</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 bg-gradient-to-br from-deep-blue via-[#1a5a9e] to-deep-blue">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center py-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+          <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="text-white/90 text-sm font-medium">真实客户故事</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          客户成功案例
+          <span class="block text-vibrant-orange mt-2 text-2xl md:text-3xl">复杂项目，专业交付</span>
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="py-20 bg-light-gray">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <!-- Case 1 -->
+      <div class="case-card bg-white rounded-2xl shadow-lg overflow-hidden mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="lg:col-span-1 bg-gradient-to-br from-blue-500 to-blue-600 p-8 text-white flex flex-col justify-center">
+            <div class="mb-4">
+              <span class="tag bg-white/20 text-white mb-2">案例一</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">机械配件跨国整合采购</h3>
+            <p class="text-blue-100">德国工业设备制造商</p>
+            <div class="mt-6 space-y-2">
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>节省物流成本15%</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>交货期缩短20天</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>质量合格率99.2%</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <div class="mb-6">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">项目背景</h4>
+              <p class="text-gray-600">需从3个不同省份采购20+种机械配件，统一标准后出口。供应商分散（山东铸件、浙江轴承、广东电子件），质量标准不一，交期协调复杂。</p>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">我们的方案</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                  <span><strong>分区域采购：</strong>山东机械件青岛港出货，浙江五金宁波港出货，广东电子深圳港出货</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                  <span><strong>或方案B（客户选择）：</strong>全部集货到青岛，统一第三方质检后整柜出运</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                  <span><strong>委托SGS进行全检，</strong>出具德国客户认可的检测报告</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-green-50 rounded-xl p-4">
+              <h4 class="text-lg font-bold text-green-900 mb-2">项目成果</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">15%</div>
+                  <div class="text-xs text-green-700">节省物流成本</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">20天</div>
+                  <div class="text-xs text-green-700">交货期缩短</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">99.2%</div>
+                  <div class="text-xs text-green-700">质量合格率</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">季度</div>
+                  <div class="text-xs text-green-700">复购客户</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case 2 -->
+      <div class="case-card bg-white rounded-2xl shadow-lg overflow-hidden mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="lg:col-span-1 bg-gradient-to-br from-vibrant-orange to-orange-500 p-8 text-white flex flex-col justify-center">
+            <div class="mb-4">
+              <span class="tag bg-white/20 text-white mb-2">案例二</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">日用品跨品类整合</h3>
+            <p class="text-orange-100">美国中西部连锁零售商</p>
+            <div class="mt-6 space-y-2">
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>SKU整合率提升40%</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>采购成本降低12%</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>上架时间减少3周</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <div class="mb-6">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">项目背景</h4>
+              <p class="text-gray-600">美国中西部连锁零售商（年采购额$500万），一次采购计划涵盖日用、五金、电子三大类，共50+SKU。品类跨度大，小批量多品种，需要拼箱整合，要求统一包装、贴标，直接上架销售。</p>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">我们的方案</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                  <span><strong>双城采购：</strong>义乌（日用）+ 深圳（电子）+ 宁波周边（五金）</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                  <span><strong>全部集货到宁波港仓库，</strong>统一包装redesign，按零售商要求贴标</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                  <span><strong>第三方抽检（Intertek），</strong>合并拼箱出运</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-green-50 rounded-xl p-4">
+              <h4 class="text-lg font-bold text-green-900 mb-2">项目成果</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">40%</div>
+                  <div class="text-xs text-green-700">SKU整合率提升</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">12%</div>
+                  <div class="text-xs text-green-700">采购成本降低</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">3周</div>
+                  <div class="text-xs text-green-700">上架时间减少</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">$800万</div>
+                  <div class="text-xs text-green-700">第三年采购额</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case 3 -->
+      <div class="case-card bg-white rounded-2xl shadow-lg overflow-hidden mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="lg:col-span-1 bg-gradient-to-br from-emerald-500 to-teal-600 p-8 text-white flex flex-col justify-center">
+            <div class="mb-4">
+              <span class="tag bg-white/20 text-white mb-2">案例三</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">中亚项目海铁联运</h3>
+            <p class="text-emerald-100">哈萨克斯坦贸易公司</p>
+            <div class="mt-6 space-y-2">
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>运输时间缩短17天</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>比空运低70%成本</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>破损率0%</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <div class="mb-6">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">项目背景</h4>
+              <p class="text-gray-600">采购机械设备，传统海运到中亚需35天+，成本高。目的地内陆，无直达海运，传统路线时间长风险高，客户预算有限，空运太贵。</p>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">我们的方案</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                  <span><strong>青岛港海铁联运：</strong>青岛→阿拉山口（铁路）→阿拉木图</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                  <span><strong>利用青岛港一带一路枢纽优势</strong></span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                  <span><strong>全程我们协调，一单到底，</strong>客户只需在阿拉木图收货</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-green-50 rounded-xl p-4">
+              <h4 class="text-lg font-bold text-green-900 mb-2">项目成果</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">18天</div>
+                  <div class="text-xs text-green-700">运输时间</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">-70%</div>
+                  <div class="text-xs text-green-700">比空运成本</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">0%</div>
+                  <div class="text-xs text-green-700">破损率</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">代理</div>
+                  <div class="text-xs text-green-700">长期合作</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case 4 -->
+      <div class="case-card bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+          <div class="lg:col-span-1 bg-gradient-to-br from-violet-500 to-purple-600 p-8 text-white flex flex-col justify-center">
+            <div class="mb-4">
+              <span class="tag bg-white/20 text-white mb-2">案例四</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">初创卖家首单支持</h3>
+            <p class="text-violet-100">荷兰亚马逊新手卖家</p>
+            <div class="mt-6 space-y-2">
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>首单3个月售罄</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>利润率35%</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>6个月复购3次</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-2 p-8">
+            <div class="mb-6">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">项目背景</h4>
+              <p class="text-gray-600">荷兰亚马逊新手卖家（首次从中国采购），预算€8000，不懂中国采购，担心被骗。需要门到门服务，直接送到亚马逊仓库。</p>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="text-lg font-bold text-gray-900 mb-2">我们的方案</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-violet-100 text-violet-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                  <span><strong>产品：</strong>家居用品（义乌产业带）</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-violet-100 text-violet-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                  <span><strong>服务：</strong>小额订单友好，无MOQ限制</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-violet-100 text-violet-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                  <span><strong>质检：</strong>第三方抽检（因货值不高，客户选择抽检）</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-6 h-6 bg-violet-100 text-violet-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                  <span><strong>物流：</strong>义乌→宁波港→鹿特丹→卡车到亚马逊仓库（门到门）</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-green-50 rounded-xl p-4">
+              <h4 class="text-lg font-bold text-green-900 mb-2">项目成果</h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">3个月</div>
+                  <div class="text-xs text-green-700">首单售罄</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">35%</div>
+                  <div class="text-xs text-green-700">利润率</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">3次</div>
+                  <div class="text-xs text-green-700">6个月复购</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-green-600">€25000</div>
+                  <div class="text-xs text-green-700">单次金额增长</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">想成为我们的下一个成功案例？</h2>
+      <p class="text-gray-600 mb-8">无论你的项目有多复杂，我们都有信心为你找到最优解决方案</p>
+      <a href="contact.html" class="inline-flex items-center gap-2 bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
+        开始你的项目
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-deep-blue text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-vibrant-orange rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <span class="font-bold text-xl">ETC Sourcing</span>
+          </div>
+          <p class="text-white/70 text-sm leading-relaxed mb-4">
+            你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。
+          </p>
+          <div class="space-y-2 text-sm text-white/70">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              </svg>
+              <span>中国 · 山东省青岛市</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span>contact@etcsourcing.cn</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+              <span>WeChat: 0086 18766270137</span>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-lg mb-5">快速链接</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="index.html" class="hover:text-white transition-colors">首页</a></li>
+            <li><a href="network.html" class="hover:text-white transition-colors">采购网络</a></li>
+            <li><a href="shipping.html" class="hover:text-white transition-colors">出口方案</a></li>
+            <li><a href="process.html" class="hover:text-white transition-colors">服务流程</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-lg mb-5">服务</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="#" class="hover:text-white transition-colors">全国采购网络</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">全品类覆盖</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">第三方品控</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">多港口出口</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-lg mb-5">联系我们</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="contact.html" class="hover:text-white transition-colors">在线咨询</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors">关于我们</a></li>
+            <li><a href="cases.html" class="hover:text-white transition-colors">成功案例</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 mt-12 pt-6 text-center">
+        <p class="text-white/50 text-sm">© 2024 ETC Sourcing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+    function toggleLang() {
+      const text = document.getElementById('lang-text');
+      text.textContent = text.textContent === 'EN' ? '中文' : 'EN';
+    }
+    
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.case-card').forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>
