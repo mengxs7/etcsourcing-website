@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 ETC Sourcing — 你的中国采购部</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'deep-blue': '#0F4C81',
+            'vibrant-orange': '#F97316',
+            'light-gray': '#F8FAFC',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.2); }
+    .lang-btn { transition: all 0.2s ease; }
+    .lang-btn:hover { background: rgba(255,255,255,0.2); }
+    .team-card:hover .team-photo { transform: scale(1.05); }
+    .team-photo { transition: transform 0.3s ease; }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-blue/95 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 bg-vibrant-orange rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <span class="text-white font-bold text-lg">ETC Sourcing</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">首页</a>
+          <a href="network.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">采购网络</a>
+          <a href="shipping.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">出口方案</a>
+          <a href="process.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">服务流程</a>
+          <a href="about.html" class="text-vibrant-orange text-sm font-medium">关于我们</a>
+          <a href="cases.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">成功案例</a>
+          <a href="contact.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors">联系我们</a>
+          <button onclick="toggleLang()" class="lang-btn flex items-center gap-2 px-3 py-1.5 rounded-full text-white text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+            </svg>
+            <span id="lang-text">EN</span>
+          </button>
+        </div>
+        
+        <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden bg-deep-blue border-t border-white/10">
+      <div class="px-6 py-4 space-y-3">
+        <a href="index.html" class="block text-white/80 hover:text-white py-2">首页</a>
+        <a href="network.html" class="block text-white/80 hover:text-white py-2">采购网络</a>
+        <a href="shipping.html" class="block text-white/80 hover:text-white py-2">出口方案</a>
+        <a href="process.html" class="block text-white/80 hover:text-white py-2">服务流程</a>
+        <a href="about.html" class="block text-vibrant-orange py-2">关于我们</a>
+        <a href="cases.html" class="block text-white/80 hover:text-white py-2">成功案例</a>
+        <a href="contact.html" class="block bg-vibrant-orange text-white text-center py-2 rounded-lg">联系我们</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 bg-gradient-to-br from-deep-blue via-[#1a5a9e] to-deep-blue">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center py-12">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+          <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+          <span class="text-white/90 text-sm font-medium">你的中国采购部</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          关于 ETC Sourcing
+          <span class="block text-vibrant-orange mt-2 text-2xl md:text-3xl">从青岛港出发，连接中国制造与全球市场</span>
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Story -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4">公司故事</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">我们的故事</h2>
+      </div>
+      
+      <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
+        <p class="text-xl text-gray-800 font-medium">
+          ETC Sourcing 成立于青岛——中国北方最大的港口城市之一。
+        </p>
+        <p>
+          不同于传统贸易公司专注单一品类，或采购代理固守单一市场，我们选择了一条"轻资产、广覆盖"的道路：
+        </p>
+        <div class="bg-gradient-to-r from-deep-blue/5 to-vibrant-orange/5 rounded-2xl p-8 my-8">
+          <p class="text-2xl font-bold text-deep-blue text-center">
+            "做客户的中国采购部，而非简单的中介。"
+          </p>
+        </div>
+        <p>
+          十年间，我们从青岛港的本地服务商，发展成为覆盖五大产业带、整合全国供应网络的采购平台。我们不养庞大的驻厂团队，而是深耕各产业带的合作资源；我们不赚信息不对称的差价，而是靠整合能力创造价值。
+        </p>
+        <p>
+          今天，我们服务的客户遍布欧美、日韩、东南亚、中亚，采购的品类从机械装备到日用百货，从工业零配件到消费电子。无论你在哪里，无论你需要什么，我们都能从中国的某个产业带，找到最优的解决方案。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Qingdao -->
+  <section class="py-20 bg-light-gray">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/10 text-vibrant-orange text-sm font-medium rounded-full mb-4">总部基地</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">为什么选择青岛作为总部</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Port Advantage -->
+        <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">港口优势</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>青岛港是全球前十集装箱港，更是日韩航线的黄金通道</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>从青岛到釜山仅需2-3天，比上海快2天，比深圳快4天</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>对于日韩市场，这是无可替代的地理优势</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Industry Advantage -->
+        <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">产业优势</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>山东是中国制造业大省</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>机械、化工、农产品加工产业发达</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>以青岛为圆心，3小时车程覆盖烟台、潍坊、威海、临沂等产业带</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Network -->
+        <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-14 h-14 bg-violet-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">我们的网络</h3>
+          <p class="text-gray-600 mb-4">依托青岛港的物流优势，我们逐步建立起：</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>• 长三角（宁波/苏州）机械五金网络</li>
+            <li>• 珠三角（深圳）电子电器网络</li>
+            <li>• 浙江（义乌）日用消费品网络</li>
+            <li>• 中西部（重庆）汽摩配件网络</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4">核心团队</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">认识我们的团队</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Team Member 1 -->
+        <div class="team-card card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div class="w-24 h-24 bg-gradient-to-br from-deep-blue to-blue-400 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+            <span class="text-3xl text-white font-bold">张</span>
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg font-bold text-gray-900">张明</h3>
+            <p class="text-vibrant-orange text-sm font-medium mb-3">创始人 / 总经理</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><strong>背景：</strong>15年外贸经验，前大型国企进出口公司部门经理</p>
+              <p><strong>专长：</strong>供应商开发、国际贸易风险管控、中亚/日韩市场</p>
+              <p><strong>负责：</strong>战略规划、大客户对接</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 2 -->
+        <div class="team-card card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div class="w-24 h-24 bg-gradient-to-br from-pink-400 to-rose-400 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+            <span class="text-3xl text-white font-bold">L</span>
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg font-bold text-gray-900">Lisa Wang</h3>
+            <p class="text-vibrant-orange text-sm font-medium mb-3">采购总监</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><strong>背景：</strong>10年义乌/宁波小商品采购经验，服务过50+欧美客户</p>
+              <p><strong>专长：</strong>日用消费品、价格谈判、供应商管理</p>
+              <p><strong>负责：</strong>日用百货/五金品类采购</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 3 -->
+        <div class="team-card card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div class="w-24 h-24 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+            <span class="text-3xl text-white font-bold">D</span>
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg font-bold text-gray-900">David Chen</h3>
+            <p class="text-vibrant-orange text-sm font-medium mb-3">工业采购经理</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><strong>背景：</strong>8年机械行业经验，熟悉长三角/环渤海装备制造</p>
+              <p><strong>专长：</strong>机械设备、工业零配件、技术规格确认</p>
+              <p><strong>负责：</strong>机械/工业品类采购</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 4 -->
+        <div class="team-card card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div class="w-24 h-24 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+            <span class="text-3xl text-white font-bold">刘</span>
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg font-bold text-gray-900">刘芳</h3>
+            <p class="text-vibrant-orange text-sm font-medium mb-3">物流经理</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><strong>背景：</strong>10年货代经验，熟悉青岛/宁波/上海港操作</p>
+              <p><strong>专长：</strong>多式联运、报关报检、物流成本优化</p>
+              <p><strong>负责：</strong>出口物流方案设计、港口协调</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 5 -->
+        <div class="team-card card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100 md:col-span-2 lg:col-span-1">
+          <div class="w-24 h-24 bg-gradient-to-br from-violet-400 to-purple-400 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+            <span class="text-3xl text-white font-bold">王</span>
+          </div>
+          <div class="text-center">
+            <h3 class="text-lg font-bold text-gray-900">王强</h3>
+            <p class="text-vibrant-orange text-sm font-medium mb-3">质检协调员</p>
+            <div class="text-sm text-gray-600 space-y-2">
+              <p><strong>背景：</strong>5年第三方检测机构（SGS）工作经验</p>
+              <p><strong>专长：</strong>质量标准制定、第三方检测协调、不合格品处理</p>
+              <p><strong>负责：</strong>质量管控体系、检测机构对接</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Stats -->
+  <section class="py-20 bg-gradient-to-br from-deep-blue to-[#1a5a9e]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-1.5 bg-white/10 text-white text-sm font-medium rounded-full mb-4">公司数据</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">用数字说话</h2>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">20XX</div>
+          <div class="text-white/70 text-sm">成立年份</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">XXX</div>
+          <div class="text-white/70 text-sm">服务客户</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">$XXX万</div>
+          <div class="text-white/70 text-sm">年采购额</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">XXX</div>
+          <div class="text-white/70 text-sm">合作工厂</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">8</div>
+          <div class="text-white/70 text-sm">出口港口</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">XX%</div>
+          <div class="text-white/70 text-sm">客户复购率</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="py-16 bg-light-gray">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-10">
+        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/10 text-vibrant-orange text-sm font-medium rounded-full mb-4">资质与认证</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">值得信赖的合作伙伴</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">营业执照 / 进出口权</h4>
+            <p class="text-sm text-gray-500">正规注册，合法经营</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">ISO9001质量管理体系</h4>
+            <p class="text-sm text-gray-500">标准化管理流程</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">AEO认证企业</h4>
+            <p class="text-sm text-gray-500">海关高级认证，通关便利</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm flex items-center gap-4">
+          <div class="w-12 h-12 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-900">合作检测机构</h4>
+            <p class="text-sm text-gray-500">SGS、Bureau Veritas、Intertek</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">想了解更多？</h2>
+      <p class="text-gray-600 mb-8">欢迎联系我们，获取更详细的公司介绍和合作方案</p>
+      <a href="contact.html" class="inline-flex items-center gap-2 bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
+        联系我们
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-deep-blue text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-vibrant-orange rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <span class="font-bold text-xl">ETC Sourcing</span>
+          </div>
+          <p class="text-white/70 text-sm leading-relaxed mb-4">
+            你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。
+          </p>
+          <div class="space-y-2 text-sm text-white/70">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              </svg>
+              <span>中国 · 山东省青岛市</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span>contact@etcsourcing.cn</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+              <span>WeChat: 0086 18766270137</span>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-lg mb-5">快速链接</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="index.html" class="hover:text-white transition-colors">首页</a></li>
+            <li><a href="network.html" class="hover:text-white transition-colors">采购网络</a></li>
+            <li><a href="shipping.html" class="hover:text-white transition-colors">出口方案</a></li>
+            <li><a href="process.html" class="hover:text-white transition-colors">服务流程</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-lg mb-5">服务</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="#" class="hover:text-white transition-colors">全国采购网络</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">全品类覆盖</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">第三方品控</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">多港口出口</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold text-lg mb-5">联系我们</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="contact.html" class="hover:text-white transition-colors">在线咨询</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors">关于我们</a></li>
+            <li><a href="cases.html" class="hover:text-white transition-colors">成功案例</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 mt-12 pt-6 text-center">
+        <p class="text-white/50 text-sm">© 2024 ETC Sourcing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+    function toggleLang() {
+      const text = document.getElementById('lang-text');
+      text.textContent = text.textContent === 'EN' ? '中文' : 'EN';
+    }
+  </script>
+</body>
+</html>
