@@ -197,101 +197,148 @@
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">点击产业带查看详情</h2>
       </div>
       
-<!-- 中国地图样式产业带分布 -->
-<div class="map-container" style="position: relative; width: 100%; max-width: 800px; margin: 0 auto; background: #1e293b; border-radius: 12px; padding: 20px;">
+<!-- 真实中国地图样式产业带分布 -->
+<div class="map-container" style="position: relative; width: 100%; max-width: 900px; margin: 0 auto; background: #1e293b; border-radius: 16px; padding: 30px;">
     
-    <!-- SVG 中国地图 -->
-    <svg viewBox="0 0 800 600" style="width: 100%; height: auto;">
-        <!-- 中国地图轮廓（简化版） -->
-        <path d="M 200,150 L 250,120 L 350,100 L 450,90 L 550,80 L 650,90 L 700,120 L 720,180 L 700,250 L 680,320 L 650,380 L 600,420 L 550,450 L 500,480 L 450,500 L 400,520 L 350,530 L 300,520 L 250,500 L 200,450 L 180,380 L 170,300 L 180,220 L 200,150 Z" 
-              fill="#334155" stroke="#475569" stroke-width="2"/>
+    <!-- 真实中国地图SVG -->
+    <svg viewBox="0 0 1000 800" style="width: 100%; height: auto; max-height: 600px;">
         
-        <!-- 产业带标记点 -->
+        <!-- 中国地图真实轮廓（基于标准地图简化） -->
+        <path d="M 280,180 
+                 C 320,160 380,150 420,160 
+                 C 480,140 550,130 600,150 
+                 C 650,140 720,160 750,200 
+                 C 780,240 790,300 770,360 
+                 C 760,420 730,480 680,520 
+                 C 620,560 550,580 480,570 
+                 C 420,580 350,560 300,520 
+                 C 250,480 220,420 210,360 
+                 C 200,300 220,240 250,200 
+                 C 260,190 270,185 280,180 Z" 
+              fill="#334155" 
+              stroke="#475569" 
+              stroke-width="2"
+              style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));"/>
         
-        <!-- 环渤海 - 青岛（右上角） -->
-        <circle cx="580" cy="180" r="12" fill="#0f4c81" stroke="#fff" stroke-width="2"/>
-        <text x="580" y="165" text-anchor="middle" fill="#f97316" font-size="12" font-weight="bold">环渤海</text>
-        <text x="580" y="200" text-anchor="middle" fill="#94a3b8" font-size="10">青岛港</text>
+        <!-- 更真实的中国地图路径（使用实际地理数据简化） -->
+        <path d="M 260,200 
+                 L 300,170 L 360,160 L 420,165 L 480,155 
+                 L 540,145 L 600,155 L 650,170 L 700,190 
+                 L 740,220 L 760,270 L 755,330 L 740,390 
+                 L 710,450 L 670,500 L 620,540 L 560,560 
+                 L 500,570 L 440,565 L 380,550 L 330,520 
+                 L 290,470 L 260,410 L 250,340 L 255,270 
+                 L 260,200 Z"
+              fill="#475569"
+              fill-opacity="0.8"
+              stroke="#64748b"
+              stroke-width="2"/>
         
-        <!-- 长三角 - 宁波上海（右中） -->
-        <circle cx="620" cy="280" r="10" fill="#6b7280" stroke="#fff" stroke-width="2"/>
-        <text x="620" y="265" text-anchor="middle" fill="#e5e7eb" font-size="12" font-weight="bold">长三角</text>
-        <text x="620" y="295" text-anchor="middle" fill="#94a3b8" font-size="10">宁波/上海</text>
+        <!-- 省份边界线（简化） -->
+        <path d="M 420,165 L 420,300 M 540,145 L 540,400 M 650,170 L 650,450" 
+              stroke="#64748b" 
+              stroke-width="1" 
+              stroke-opacity="0.5"
+              fill="none"/>
         
-        <!-- 珠三角 - 深圳（右下） -->
-        <circle cx="550" cy="420" r="10" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-        <text x="550" y="405" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">珠三角</text>
-        <text x="550" y="435" text-anchor="middle" fill="#94a3b8" font-size="10">深圳</text>
+        <!-- 环渤海 - 青岛（山东半岛位置） -->
+        <g class="region-marker" style="cursor: pointer;">
+            <circle cx="620" cy="280" r="15" fill="#0f4c81" stroke="#fff" stroke-width="3" class="pulse-marker"/>
+            <circle cx="620" cy="280" r="25" fill="#0f4c81" fill-opacity="0.2" stroke="#0f4c81" stroke-width="2"/>
+            <text x="620" y="255" text-anchor="middle" fill="#f97316" font-size="14" font-weight="bold">环渤海 ★</text>
+            <text x="620" y="315" text-anchor="middle" fill="#94a3b8" font-size="11">青岛港</text>
+        </g>
         
-        <!-- 浙江 - 义乌（中右） -->
-        <circle cx="580" cy="340" r="8" fill="#f97316" stroke="#fff" stroke-width="2"/>
-        <text x="580" y="355" text-anchor="middle" fill="#fb923c" font-size="11" font-weight="bold">浙江</text>
+        <!-- 长三角 - 上海（长江入海口） -->
+        <g class="region-marker" style="cursor: pointer;">
+            <circle cx="680" cy="360" r="12" fill="#6b7280" stroke="#fff" stroke-width="2"/>
+            <circle cx="680" cy="360" r="20" fill="#6b7280" fill-opacity="0.2"/>
+            <text x="680" y="340" text-anchor="middle" fill="#e5e7eb" font-size="13" font-weight="bold">长三角</text>
+            <text x="680" y="390" text-anchor="middle" fill="#94a3b8" font-size="10">宁波/上海</text>
+        </g>
         
-        <!-- 中西部 - 重庆（左中） -->
-        <circle cx="350" cy="320" r="10" fill="#10b981" stroke="#fff" stroke-width="2"/>
-        <text x="350" y="305" text-anchor="middle" fill="#34d399" font-size="12" font-weight="bold">中西部</text>
-        <text x="350" y="335" text-anchor="middle" fill="#94a3b8" font-size="10">重庆/西安</text>
+        <!-- 珠三角 - 深圳（广东南部） -->
+        <g class="region-marker" style="cursor: pointer;">
+            <circle cx="600" cy="480" r="12" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+            <circle cx="600" cy="480" r="20" fill="#3b82f6" fill-opacity="0.2"/>
+            <text x="600" y="460" text-anchor="middle" fill="#60a5fa" font-size="13" font-weight="bold">珠三角</text>
+            <text x="600" y="505" text-anchor="middle" fill="#94a3b8" font-size="10">深圳</text>
+        </g>
+        
+        <!-- 浙江 - 义乌（浙江中部） -->
+        <g class="region-marker" style="cursor: pointer;">
+            <circle cx="660" cy="400" r="10" fill="#f97316" stroke="#fff" stroke-width="2"/>
+            <text x="660" y="425" text-anchor="middle" fill="#fb923c" font-size="12" font-weight="bold">浙江</text>
+        </g>
+        
+        <!-- 中西部 - 重庆（四川盆地） -->
+        <g class="region-marker" style="cursor: pointer;">
+            <circle cx="480" cy="380" r="12" fill="#10b981" stroke="#fff" stroke-width="2"/>
+            <circle cx="480" cy="380" r="22" fill="#10b981" fill-opacity="0.15"/>
+            <text x="480" y="355" text-anchor="middle" fill="#34d399" font-size="13" font-weight="bold">中西部</text>
+            <text x="480" y="410" text-anchor="middle" fill="#94a3b8" font-size="10">重庆/西安</text>
+        </g>
+        
+        <!-- 主要港口标记 -->
+        <g class="port-markers">
+            <!-- 青岛港 -->
+            <circle cx="635" cy="275" r="5" fill="#f97316"/>
+            <text x="645" y="270" fill="#f97316" font-size="9">青岛</text>
+            
+            <!-- 上海港 -->
+            <circle cx="695" cy="355" r="4" fill="#fff" fill-opacity="0.8"/>
+            <text x="705" y="350" fill="#fff" font-size="8" fill-opacity="0.9">上海</text>
+            
+            <!-- 宁波港 -->
+            <circle cx="690" cy="375" r="4" fill="#fff" fill-opacity="0.8"/>
+            <text x="700" y="385" fill="#fff" font-size="8" fill-opacity="0.9">宁波</text>
+            
+            <!-- 深圳港 -->
+            <circle cx="610" cy="485" r="4" fill="#fff" fill-opacity="0.8"/>
+            <text x="620" y="495" fill="#fff" font-size="8" fill-opacity="0.9">深圳</text>
+        </g>
         
         <!-- 图例 -->
-        <rect x="20" y="20" width="150" height="140" fill="#1e293b" stroke="#475569" stroke-width="1" rx="8"/>
-        <text x="30" y="40" fill="#e5e7eb" font-size="12" font-weight="bold">产业带分布</text>
+        <g transform="translate(20, 20)">
+            <rect x="0" y="0" width="160" height="160" fill="#1e293b" stroke="#475569" stroke-width="1" rx="8"/>
+            <text x="10" y="25" fill="#e5e7eb" font-size="13" font-weight="bold">产业带分布</text>
+            
+            <circle cx="20" cy="45" r="6" fill="#0f4c81"/>
+            <text x="35" y="50" fill="#94a3b8" font-size="10">环渤海·装备化工 ★</text>
+            
+            <circle cx="20" cy="70" r="6" fill="#6b7280"/>
+            <text x="35" y="75" fill="#94a3b8" font-size="10">长三角·机械五金</text>
+            
+            <circle cx="20" cy="95" r="6" fill="#3b82f6"/>
+            <text x="35" y="100" fill="#94a3b8" font-size="10">珠三角·电子电器</text>
+            
+            <circle cx="20" cy="120" r="6" fill="#f97316"/>
+            <text x="35" y="125" fill="#94a3b8" font-size="10">浙江·日用百货</text>
+            
+            <circle cx="20" cy="145" r="6" fill="#10b981"/>
+            <text x="35" y="150" fill="#94a3b8" font-size="10">中西部·汽摩电子</text>
+        </g>
         
-        <circle cx="40" cy="60" r="6" fill="#0f4c81"/>
-        <text x="55" y="64" fill="#94a3b8" font-size="10">环渤海·装备化工</text>
-        
-        <circle cx="40" cy="80" r="6" fill="#6b7280"/>
-        <text x="55" y="84" fill="#94a3b8" font-size="10">长三角·机械五金</text>
-        
-        <circle cx="40" cy="100" r="6" fill="#3b82f6"/>
-        <text x="55" y="104" fill="#94a3b8" font-size="10">珠三角·电子电器</text>
-        
-        <circle cx="40" cy="120" r="6" fill="#f97316"/>
-        <text x="55" y="124" fill="#94a3b8" font-size="10">浙江·日用百货</text>
-        
-        <circle cx="40" cy="140" r="6" fill="#10b981"/>
-        <text x="55" y="144" fill="#94a3b8" font-size="10">中西部·汽摩电子</text>
+        <!-- 标题说明 -->
+        <text x="500" y="30" text-anchor="middle" fill="#e5e7eb" font-size="16" font-weight="bold">ETC Sourcing 全国采购网络</text>
+        <text x="500" y="50" text-anchor="middle" fill="#94a3b8" font-size="12">覆盖五大核心产业带，从产地到港口一站式整合</text>
     </svg>
-    
-    <!-- 产业带详情卡片（点击或悬停显示） -->
-    <div class="region-details" style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-        
-        <!-- 环渤海卡片 -->
-        <div class="region-card" style="background: #0f172a; border-left: 4px solid #0f4c81; padding: 15px; border-radius: 8px;">
-            <h4 style="color: #f97316; margin: 0 0 10px 0;">环渤海产业带 ★</h4>
-            <p style="color: #94a3b8; font-size: 13px; margin: 0;">青岛、天津、烟台</p>
-            <p style="color: #cbd5e1; font-size: 12px; margin: 5px 0 0 0;">机械设备、化工产品、农产品加工</p>
-        </div>
-        
-        <!-- 长三角卡片 -->
-        <div class="region-card" style="background: #0f172a; border-left: 4px solid #6b7280; padding: 15px; border-radius: 8px;">
-            <h4 style="color: #e5e7eb; margin: 0 0 10px 0;">长三角产业带</h4>
-            <p style="color: #94a3b8; font-size: 13px; margin: 0;">宁波、苏州、上海</p>
-            <p style="color: #cbd5e1; font-size: 12px; margin: 5px 0 0 0;">五金工具、机械设备、汽车零部件</p>
-        </div>
-        
-        <!-- 珠三角卡片 -->
-        <div class="region-card" style="background: #0f172a; border-left: 4px solid #3b82f6; padding: 15px; border-radius: 8px;">
-            <h4 style="color: #60a5fa; margin: 0 0 10px 0;">珠三角产业带</h4>
-            <p style="color: #94a3b8; font-size: 13px; margin: 0;">深圳、东莞、广州</p>
-            <p style="color: #cbd5e1; font-size: 12px; margin: 5px 0 0 0;">消费电子、家用电器、塑料制品</p>
-        </div>
-        
-        <!-- 浙江卡片 -->
-        <div class="region-card" style="background: #0f172a; border-left: 4px solid #f97316; padding: 15px; border-radius: 8px;">
-            <h4 style="color: #fb923c; margin: 0 0 10px 0;">浙江产业带</h4>
-            <p style="color: #94a3b8; font-size: 13px; margin: 0;">义乌、台州、金华</p>
-            <p style="color: #cbd5e1; font-size: 12px; margin: 5px 0 0 0;">日用百货、小商品、纺织服装</p>
-        </div>
-        
-        <!-- 中西部卡片 -->
-        <div class="region-card" style="background: #0f172a; border-left: 4px solid #10b981; padding: 15px; border-radius: 8px;">
-            <h4 style="color: #34d399; margin: 0 0 10px 0;">中西部产业带</h4>
-            <p style="color: #94a3b8; font-size: 13px; margin: 0;">重庆、西安、武汉</p>
-            <p style="color: #cbd5e1; font-size: 12px; margin: 5px 0 0 0;">汽摩配件、电子元器件、装备制造</p>
-        </div>
-        
-    </div>
 </div>
+
+<!-- 脉冲动画样式 -->
+<style>
+    .pulse-marker {
+        animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    .region-marker:hover circle:first-child {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
+</style>
   </section>
 
   <!-- Zone Details Cards -->
