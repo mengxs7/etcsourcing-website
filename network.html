@@ -85,6 +85,14 @@
       border-color: rgba(249, 115, 22, 0.5);
       background: rgba(249, 115, 22, 0.1);
     }
+
+    /* 锚点跳转时留出导航栏空间 */
+    #zone-bohai,
+    #zone-yrd,
+    #zone-prd,
+    #zone-central {
+      scroll-margin-top: 80px;
+    }
   </style>
 <base target="_blank">
 </head>
@@ -213,13 +221,13 @@
               <!-- 环渤海点击区 -->
               <a href="#zone-bohai" 
                  class="click-area"
-                 style="position: absolute; left: 57.86%; top: 35.87%; width: 11.79%; padding-bottom: 15.00%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                 style="position: absolute; left: 57.86%; top: 35.87%; width: 11.79%; padding-bottom: 14.81%; border-radius: 50%; z-index: 10; cursor: pointer;"
                  title="环渤海产业带 - 青岛"></a>
 
               <!-- 长三角+浙江点击区 -->
               <a href="#zone-yrd" 
                  class="click-area"
-                 style="position: absolute; left: 65%; top: 55.61%; width: 9.29%; padding-bottom: 11.70%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                 style="position: absolute; left: 65%; top: 55.61%; width: 9.29%; padding-bottom: 11.67%; border-radius: 50%; z-index: 10; cursor: pointer;"
                  title="长三角+浙江产业带 - 上海/宁波/杭州/义乌"></a>
 
               <!-- 珠三角点击区 -->
@@ -231,7 +239,7 @@
               <!-- 中西部点击区 -->
               <a href="#zone-central" 
                  class="click-area"
-                 style="position: absolute; left: 43.57%; top: 50.67%; width: 17.14%; padding-bottom: 21.60%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                 style="position: absolute; left: 43.57%; top: 50.67%; width: 17.14%; padding-bottom: 21.53%; border-radius: 50%; z-index: 10; cursor: pointer;"
                  title="中西部产业带 - 重庆/西安/武汉/四川"></a>
             </div>
           </div>
