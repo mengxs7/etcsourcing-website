@@ -219,28 +219,28 @@
                    alt="ETC Sourcing 全国采购网络 - 四大产业带分布">
 
               <!-- 环渤海点击区 -->
-              <a href="#zone-bohai" 
-                 class="click-area"
-                 style="position: absolute; left: 57.86%; top: 35.87%; width: 11.79%; padding-bottom: 14.81%; border-radius: 50%; z-index: 10; cursor: pointer;"
-                 title="环渤海产业带 - 青岛"></a>
+              <div onclick="scrollToZone('zone-bohai')" 
+                   class="click-area"
+                   style="position: absolute; left: 57.86%; top: 35.87%; width: 11.79%; padding-bottom: 11.79%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                   title="环渤海产业带 - 青岛"></div>
 
               <!-- 长三角+浙江点击区 -->
-              <a href="#zone-yrd" 
-                 class="click-area"
-                 style="position: absolute; left: 65%; top: 55.61%; width: 9.29%; padding-bottom: 11.67%; border-radius: 50%; z-index: 10; cursor: pointer;"
-                 title="长三角+浙江产业带 - 上海/宁波/杭州/义乌"></a>
+              <div onclick="scrollToZone('zone-yrd')" 
+                   class="click-area"
+                   style="position: absolute; left: 65%; top: 55.61%; width: 9.29%; padding-bottom: 9.29%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                   title="长三角+浙江产业带 - 上海/宁波/杭州/义乌"></div>
 
               <!-- 珠三角点击区 -->
-              <a href="#zone-prd" 
-                 class="click-area"
-                 style="position: absolute; left: 56.43%; top: 75.34%; width: 6.07%; padding-bottom: 7.62%; border-radius: 50%; z-index: 10; cursor: pointer;"
-                 title="珠三角产业带 - 广州/东莞"></a>
+              <div onclick="scrollToZone('zone-prd')" 
+                   class="click-area"
+                   style="position: absolute; left: 56.43%; top: 75.34%; width: 6.07%; padding-bottom: 6.07%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                   title="珠三角产业带 - 广州/东莞"></div>
 
               <!-- 中西部点击区 -->
-              <a href="#zone-central" 
-                 class="click-area"
-                 style="position: absolute; left: 43.57%; top: 50.67%; width: 17.14%; padding-bottom: 21.53%; border-radius: 50%; z-index: 10; cursor: pointer;"
-                 title="中西部产业带 - 重庆/西安/武汉/四川"></a>
+              <div onclick="scrollToZone('zone-central')" 
+                   class="click-area"
+                   style="position: absolute; left: 43.57%; top: 50.67%; width: 17.14%; padding-bottom: 17.14%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                   title="中西部产业带 - 重庆/西安/武汉/四川"></div>
             </div>
           </div>
 
@@ -459,6 +459,19 @@
   </footer>
 
   <script>
+        function scrollToZone(zoneId) {
+      const element = document.getElementById(zoneId);
+      if (element) {
+        const navHeight = 80;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navHeight;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
