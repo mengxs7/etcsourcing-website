@@ -190,7 +190,7 @@
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">点击产业带查看详情</h2>
       </div>
       
-      <!-- 中国产业带地图 - 图片+隐形点击区 -->
+      <!-- 中国产业带地图 - 图片+点击区 -->
       <div style="position: relative; width: 100%; max-width: 1000px; margin: 0 auto; background: #1e293b; border-radius: 16px; padding: 20px;">
         
         <!-- 标题 -->
@@ -202,35 +202,61 @@
         <!-- 地图容器 -->
         <div style="position: relative; width: 100%; padding-bottom: 75%; background: #334155; border-radius: 12px; overflow: hidden;">
           
-          <!-- 带标记的地图图片 -->
-          <img src="china-map-marked20260422.png" 
+          <!-- 产业带地图图片 -->
+          <img src="china-map-marked%2020260422.png" 
                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;"
                alt="ETC Sourcing 全国采购网络 - 四大产业带分布">
           
-          <!-- 隐形点击区 -->
-          
-          <!-- 环渤海点击区 -->
+          <!-- 环渤海点击区 - 边框距离: left 57.86%, top 35.87% | 直径: 11.79% -->
           <a href="#zone-bohai" 
              class="click-area"
-             style="position: absolute; left: 62%; top: 25%; width: 20%; height: 25%; z-index: 10; cursor: pointer; border-radius: 50%;"
+             style="position: absolute; 
+                    left: 57.86%; 
+                    top: 35.87%; 
+                    width: 11.79%; 
+                    height: 11.79%; 
+                    z-index: 10; 
+                    cursor: pointer; 
+                    border-radius: 50%;"
              title="环渤海产业带 - 青岛"></a>
           
-          <!-- 长三角+浙江合并点击区 -->
+          <!-- 长三角+浙江点击区 - 边框距离: left 65%, top 55.61% | 直径: 9.29% -->
           <a href="#zone-yrd" 
              class="click-area"
-             style="position: absolute; left: 65%; top: 50%; width: 30%; height: 30%; z-index: 10; cursor: pointer; border-radius: 50%;"
+             style="position: absolute; 
+                    left: 65%; 
+                    top: 55.61%; 
+                    width: 9.29%; 
+                    height: 9.29%; 
+                    z-index: 10; 
+                    cursor: pointer; 
+                    border-radius: 50%;"
              title="长三角+浙江产业带 - 上海/宁波/杭州/义乌"></a>
           
-          <!-- 珠三角点击区 -->
+          <!-- 珠三角点击区 - 边框距离: left 56.43%, top 75.34% | 直径: 6.07% -->
           <a href="#zone-prd" 
              class="click-area"
-             style="position: absolute; left: 58%; top: 72%; width: 18%; height: 22%; z-index: 10; cursor: pointer; border-radius: 50%;"
+             style="position: absolute; 
+                    left: 56.43%; 
+                    top: 75.34%; 
+                    width: 6.07%; 
+                    height: 6.07%; 
+                    z-index: 10; 
+                    cursor: pointer; 
+                    border-radius: 50%;"
              title="珠三角产业带 - 广州/东莞"></a>
           
-          <!-- 中西部点击区 -->
+          <!-- 中西部点击区 - 边框距离: left 43.57%, top 50.67% | 直径: 17.14% -->
           <a href="#zone-central" 
              class="click-area"
-             style="position: absolute; left: 40%; top: 48%; width: 28%; height: 32%; z-index: 10; cursor: pointer; border-radius: 50%;"
+             style="position: absolute; 
+                    left: 43.57%; 
+                    top: 50.67%; 
+                    width: 17.14%; 
+                    height: 17.14%; 
+                    z-index: 10; 
+                    cursor: pointer; 
+                    border-radius: 50%;"
              title="中西部产业带 - 重庆/西安/武汉/四川"></a>
           
         </div>
@@ -475,57 +501,4 @@
         'electronics-usa': '推荐：珠三角产业带 + 深圳港出口。电子产品制造中心，美西快线14-18天直达。',
         'electronics-europe': '推荐：长三角+浙江产业带 + 宁波港出口。欧洲航线优势，16-22天到欧洲主要港口。',
         'machinery-japan-korea': '推荐：环渤海产业带 + 青岛港出口。距离日韩最近，3-5天快速直达。',
-        'machinery-central-asia': '推荐：环渤海产业带 + 青岛港海铁联运。中亚班列5-7天到阿拉木图。',
-        'daily-sea': '推荐：长三角+浙江产业带 + 宁波港出口。小商品品类最全，拼箱便利成本低。',
-        'auto-europe': '推荐：中西部产业带 + 中欧班列。铁路14天到欧洲，比海运快10天。',
-        'hardware-europe': '推荐：长三角+浙江产业带 + 宁波港出口。五金工具制造基地，欧洲航线成熟。',
-        'chemical-japan-korea': '推荐：环渤海产业带 + 青岛港出口。化工产业集中，日韩航线便利。'
-      };
-      
-      const key = product + '-' + market;
-      const recommendation = recommendations[key] || '根据您的产品和目的地，我们建议联系我们的采购专家获取定制化方案。多个产业带可能适合您的需求。';
-      
-      resultText.textContent = recommendation;
-      resultDiv.classList.remove('hidden');
-    }
-    
-    function animateNumbers() {
-      const counters = document.querySelectorAll('[data-count]');
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const updateCounter = () => {
-          current += step;
-          if (current < target) {
-            counter.textContent = Math.floor(current);
-            requestAnimationFrame(updateCounter);
-          } else {
-            counter.textContent = target + (target >= 15 ? '+' : '');
-          }
-        };
-        
-        updateCounter();
-      });
-    }
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (entry.target.querySelector('[data-count]')) {
-            animateNumbers();
-          }
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      const heroSection = document.querySelector('section');
-      if (heroSection) observer.observe(heroSection);
-    });
-  </script>
-</body>
-</html>
+        'machinery-central-asia': '推荐
