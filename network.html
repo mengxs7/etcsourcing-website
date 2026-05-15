@@ -459,16 +459,10 @@
   </footer>
 
   <script>
-        function scrollToZone(zoneId) {
+    function scrollToZone(zoneId) {
       const element = document.getElementById(zoneId);
       if (element) {
-        const navHeight = 80;
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - navHeight;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
 
@@ -476,7 +470,7 @@
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
     }
-    
+
     let currentLang = 'zh';
     function toggleLang() {
       currentLang = currentLang === 'zh' ? 'en' : 'zh';
