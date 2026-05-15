@@ -201,67 +201,42 @@
         </div>
         
         <!-- 地图容器 -->
-        <div style="position: relative; width: 100%; padding-bottom: 75%; background: #334155; border-radius: 12px; overflow: hidden;">
-          
-          <!-- 产业带地图图片 -->
-          <img src="china-map-marked20260422.png" 
-               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;"
-               alt="ETC Sourcing 全国采购网络 - 四大产业带分布">
-          
-          <!-- 环渤海点击区 - 边框距离: left 57.86%, top 35.87% | 直径: 11.79% -->
-          <a href="#zone-bohai" 
-             class="click-area"
-             style="position: absolute; 
-                    left: 54.29%; 
-                    top: 35.87%; 
-                    width: 11.79%; 
-                    height: 15.00%; 
-                    z-index: 10; 
-                    cursor: pointer; 
-                    border-radius: 50%;"
-             title="环渤海产业带 - 青岛"></a>
-          
-          <!-- 长三角+浙江点击区 - 边框距离: left 65%, top 55.61% | 直径: 9.29% -->
-          <a href="#zone-yrd" 
-             class="click-area"
-             style="position: absolute; 
-                    left: 61.43%; 
-                    top: 55.61%; 
-                    width: 9.29%; 
-                    height: 11.70%; 
-                    z-index: 10; 
-                    cursor: pointer; 
-                    border-radius: 50%;"
-             title="长三角+浙江产业带 - 上海/宁波/杭州/义乌"></a>
-          
-          <!-- 珠三角点击区 - 边框距离: left 56.43%, top 75.34% | 直径: 6.07% -->
-          <a href="#zone-prd" 
-             class="click-area"
-             style="position: absolute; 
-                    left: 52.86%; 
-                    top: 75.34%; 
-                    width: 6.07%; 
-                    height: 7.62%; 
-                    z-index: 10; 
-                    cursor: pointer; 
-                    border-radius: 50%;"
-             title="珠三角产业带 - 广州/东莞"></a>
-          
-          <!-- 中西部点击区 - 边框距离: left 43.57%, top 50.67% | 直径: 17.14% -->
-          <a href="#zone-central" 
-             class="click-area"
-             style="position: absolute; 
-                    left: 40%; 
-                    top: 50.67%; 
-                    width: 17.14%; 
-                    height: 21.60%; 
-                    z-index: 10; 
-                    cursor: pointer; 
-                    border-radius: 50%;"
-             title="中西部产业带 - 重庆/西安/武汉/四川"></a>
-          
+        <div style="width: 100%; padding-bottom: 75%; background: #334155; border-radius: 12px; overflow: hidden; position: relative;">
+
+          <!-- 图片层填满整个容器，点击区基于图片本身定位 -->
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+            <div style="position: relative; width: 100%; height: 100%;">
+              <img src="china-map-marked20260422.png" 
+                   style="width: 100%; height: 100%; object-fit: contain; display: block;"
+                   alt="ETC Sourcing 全国采购网络 - 四大产业带分布">
+
+              <!-- 环渤海点击区 -->
+              <a href="#zone-bohai" 
+                 class="click-area"
+                 style="position: absolute; left: 57.86%; top: 35.87%; width: 11.79%; padding-bottom: 15.00%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                 title="环渤海产业带 - 青岛"></a>
+
+              <!-- 长三角+浙江点击区 -->
+              <a href="#zone-yrd" 
+                 class="click-area"
+                 style="position: absolute; left: 65%; top: 55.61%; width: 9.29%; padding-bottom: 11.70%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                 title="长三角+浙江产业带 - 上海/宁波/杭州/义乌"></a>
+
+              <!-- 珠三角点击区 -->
+              <a href="#zone-prd" 
+                 class="click-area"
+                 style="position: absolute; left: 56.43%; top: 75.34%; width: 6.07%; padding-bottom: 7.62%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                 title="珠三角产业带 - 广州/东莞"></a>
+
+              <!-- 中西部点击区 -->
+              <a href="#zone-central" 
+                 class="click-area"
+                 style="position: absolute; left: 43.57%; top: 50.67%; width: 17.14%; padding-bottom: 21.60%; border-radius: 50%; z-index: 10; cursor: pointer;"
+                 title="中西部产业带 - 重庆/西安/武汉/四川"></a>
+            </div>
+          </div>
+
         </div>
-        
         <!-- 图例 -->
         <div style="display: flex; justify-content: center; gap: 20px; margin-top: 25px; flex-wrap: wrap;">
           <div style="display: flex; align-items: center; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 6px 12px; border-radius: 8px;">
