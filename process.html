@@ -57,315 +57,6 @@
     .compare-table tr:nth-child(even) { background: #F8FAFC; }
     .compare-table td, .compare-table th { padding: 16px; text-align: left; }
   </style>
-  <script>
-    // ========== 多语言系统 ==========
-    const i18nData = {
-      zh: {
-        nav_home: "首页",
-        nav_network: "采购网络",
-        nav_shipping: "出口方案",
-        nav_process: "服务流程",
-        nav_about: "关于我们",
-        nav_cases: "成功案例",
-        nav_contact: "联系我们",
-        nav_lang: "EN",
-
-        process_hero_badge: "轻资产整合模式",
-        process_hero_title: "服务流程",
-        process_hero_subtitle: "轻资产整合，重结果交付",
-        process_hero_desc: "不同于传统采购代理驻厂跟进，我们采用"远程管理+第三方验证"模式，在保证质量的同时，为你节省成本、提高效率、扩大覆盖范围。",
-
-        process_step_badge: "五步完成从需求到出口",
-        process_step_title: "How We Work",
-
-        process_step1_num: "1",
-        process_step1_title: "需求分析",
-        process_step1_time: "1-2天",
-        process_step1_you: "你提供：",
-        process_step1_you_desc: "产品规格、目标价格、数量、质量标准、目的地",
-        process_step1_deliver: "我们交付：",
-        process_step1_deliver_1: "可行性评估（是否适合中国采购）",
-        process_step1_deliver_2: "推荐最优产业带（匹配工厂资源）",
-        process_step1_deliver_3: "预估成本与交期",
-        process_step1_free: "免费",
-
-        process_step2_num: "2",
-        process_step2_title: "供应商匹配",
-        process_step2_time: "3-5天",
-        process_step2_action: "我们行动：",
-        process_step2_action_1: "在对应产业带筛选2-3家合格工厂",
-        process_step2_action_2: "核实工厂资质（营业执照、出口权、产能）",
-        process_step2_action_3: "获取详细报价（含包装、港杂、运费预估）",
-        process_step2_receive: "你收到：",
-        process_step2_receive_1: "供应商对比报告（价格、交期、MOQ、优势分析）",
-        process_step2_receive_2: "样品安排（免费寄送，快递费到付）",
-
-        process_step3_num: "3",
-        process_step3_title: "订单执行",
-        process_step3_time: "根据交期",
-        process_step3_model: "合作模式：",
-        process_step3_model_desc: "你与我们签订合同（非直接与工厂），<strong>我们承担交付责任</strong>",
-        process_step3_manage: "我们管理：",
-        process_step3_manage_1: "生产进度跟踪（工厂周报+我们远程监控）",
-        process_step3_manage_2: "原材料确认（关键材料拍照确认）",
-        process_step3_manage_3: "中期检查（大货生产前关键节点确认，按需）",
-        process_step3_note: "<strong>注：</strong>我们不驻厂，但要求工厂提供生产日志和照片",
-
-        process_step4_num: "4",
-        process_step4_title: "第三方质检",
-        process_step4_time: "2-3天",
-        process_step4_partner: "合作机构：",
-        process_step4_partner_desc: "SGS、Bureau Veritas、Intertek等国际第三方",
-        process_step4_check: "检测内容：",
-        process_step4_check_1: "全检或抽检（根据产品价值和客户要求）",
-        process_step4_check_2: "功能测试、外观检查、包装确认",
-        process_step4_check_3: "出具权威检测报告（可提供给终端客户）",
-        process_step4_fail: "<strong>不合格处理：</strong>",
-        process_step4_fail_desc: "协调工厂返工或折扣，我们承担协调责任",
-        process_step4_cost: "按货值1-2%（基础抽检可协商免费）",
-
-        process_step5_num: "5",
-        process_step5_title: "多港口出口",
-        process_step5_time: "根据目的地",
-        process_step5_arrange: "我们安排：",
-        process_step5_arrange_1: "选择最优出口港（成本/时效/航线综合考量）",
-        process_step5_arrange_2: "出口报关、订舱、装柜",
-        process_step5_arrange_3: "海运/空运/铁路运输",
-        process_step5_arrange_4: "目的港清关单据准备",
-        process_step5_deliver: "<strong>交付：</strong>",
-        process_step5_deliver_desc: "门到门或FOB/CIF，按你需求",
-
-        qa_badge: "质量保障体系",
-        qa_title: "不驻厂，但可控",
-        qa_desc: "通过三重保障机制，我们在不派驻人员的情况下，确保产品质量和交付可靠性",
-
-        qa1_title: "供应商预审",
-        qa1_1: "合作前实地考察（或委托当地代理），建立合格供应商库",
-        qa1_2: "定期评估：交期准确率、质量合格率、配合度",
-
-        qa2_title: "合同约束",
-        qa2_1: "与我们签约（非直接对工厂），<strong>我们承担交付责任</strong>",
-        qa2_2: "付款条款：生产前30%，见第三方检测报告后70%",
-        qa2_3: "违约条款：明确质量标准和赔偿机制",
-
-        qa3_title: "第三方验证",
-        qa3_1: "生产完成后必检，国际机构背书",
-        qa3_2: "报告透明：你直接收到SGS/BV原版报告",
-
-        compare_badge: "模式对比",
-        compare_title: "与传统模式有什么不同？",
-        compare_dim: "对比维度",
-        compare_traditional: "传统驻厂代理",
-        compare_etc: "ETC Sourcing轻资产模式",
-        compare_range: "覆盖范围",
-        compare_range_t: "单一产业带",
-        compare_range_e: "全国五大产业带",
-        compare_category: "品类能力",
-        compare_category_t: "专注少数品类",
-        compare_category_e: "机械到日用全品类",
-        compare_cost: "成本结构",
-        compare_cost_t: "高（养驻厂团队）",
-        compare_cost_e: "低（按需调用资源）",
-        compare_speed: "响应速度",
-        compare_speed_t: "依赖驻厂人员",
-        compare_speed_e: "远程+本地代理，更快",
-        compare_quality: "质量保障",
-        compare_quality_t: "自有质检（主观）",
-        compare_quality_e: "第三方机构（客观权威）",
-        compare_flex: "灵活性",
-        compare_flex_t: "人员固定",
-        compare_flex_e: "按项目调配最优资源",
-
-        cta_title: "准备好开始你的采购项目了吗？",
-        cta_desc: "第一步需求分析完全免费，24小时内获取初步方案",
-        cta_btn: "免费咨询，获取方案",
-
-        footer_desc: "你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。",
-        footer_address: "中国 · 山东省青岛市",
-        footer_email: "contact@etcsourcing.cn",
-        footer_wechat: "WeChat: 0086 18766270137",
-        footer_quick: "快速链接",
-        footer_service: "服务",
-        footer_service_1: "全国采购网络",
-        footer_service_2: "全品类覆盖",
-        footer_service_3: "第三方品控",
-        footer_service_4: "多港口出口",
-        footer_contact: "联系我们",
-        footer_contact_1: "在线咨询",
-        footer_contact_2: "关于我们",
-        footer_contact_3: "成功案例",
-        footer_copyright: "© 2024 ETC Sourcing. All rights reserved.",
-      },
-
-      en: {
-        nav_home: "Home",
-        nav_network: "Sourcing Network",
-        nav_shipping: "Export Solutions",
-        nav_process: "Service Process",
-        nav_about: "About Us",
-        nav_cases: "Case Studies",
-        nav_contact: "Contact Us",
-        nav_lang: "中文",
-
-        process_hero_badge: "Light-Asset Integration",
-        process_hero_title: "Service Process",
-        process_hero_subtitle: "Light Assets, Heavy Results",
-        process_hero_desc: "Unlike traditional sourcing agents who station staff at factories, we adopt a "Remote Management + Third-Party Verification" model to save costs, improve efficiency, and expand coverage while ensuring quality.",
-
-        process_step_badge: "5 Steps from Inquiry to Export",
-        process_step_title: "How We Work",
-
-        process_step1_num: "1",
-        process_step1_title: "Requirement Analysis",
-        process_step1_time: "1-2 Days",
-        process_step1_you: "You Provide:",
-        process_step1_you_desc: "Product specs, target price, quantity, quality standards, destination",
-        process_step1_deliver: "We Deliver:",
-        process_step1_deliver_1: "Feasibility assessment (suitability for China sourcing)",
-        process_step1_deliver_2: "Optimal industry belt recommendation (matching factory resources)",
-        process_step1_deliver_3: "Estimated cost & lead time",
-        process_step1_free: "Free",
-
-        process_step2_num: "2",
-        process_step2_title: "Supplier Matching",
-        process_step2_time: "3-5 Days",
-        process_step2_action: "We Act:",
-        process_step2_action_1: "Screen 2-3 qualified factories in the relevant industry belt",
-        process_step2_action_2: "Verify factory credentials (license, export rights, capacity)",
-        process_step2_action_3: "Obtain detailed quotations (packaging, port charges, freight estimates included)",
-        process_step2_receive: "You Receive:",
-        process_step2_receive_1: "Supplier comparison report (price, lead time, MOQ, advantage analysis)",
-        process_step2_receive_2: "Sample arrangement (free shipping, courier fee collect)",
-
-        process_step3_num: "3",
-        process_step3_title: "Order Execution",
-        process_step3_time: "Per Lead Time",
-        process_step3_model: "Cooperation Model:",
-        process_step3_model_desc: "You contract with us (not directly with the factory). <strong>We bear the delivery responsibility.</strong>",
-        process_step3_manage: "We Manage:",
-        process_step3_manage_1: "Production progress tracking (factory weekly reports + our remote monitoring)",
-        process_step3_manage_2: "Raw material confirmation (photo verification of key materials)",
-        process_step3_manage_3: "Mid-term inspection (key node confirmation before mass production, as needed)",
-        process_step3_note: "<strong>Note:</strong> We do not station staff, but require factories to provide production logs and photos.",
-
-        process_step4_num: "4",
-        process_step4_title: "Third-Party QC",
-        process_step4_time: "2-3 Days",
-        process_step4_partner: "Partner Institutions:",
-        process_step4_partner_desc: "SGS, Bureau Veritas, Intertek and other international third parties",
-        process_step4_check: "Inspection Content:",
-        process_step4_check_1: "Full or sampling inspection (based on product value and client requirements)",
-        process_step4_check_2: "Functional testing, appearance check, packaging confirmation",
-        process_step4_check_3: "Authoritative inspection report issued (can be provided to end clients)",
-        process_step4_fail: "<strong>Non-conforming Handling:</strong>",
-        process_step4_fail_desc: "Coordinate factory rework or discount. We bear the coordination responsibility.",
-        process_step4_cost: "1-2% of cargo value (basic sampling inspection negotiable for free)",
-
-        process_step5_num: "5",
-        process_step5_title: "Multi-Port Export",
-        process_step5_time: "Per Destination",
-        process_step5_arrange: "We Arrange:",
-        process_step5_arrange_1: "Select optimal export port (cost/time/route comprehensive consideration)",
-        process_step5_arrange_2: "Export customs declaration, booking, container loading",
-        process_step5_arrange_3: "Sea freight / Air freight / Rail transport",
-        process_step5_arrange_4: "Destination port customs clearance document preparation",
-        process_step5_deliver: "<strong>Delivery:</strong>",
-        process_step5_deliver_desc: "Door-to-door or FOB/CIF, as per your needs",
-
-        qa_badge: "Quality Assurance",
-        qa_title: "No On-Site Staff, But Fully Controllable",
-        qa_desc: "Through a triple guarantee mechanism, we ensure product quality and delivery reliability without stationing personnel.",
-
-        qa1_title: "Supplier Pre-screening",
-        qa1_1: "On-site inspection before cooperation (or delegate local agents), building qualified supplier database",
-        qa1_2: "Regular evaluation: on-time delivery rate, quality pass rate, cooperation level",
-
-        qa2_title: "Contractual Constraints",
-        qa2_1: "Contract with us (not directly with factory). <strong>We bear delivery responsibility.</strong>",
-        qa2_2: "Payment terms: 30% before production, 70% upon third-party inspection report",
-        qa2_3: "Penalty clauses: clear quality standards and compensation mechanism",
-
-        qa3_title: "Third-Party Verification",
-        qa3_1: "Mandatory inspection after production completion, backed by international institutions",
-        qa3_2: "Transparent reporting: you receive original SGS/BV reports directly",
-
-        compare_badge: "Model Comparison",
-        compare_title: "How Are We Different from Traditional Models?",
-        compare_dim: "Dimension",
-        compare_traditional: "Traditional On-Site Agent",
-        compare_etc: "ETC Sourcing Light-Asset Model",
-        compare_range: "Coverage",
-        compare_range_t: "Single industry belt",
-        compare_range_e: "Five major industry belts nationwide",
-        compare_category: "Category Capability",
-        compare_category_t: "Focus on limited categories",
-        compare_category_e: "Full range from machinery to daily necessities",
-        compare_cost: "Cost Structure",
-        compare_cost_t: "High (maintain on-site team)",
-        compare_cost_e: "Low (allocate resources on demand)",
-        compare_speed: "Response Speed",
-        compare_speed_t: "Dependent on on-site staff",
-        compare_speed_e: "Remote + local agents, faster",
-        compare_quality: "Quality Assurance",
-        compare_quality_t: "In-house QC (subjective)",
-        compare_quality_e: "Third-party institutions (objective & authoritative)",
-        compare_flex: "Flexibility",
-        compare_flex_t: "Fixed personnel",
-        compare_flex_e: "Allocate optimal resources per project",
-
-        cta_title: "Ready to Start Your Sourcing Project?",
-        cta_desc: "Step 1 requirement analysis is completely free. Get preliminary proposal within 24 hours.",
-        cta_btn: "Free Consultation, Get Proposal",
-
-        footer_desc: "Your China supply chain integration partner. Cross-category, cross-industry-belt, multi-port export. Making global sourcing easier.",
-        footer_address: "Qingdao, Shandong, China",
-        footer_email: "contact@etcsourcing.cn",
-        footer_wechat: "WeChat: 0086 18766270137",
-        footer_quick: "Quick Links",
-        footer_service: "Services",
-        footer_service_1: "Nationwide Sourcing Network",
-        footer_service_2: "Full Category Coverage",
-        footer_service_3: "Third-Party QC",
-        footer_service_4: "Multi-Port Export",
-        footer_contact: "Contact Us",
-        footer_contact_1: "Online Inquiry",
-        footer_contact_2: "About Us",
-        footer_contact_3: "Case Studies",
-        footer_copyright: "© 2024 ETC Sourcing. All rights reserved.",
-      }
-    };
-
-    let currentLang = localStorage.getItem('etcsourcing-lang') || 'zh';
-
-    function setLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('etcsourcing-lang', lang);
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (i18nData[lang][key]) {
-          el.innerHTML = i18nData[lang][key];
-        }
-      });
-
-      const langBtn = document.getElementById('lang-text');
-      if (langBtn) {
-        langBtn.textContent = i18nData[lang].nav_lang;
-      }
-
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-      document.title = lang === 'zh' ? '服务流程 — ETC Sourcing' : 'Service Process — ETC Sourcing';
-    }
-
-    function toggleLang() {
-      const newLang = currentLang === 'zh' ? 'en' : 'zh';
-      setLanguage(newLang);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      setLanguage(currentLang);
-    });
-  </script>
 <base target="_blank">
 </head>
 <body class="bg-white">
@@ -862,7 +553,332 @@
     </div>
   </footer>
 
+  <!-- 多语言脚本放在 body 末尾，确保 DOM 已加载 -->
   <script>
+    // ========== 多语言系统 ==========
+    const i18nData = {
+      zh: {
+        nav_home: "首页",
+        nav_network: "采购网络",
+        nav_shipping: "出口方案",
+        nav_process: "服务流程",
+        nav_about: "关于我们",
+        nav_cases: "成功案例",
+        nav_contact: "联系我们",
+        nav_lang: "EN",
+
+        process_hero_badge: "轻资产整合模式",
+        process_hero_title: "服务流程",
+        process_hero_subtitle: "轻资产整合，重结果交付",
+        process_hero_desc: "不同于传统采购代理驻厂跟进，我们采用"远程管理+第三方验证"模式，在保证质量的同时，为你节省成本、提高效率、扩大覆盖范围。",
+
+        process_step_badge: "五步完成从需求到出口",
+        process_step_title: "How We Work",
+
+        process_step1_num: "1",
+        process_step1_title: "需求分析",
+        process_step1_time: "1-2天",
+        process_step1_you: "你提供：",
+        process_step1_you_desc: "产品规格、目标价格、数量、质量标准、目的地",
+        process_step1_deliver: "我们交付：",
+        process_step1_deliver_1: "• 可行性评估（是否适合中国采购）",
+        process_step1_deliver_2: "• 推荐最优产业带（匹配工厂资源）",
+        process_step1_deliver_3: "• 预估成本与交期",
+        process_step1_free: "免费",
+
+        process_step2_num: "2",
+        process_step2_title: "供应商匹配",
+        process_step2_time: "3-5天",
+        process_step2_action: "我们行动：",
+        process_step2_action_1: "• 在对应产业带筛选2-3家合格工厂",
+        process_step2_action_2: "• 核实工厂资质（营业执照、出口权、产能）",
+        process_step2_action_3: "• 获取详细报价（含包装、港杂、运费预估）",
+        process_step2_receive: "你收到：",
+        process_step2_receive_1: "• 供应商对比报告（价格、交期、MOQ、优势分析）",
+        process_step2_receive_2: "• 样品安排（免费寄送，快递费到付）",
+
+        process_step3_num: "3",
+        process_step3_title: "订单执行",
+        process_step3_time: "根据交期",
+        process_step3_model: "合作模式：",
+        process_step3_model_desc: "你与我们签订合同（非直接与工厂），<strong>我们承担交付责任</strong>",
+        process_step3_manage: "我们管理：",
+        process_step3_manage_1: "• 生产进度跟踪（工厂周报+我们远程监控）",
+        process_step3_manage_2: "• 原材料确认（关键材料拍照确认）",
+        process_step3_manage_3: "• 中期检查（大货生产前关键节点确认，按需）",
+        process_step3_note: "<strong>注：</strong>我们不驻厂，但要求工厂提供生产日志和照片",
+
+        process_step4_num: "4",
+        process_step4_title: "第三方质检",
+        process_step4_time: "2-3天",
+        process_step4_partner: "合作机构：",
+        process_step4_partner_desc: "SGS、Bureau Veritas、Intertek等国际第三方",
+        process_step4_check: "检测内容：",
+        process_step4_check_1: "• 全检或抽检（根据产品价值和客户要求）",
+        process_step4_check_2: "• 功能测试、外观检查、包装确认",
+        process_step4_check_3: "• 出具权威检测报告（可提供给终端客户）",
+        process_step4_fail: "<strong>不合格处理：</strong>",
+        process_step4_fail_desc: "协调工厂返工或折扣，我们承担协调责任",
+        process_step4_cost: "按货值1-2%（基础抽检可协商免费）",
+
+        process_step5_num: "5",
+        process_step5_title: "多港口出口",
+        process_step5_time: "根据目的地",
+        process_step5_arrange: "我们安排：",
+        process_step5_arrange_1: "• 选择最优出口港（成本/时效/航线综合考量）",
+        process_step5_arrange_2: "• 出口报关、订舱、装柜",
+        process_step5_arrange_3: "• 海运/空运/铁路运输",
+        process_step5_arrange_4: "• 目的港清关单据准备",
+        process_step5_deliver: "<strong>交付：</strong>",
+        process_step5_deliver_desc: "门到门或FOB/CIF，按你需求",
+
+        qa_badge: "质量保障体系",
+        qa_title: "不驻厂，但可控",
+        qa_desc: "通过三重保障机制，我们在不派驻人员的情况下，确保产品质量和交付可靠性",
+
+        qa1_title: "供应商预审",
+        qa1_1: "合作前实地考察（或委托当地代理），建立合格供应商库",
+        qa1_2: "定期评估：交期准确率、质量合格率、配合度",
+
+        qa2_title: "合同约束",
+        qa2_1: "与我们签约（非直接对工厂），<strong>我们承担交付责任</strong>",
+        qa2_2: "付款条款：生产前30%，见第三方检测报告后70%",
+        qa2_3: "违约条款：明确质量标准和赔偿机制",
+
+        qa3_title: "第三方验证",
+        qa3_1: "生产完成后必检，国际机构背书",
+        qa3_2: "报告透明：你直接收到SGS/BV原版报告",
+
+        compare_badge: "模式对比",
+        compare_title: "与传统模式有什么不同？",
+        compare_dim: "对比维度",
+        compare_traditional: "传统驻厂代理",
+        compare_etc: "ETC Sourcing轻资产模式",
+        compare_range: "覆盖范围",
+        compare_range_t: "单一产业带",
+        compare_range_e: "全国五大产业带",
+        compare_category: "品类能力",
+        compare_category_t: "专注少数品类",
+        compare_category_e: "机械到日用全品类",
+        compare_cost: "成本结构",
+        compare_cost_t: "高（养驻厂团队）",
+        compare_cost_e: "低（按需调用资源）",
+        compare_speed: "响应速度",
+        compare_speed_t: "依赖驻厂人员",
+        compare_speed_e: "远程+本地代理，更快",
+        compare_quality: "质量保障",
+        compare_quality_t: "自有质检（主观）",
+        compare_quality_e: "第三方机构（客观权威）",
+        compare_flex: "灵活性",
+        compare_flex_t: "人员固定",
+        compare_flex_e: "按项目调配最优资源",
+
+        cta_title: "准备好开始你的采购项目了吗？",
+        cta_desc: "第一步需求分析完全免费，24小时内获取初步方案",
+        cta_btn: "免费咨询，获取方案",
+
+        footer_desc: "你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。",
+        footer_address: "中国 · 山东省青岛市",
+        footer_email: "contact@etcsourcing.cn",
+        footer_wechat: "WeChat: 0086 18766270137",
+        footer_quick: "快速链接",
+        footer_service: "服务",
+        footer_service_1: "全国采购网络",
+        footer_service_2: "全品类覆盖",
+        footer_service_3: "第三方品控",
+        footer_service_4: "多港口出口",
+        footer_contact: "联系我们",
+        footer_contact_1: "在线咨询",
+        footer_contact_2: "关于我们",
+        footer_contact_3: "成功案例",
+        footer_copyright: "© 2024 ETC Sourcing. All rights reserved.",
+      },
+
+      en: {
+        nav_home: "Home",
+        nav_network: "Sourcing Network",
+        nav_shipping: "Export Solutions",
+        nav_process: "Service Process",
+        nav_about: "About Us",
+        nav_cases: "Case Studies",
+        nav_contact: "Contact Us",
+        nav_lang: "中文",
+
+        process_hero_badge: "Light-Asset Integration",
+        process_hero_title: "Service Process",
+        process_hero_subtitle: "Light Assets, Heavy Results",
+        process_hero_desc: "Unlike traditional sourcing agents who station staff at factories, we adopt a "Remote Management + Third-Party Verification" model to save costs, improve efficiency, and expand coverage while ensuring quality.",
+
+        process_step_badge: "5 Steps from Inquiry to Export",
+        process_step_title: "How We Work",
+
+        process_step1_num: "1",
+        process_step1_title: "Requirement Analysis",
+        process_step1_time: "1-2 Days",
+        process_step1_you: "You Provide:",
+        process_step1_you_desc: "Product specs, target price, quantity, quality standards, destination",
+        process_step1_deliver: "We Deliver:",
+        process_step1_deliver_1: "• Feasibility assessment (suitability for China sourcing)",
+        process_step1_deliver_2: "• Optimal industry belt recommendation (matching factory resources)",
+        process_step1_deliver_3: "• Estimated cost & lead time",
+        process_step1_free: "Free",
+
+        process_step2_num: "2",
+        process_step2_title: "Supplier Matching",
+        process_step2_time: "3-5 Days",
+        process_step2_action: "We Act:",
+        process_step2_action_1: "• Screen 2-3 qualified factories in the relevant industry belt",
+        process_step2_action_2: "• Verify factory credentials (license, export rights, capacity)",
+        process_step2_action_3: "• Obtain detailed quotations (packaging, port charges, freight estimates included)",
+        process_step2_receive: "You Receive:",
+        process_step2_receive_1: "• Supplier comparison report (price, lead time, MOQ, advantage analysis)",
+        process_step2_receive_2: "• Sample arrangement (free shipping, courier fee collect)",
+
+        process_step3_num: "3",
+        process_step3_title: "Order Execution",
+        process_step3_time: "Per Lead Time",
+        process_step3_model: "Cooperation Model:",
+        process_step3_model_desc: "You contract with us (not directly with the factory). <strong>We bear the delivery responsibility.</strong>",
+        process_step3_manage: "We Manage:",
+        process_step3_manage_1: "• Production progress tracking (factory weekly reports + our remote monitoring)",
+        process_step3_manage_2: "• Raw material confirmation (photo verification of key materials)",
+        process_step3_manage_3: "• Mid-term inspection (key node confirmation before mass production, as needed)",
+        process_step3_note: "<strong>Note:</strong> We do not station staff, but require factories to provide production logs and photos.",
+
+        process_step4_num: "4",
+        process_step4_title: "Third-Party QC",
+        process_step4_time: "2-3 Days",
+        process_step4_partner: "Partner Institutions:",
+        process_step4_partner_desc: "SGS, Bureau Veritas, Intertek and other international third parties",
+        process_step4_check: "Inspection Content:",
+        process_step4_check_1: "• Full or sampling inspection (based on product value and client requirements)",
+        process_step4_check_2: "• Functional testing, appearance check, packaging confirmation",
+        process_step4_check_3: "• Authoritative inspection report issued (can be provided to end clients)",
+        process_step4_fail: "<strong>Non-conforming Handling:</strong>",
+        process_step4_fail_desc: "Coordinate factory rework or discount. We bear the coordination responsibility.",
+        process_step4_cost: "1-2% of cargo value (basic sampling inspection negotiable for free)",
+
+        process_step5_num: "5",
+        process_step5_title: "Multi-Port Export",
+        process_step5_time: "Per Destination",
+        process_step5_arrange: "We Arrange:",
+        process_step5_arrange_1: "• Select optimal export port (cost/time/route comprehensive consideration)",
+        process_step5_arrange_2: "• Export customs declaration, booking, container loading",
+        process_step5_arrange_3: "• Sea freight / Air freight / Rail transport",
+        process_step5_arrange_4: "• Destination port customs clearance document preparation",
+        process_step5_deliver: "<strong>Delivery:</strong>",
+        process_step5_deliver_desc: "Door-to-door or FOB/CIF, as per your needs",
+
+        qa_badge: "Quality Assurance",
+        qa_title: "No On-Site Staff, But Fully Controllable",
+        qa_desc: "Through a triple guarantee mechanism, we ensure product quality and delivery reliability without stationing personnel.",
+
+        qa1_title: "Supplier Pre-screening",
+        qa1_1: "On-site inspection before cooperation (or delegate local agents), building qualified supplier database",
+        qa1_2: "Regular evaluation: on-time delivery rate, quality pass rate, cooperation level",
+
+        qa2_title: "Contractual Constraints",
+        qa2_1: "Contract with us (not directly with factory). <strong>We bear delivery responsibility.</strong>",
+        qa2_2: "Payment terms: 30% before production, 70% upon third-party inspection report",
+        qa2_3: "Penalty clauses: clear quality standards and compensation mechanism",
+
+        qa3_title: "Third-Party Verification",
+        qa3_1: "Mandatory inspection after production completion, backed by international institutions",
+        qa3_2: "Transparent reporting: you receive original SGS/BV reports directly",
+
+        compare_badge: "Model Comparison",
+        compare_title: "How Are We Different from Traditional Models?",
+        compare_dim: "Dimension",
+        compare_traditional: "Traditional On-Site Agent",
+        compare_etc: "ETC Sourcing Light-Asset Model",
+        compare_range: "Coverage",
+        compare_range_t: "Single industry belt",
+        compare_range_e: "Five major industry belts nationwide",
+        compare_category: "Category Capability",
+        compare_category_t: "Focus on limited categories",
+        compare_category_e: "Full range from machinery to daily necessities",
+        compare_cost: "Cost Structure",
+        compare_cost_t: "High (maintain on-site team)",
+        compare_cost_e: "Low (allocate resources on demand)",
+        compare_speed: "Response Speed",
+        compare_speed_t: "Dependent on on-site staff",
+        compare_speed_e: "Remote + local agents, faster",
+        compare_quality: "Quality Assurance",
+        compare_quality_t: "In-house QC (subjective)",
+        compare_quality_e: "Third-party institutions (objective & authoritative)",
+        compare_flex: "Flexibility",
+        compare_flex_t: "Fixed personnel",
+        compare_flex_e: "Allocate optimal resources per project",
+
+        cta_title: "Ready to Start Your Sourcing Project?",
+        cta_desc: "Step 1 requirement analysis is completely free. Get preliminary proposal within 24 hours.",
+        cta_btn: "Free Consultation, Get Proposal",
+
+        footer_desc: "Your China supply chain integration partner. Cross-category, cross-industry-belt, multi-port export. Making global sourcing easier.",
+        footer_address: "Qingdao, Shandong, China",
+        footer_email: "contact@etcsourcing.cn",
+        footer_wechat: "WeChat: 0086 18766270137",
+        footer_quick: "Quick Links",
+        footer_service: "Services",
+        footer_service_1: "Nationwide Sourcing Network",
+        footer_service_2: "Full Category Coverage",
+        footer_service_3: "Third-Party QC",
+        footer_service_4: "Multi-Port Export",
+        footer_contact: "Contact Us",
+        footer_contact_1: "Online Inquiry",
+        footer_contact_2: "About Us",
+        footer_contact_3: "Case Studies",
+        footer_copyright: "© 2024 ETC Sourcing. All rights reserved.",
+      }
+    };
+
+    let currentLang = 'zh';
+    try {
+      const saved = localStorage.getItem('etcsourcing-lang');
+      if (saved && i18nData[saved]) {
+        currentLang = saved;
+      }
+    } catch (e) {
+      console.log('localStorage not available');
+    }
+
+    function setLanguage(lang) {
+      if (!i18nData[lang]) return;
+      currentLang = lang;
+      try {
+        localStorage.setItem('etcsourcing-lang', lang);
+      } catch (e) {}
+
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        const key = el.getAttribute('data-i18n');
+        if (i18nData[lang][key]) {
+          el.innerHTML = i18nData[lang][key];
+        }
+      });
+
+      const langBtn = document.getElementById('lang-text');
+      if (langBtn && i18nData[lang].nav_lang) {
+        langBtn.textContent = i18nData[lang].nav_lang;
+      }
+
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      document.title = lang === 'zh' ? '服务流程 — ETC Sourcing' : 'Service Process — ETC Sourcing';
+    }
+
+    function toggleLang() {
+      const newLang = currentLang === 'zh' ? 'en' : 'zh';
+      setLanguage(newLang);
+    }
+
+    // 页面加载完成后立即执行
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setLanguage(currentLang);
+      });
+    } else {
+      setLanguage(currentLang);
+    }
+
     function toggleMobileMenu() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     }
