@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>关于 ETC Sourcing — 你的中国采购部</title>
+  <title data-i18n="about_title">关于 ETC Sourcing — 你的中国采购部</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
@@ -48,13 +48,13 @@
         </a>
         
         <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">首页</a>
-          <a href="network.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">采购网络</a>
-          <a href="shipping.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">出口方案</a>
-          <a href="process.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">服务流程</a>
-          <a href="about.html" class="text-vibrant-orange text-sm font-medium">关于我们</a>
-          <a href="cases.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">成功案例</a>
-          <a href="contact.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors">联系我们</a>
+          <a href="index.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="nav_home">首页</a>
+          <a href="network.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="nav_network">采购网络</a>
+          <a href="shipping.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="nav_shipping">出口方案</a>
+          <a href="process.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="nav_process">服务流程</a>
+          <a href="about.html" class="text-vibrant-orange text-sm font-medium" data-i18n="nav_about">关于我们</a>
+          <a href="cases.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="nav_cases">成功案例</a>
+          <a href="contact.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors" data-i18n="nav_contact">联系我们</a>
           <button onclick="toggleLang()" class="lang-btn flex items-center gap-2 px-3 py-1.5 rounded-full text-white text-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
@@ -73,13 +73,13 @@
     
     <div id="mobile-menu" class="hidden md:hidden bg-deep-blue border-t border-white/10">
       <div class="px-6 py-4 space-y-3">
-        <a href="index.html" class="block text-white/80 hover:text-white py-2">首页</a>
-        <a href="network.html" class="block text-white/80 hover:text-white py-2">采购网络</a>
-        <a href="shipping.html" class="block text-white/80 hover:text-white py-2">出口方案</a>
-        <a href="process.html" class="block text-white/80 hover:text-white py-2">服务流程</a>
-        <a href="about.html" class="block text-vibrant-orange py-2">关于我们</a>
-        <a href="cases.html" class="block text-white/80 hover:text-white py-2">成功案例</a>
-        <a href="contact.html" class="block bg-vibrant-orange text-white text-center py-2 rounded-lg">联系我们</a>
+        <a href="index.html" class="block text-white/80 hover:text-white py-2" data-i18n="nav_home">首页</a>
+        <a href="network.html" class="block text-white/80 hover:text-white py-2" data-i18n="nav_network">采购网络</a>
+        <a href="shipping.html" class="block text-white/80 hover:text-white py-2" data-i18n="nav_shipping">出口方案</a>
+        <a href="process.html" class="block text-white/80 hover:text-white py-2" data-i18n="nav_process">服务流程</a>
+        <a href="about.html" class="block text-vibrant-orange py-2" data-i18n="nav_about">关于我们</a>
+        <a href="cases.html" class="block text-white/80 hover:text-white py-2" data-i18n="nav_cases">成功案例</a>
+        <a href="contact.html" class="block bg-vibrant-orange text-white text-center py-2 rounded-lg" data-i18n="nav_contact">联系我们</a>
       </div>
     </div>
   </nav>
@@ -92,12 +92,12 @@
           <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
           </svg>
-          <span class="text-white/90 text-sm font-medium">你的中国采购部</span>
+          <span class="text-white/90 text-sm font-medium" data-i18n="about_hero_badge">你的中国采购部</span>
         </div>
         
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-          关于 ETC Sourcing
-          <span class="block text-vibrant-orange mt-2 text-2xl md:text-3xl">从青岛港出发，连接中国制造与全球市场</span>
+          <span data-i18n="about_hero_title">关于 ETC Sourcing</span>
+          <span class="block text-vibrant-orange mt-2 text-2xl md:text-3xl" data-i18n="about_hero_subtitle">从青岛港出发，连接中国制造与全球市场</span>
         </h1>
       </div>
     </div>
@@ -107,26 +107,26 @@
   <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4">公司故事</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">我们的故事</h2>
+        <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4" data-i18n="about_story_badge">公司故事</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="about_story_title">我们的故事</h2>
       </div>
       
       <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
-        <p class="text-xl text-gray-800 font-medium">
+        <p class="text-xl text-gray-800 font-medium" data-i18n="about_story_p1">
           ETC Sourcing 成立于青岛——中国北方最大的港口城市之一。
         </p>
-        <p>
+        <p data-i18n="about_story_p2">
           不同于传统贸易公司专注单一品类，或采购代理固守单一市场，我们选择了一条"轻资产、广覆盖"的道路：
         </p>
         <div class="bg-gradient-to-r from-deep-blue/5 to-vibrant-orange/5 rounded-2xl p-8 my-8">
-          <p class="text-2xl font-bold text-deep-blue text-center">
+          <p class="text-2xl font-bold text-deep-blue text-center" data-i18n="about_story_quote">
             "做客户的中国采购部，而非简单的中介。"
           </p>
         </div>
-        <p>
+        <p data-i18n="about_story_p3">
           十年间，我们从青岛港的本地服务商，发展成为覆盖五大产业带、整合全国供应网络的采购平台。我们不养庞大的驻厂团队，而是深耕各产业带的合作资源；我们不赚信息不对称的差价，而是靠整合能力创造价值。
         </p>
-        <p>
+        <p data-i18n="about_story_p4">
           今天，我们服务的客户遍布欧美、日韩、东南亚、中亚，采购的品类从机械装备到日用百货，从工业零配件到消费电子。无论你在哪里，无论你需要什么，我们都能从中国的某个产业带，找到最优的解决方案。
         </p>
       </div>
@@ -137,8 +137,8 @@
   <section class="py-20 bg-light-gray">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/10 text-vibrant-orange text-sm font-medium rounded-full mb-4">总部基地</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">为什么选择青岛作为总部</h2>
+        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/10 text-vibrant-orange text-sm font-medium rounded-full mb-4" data-i18n="about_qingdao_badge">总部基地</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="about_qingdao_title">为什么选择青岛作为总部</h2>
       </div>
       
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -149,25 +149,25 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">港口优势</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-4" data-i18n="about_port_title">港口优势</h3>
           <ul class="space-y-3 text-gray-600">
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span>青岛港是全球前十集装箱港，更是日韩航线的黄金通道</span>
+              <span data-i18n="about_port_1">青岛港是全球前十集装箱港，更是日韩航线的黄金通道</span>
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span>从青岛到釜山仅需2-3天，比上海快2天，比深圳快4天</span>
+              <span data-i18n="about_port_2">从青岛到釜山仅需2-3天，比上海快2天，比深圳快4天</span>
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span>对于日韩市场，这是无可替代的地理优势</span>
+              <span data-i18n="about_port_3">对于日韩市场，这是无可替代的地理优势</span>
             </li>
           </ul>
         </div>
@@ -179,25 +179,25 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">产业优势</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-4" data-i18n="about_industry_title">产业优势</h3>
           <ul class="space-y-3 text-gray-600">
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span>山东是中国制造业大省</span>
+              <span data-i18n="about_industry_1">山东是中国制造业大省</span>
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span>机械、化工、农产品加工产业发达</span>
+              <span data-i18n="about_industry_2">机械、化工、农产品加工产业发达</span>
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span>以青岛为圆心，3小时车程覆盖烟台、潍坊、威海、临沂等产业带</span>
+              <span data-i18n="about_industry_3">以青岛为圆心，3小时车程覆盖烟台、潍坊、威海、临沂等产业带</span>
             </li>
           </ul>
         </div>
@@ -209,13 +209,13 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">我们的网络</h3>
-          <p class="text-gray-600 mb-4">依托青岛港的物流优势，我们逐步建立起：</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-4" data-i18n="about_network_title">我们的网络</h3>
+          <p class="text-gray-600 mb-4" data-i18n="about_network_desc">依托青岛港的物流优势，我们逐步建立起：</p>
           <ul class="space-y-2 text-sm text-gray-600">
-            <li>• 长三角（宁波/苏州）机械五金网络</li>
-            <li>• 珠三角（深圳）电子电器网络</li>
-            <li>• 浙江（义乌）日用消费品网络</li>
-            <li>• 中西部（重庆）汽摩配件网络</li>
+            <li data-i18n="about_network_1">• 长三角（宁波/苏州）机械五金网络</li>
+            <li data-i18n="about_network_2">• 珠三角（深圳）电子电器网络</li>
+            <li data-i18n="about_network_3">• 浙江（义乌）日用消费品网络</li>
+            <li data-i18n="about_network_4">• 中西部（重庆）汽摩配件网络</li>
           </ul>
         </div>
       </div>
@@ -226,8 +226,8 @@
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4">核心团队</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">认识我们的团队</h2>
+        <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4" data-i18n="about_team_badge">核心团队</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="about_team_title">认识我们的团队</h2>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -238,11 +238,11 @@
           </div>
           <div class="text-center">
             <h3 class="text-lg font-bold text-gray-900">张明</h3>
-            <p class="text-vibrant-orange text-sm font-medium mb-3">创始人 / 总经理</p>
+            <p class="text-vibrant-orange text-sm font-medium mb-3" data-i18n="about_team1_role">创始人 / 总经理</p>
             <div class="text-sm text-gray-600 space-y-2">
-              <p><strong>背景：</strong>15年外贸经验，前大型国企进出口公司部门经理</p>
-              <p><strong>专长：</strong>供应商开发、国际贸易风险管控、中亚/日韩市场</p>
-              <p><strong>负责：</strong>战略规划、大客户对接</p>
+              <p><strong data-i18n="about_bg">背景：</strong><span data-i18n="about_team1_bg">15年外贸经验，前大型国企进出口公司部门经理</span></p>
+              <p><strong data-i18n="about_expertise">专长：</strong><span data-i18n="about_team1_exp">供应商开发、国际贸易风险管控、中亚/日韩市场</span></p>
+              <p><strong data-i18n="about_responsible">负责：</strong><span data-i18n="about_team1_resp">战略规划、大客户对接</span></p>
             </div>
           </div>
         </div>
@@ -254,11 +254,11 @@
           </div>
           <div class="text-center">
             <h3 class="text-lg font-bold text-gray-900">Lisa Wang</h3>
-            <p class="text-vibrant-orange text-sm font-medium mb-3">采购总监</p>
+            <p class="text-vibrant-orange text-sm font-medium mb-3" data-i18n="about_team2_role">采购总监</p>
             <div class="text-sm text-gray-600 space-y-2">
-              <p><strong>背景：</strong>10年义乌/宁波小商品采购经验，服务过50+欧美客户</p>
-              <p><strong>专长：</strong>日用消费品、价格谈判、供应商管理</p>
-              <p><strong>负责：</strong>日用百货/五金品类采购</p>
+              <p><strong data-i18n="about_bg">背景：</strong><span data-i18n="about_team2_bg">10年义乌/宁波小商品采购经验，服务过50+欧美客户</span></p>
+              <p><strong data-i18n="about_expertise">专长：</strong><span data-i18n="about_team2_exp">日用消费品、价格谈判、供应商管理</span></p>
+              <p><strong data-i18n="about_responsible">负责：</strong><span data-i18n="about_team2_resp">日用百货/五金品类采购</span></p>
             </div>
           </div>
         </div>
@@ -270,11 +270,11 @@
           </div>
           <div class="text-center">
             <h3 class="text-lg font-bold text-gray-900">David Chen</h3>
-            <p class="text-vibrant-orange text-sm font-medium mb-3">工业采购经理</p>
+            <p class="text-vibrant-orange text-sm font-medium mb-3" data-i18n="about_team3_role">工业采购经理</p>
             <div class="text-sm text-gray-600 space-y-2">
-              <p><strong>背景：</strong>8年机械行业经验，熟悉长三角/环渤海装备制造</p>
-              <p><strong>专长：</strong>机械设备、工业零配件、技术规格确认</p>
-              <p><strong>负责：</strong>机械/工业品类采购</p>
+              <p><strong data-i18n="about_bg">背景：</strong><span data-i18n="about_team3_bg">8年机械行业经验，熟悉长三角/环渤海装备制造</span></p>
+              <p><strong data-i18n="about_expertise">专长：</strong><span data-i18n="about_team3_exp">机械设备、工业零配件、技术规格确认</span></p>
+              <p><strong data-i18n="about_responsible">负责：</strong><span data-i18n="about_team3_resp">机械/工业品类采购</span></p>
             </div>
           </div>
         </div>
@@ -286,11 +286,11 @@
           </div>
           <div class="text-center">
             <h3 class="text-lg font-bold text-gray-900">刘芳</h3>
-            <p class="text-vibrant-orange text-sm font-medium mb-3">物流经理</p>
+            <p class="text-vibrant-orange text-sm font-medium mb-3" data-i18n="about_team4_role">物流经理</p>
             <div class="text-sm text-gray-600 space-y-2">
-              <p><strong>背景：</strong>10年货代经验，熟悉青岛/宁波/上海港操作</p>
-              <p><strong>专长：</strong>多式联运、报关报检、物流成本优化</p>
-              <p><strong>负责：</strong>出口物流方案设计、港口协调</p>
+              <p><strong data-i18n="about_bg">背景：</strong><span data-i18n="about_team4_bg">10年货代经验，熟悉青岛/宁波/上海港操作</span></p>
+              <p><strong data-i18n="about_expertise">专长：</strong><span data-i18n="about_team4_exp">多式联运、报关报检、物流成本优化</span></p>
+              <p><strong data-i18n="about_responsible">负责：</strong><span data-i18n="about_team4_resp">出口物流方案设计、港口协调</span></p>
             </div>
           </div>
         </div>
@@ -302,11 +302,11 @@
           </div>
           <div class="text-center">
             <h3 class="text-lg font-bold text-gray-900">王强</h3>
-            <p class="text-vibrant-orange text-sm font-medium mb-3">质检协调员</p>
+            <p class="text-vibrant-orange text-sm font-medium mb-3" data-i18n="about_team5_role">质检协调员</p>
             <div class="text-sm text-gray-600 space-y-2">
-              <p><strong>背景：</strong>5年第三方检测机构（SGS）工作经验</p>
-              <p><strong>专长：</strong>质量标准制定、第三方检测协调、不合格品处理</p>
-              <p><strong>负责：</strong>质量管控体系、检测机构对接</p>
+              <p><strong data-i18n="about_bg">背景：</strong><span data-i18n="about_team5_bg">5年第三方检测机构（SGS）工作经验</span></p>
+              <p><strong data-i18n="about_expertise">专长：</strong><span data-i18n="about_team5_exp">质量标准制定、第三方检测协调、不合格品处理</span></p>
+              <p><strong data-i18n="about_responsible">负责：</strong><span data-i18n="about_team5_resp">质量管控体系、检测机构对接</span></p>
             </div>
           </div>
         </div>
@@ -318,34 +318,34 @@
   <section class="py-20 bg-gradient-to-br from-deep-blue to-[#1a5a9e]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-white/10 text-white text-sm font-medium rounded-full mb-4">公司数据</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">用数字说话</h2>
+        <span class="inline-block px-4 py-1.5 bg-white/10 text-white text-sm font-medium rounded-full mb-4" data-i18n="about_stats_badge">公司数据</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white" data-i18n="about_stats_title">用数字说话</h2>
       </div>
       
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         <div class="text-center">
           <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">2019</div>
-          <div class="text-white/70 text-sm">成立年份</div>
+          <div class="text-white/70 text-sm" data-i18n="about_stat1">成立年份</div>
         </div>
         <div class="text-center">
           <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">128位</div>
-          <div class="text-white/70 text-sm">服务客户</div>
+          <div class="text-white/70 text-sm" data-i18n="about_stat2">服务客户</div>
         </div>
         <div class="text-center">
           <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">$50-100万美金</div>
-          <div class="text-white/70 text-sm">年采购额</div>
+          <div class="text-white/70 text-sm" data-i18n="about_stat3">年采购额</div>
         </div>
         <div class="text-center">
           <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">247家</div>
-          <div class="text-white/70 text-sm">合作工厂</div>
+          <div class="text-white/70 text-sm" data-i18n="about_stat4">合作工厂</div>
         </div>
         <div class="text-center">
           <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">8</div>
-          <div class="text-white/70 text-sm">出口港口</div>
+          <div class="text-white/70 text-sm" data-i18n="about_stat5">出口港口</div>
         </div>
         <div class="text-center">
           <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-2">70%</div>
-          <div class="text-white/70 text-sm">客户复购率</div>
+          <div class="text-white/70 text-sm" data-i18n="about_stat6">客户复购率</div>
         </div>
       </div>
     </div>
@@ -355,8 +355,8 @@
   <section class="py-16 bg-light-gray">
     <div class="max-w-4xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-10">
-        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/10 text-vibrant-orange text-sm font-medium rounded-full mb-4">资质与认证</span>
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900">值得信赖的合作伙伴</h2>
+        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/10 text-vibrant-orange text-sm font-medium rounded-full mb-4" data-i18n="about_cert_badge">资质与认证</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900" data-i18n="about_cert_title">值得信赖的合作伙伴</h2>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -367,8 +367,8 @@
             </svg>
           </div>
           <div>
-            <h4 class="font-semibold text-gray-900">营业执照 / 进出口权</h4>
-            <p class="text-sm text-gray-500">正规注册，合法经营</p>
+            <h4 class="font-semibold text-gray-900" data-i18n="about_cert1_title">营业执照 / 进出口权</h4>
+            <p class="text-sm text-gray-500" data-i18n="about_cert1_desc">正规注册，合法经营</p>
           </div>
         </div>
         
@@ -379,8 +379,8 @@
             </svg>
           </div>
           <div>
-            <h4 class="font-semibold text-gray-900">ISO9001质量管理体系</h4>
-            <p class="text-sm text-gray-500">标准化管理流程</p>
+            <h4 class="font-semibold text-gray-900" data-i18n="about_cert2_title">ISO9001质量管理体系</h4>
+            <p class="text-sm text-gray-500" data-i18n="about_cert2_desc">标准化管理流程</p>
           </div>
         </div>
         
@@ -391,8 +391,8 @@
             </svg>
           </div>
           <div>
-            <h4 class="font-semibold text-gray-900">AEO认证企业</h4>
-            <p class="text-sm text-gray-500">海关高级认证，通关便利</p>
+            <h4 class="font-semibold text-gray-900" data-i18n="about_cert3_title">AEO认证企业</h4>
+            <p class="text-sm text-gray-500" data-i18n="about_cert3_desc">海关高级认证，通关便利</p>
           </div>
         </div>
         
@@ -403,8 +403,8 @@
             </svg>
           </div>
           <div>
-            <h4 class="font-semibold text-gray-900">合作检测机构</h4>
-            <p class="text-sm text-gray-500">SGS、Bureau Veritas、Intertek</p>
+            <h4 class="font-semibold text-gray-900" data-i18n="about_cert4_title">合作检测机构</h4>
+            <p class="text-sm text-gray-500" data-i18n="about_cert4_desc">SGS、Bureau Veritas、Intertek</p>
           </div>
         </div>
       </div>
@@ -414,10 +414,10 @@
   <!-- CTA -->
   <section class="py-16 bg-white">
     <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">想了解更多？</h2>
-      <p class="text-gray-600 mb-8">欢迎联系我们，获取更详细的公司介绍和合作方案</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4" data-i18n="about_cta_title">想了解更多？</h2>
+      <p class="text-gray-600 mb-8" data-i18n="about_cta_desc">欢迎联系我们，获取更详细的公司介绍和合作方案</p>
       <a href="contact.html" class="inline-flex items-center gap-2 bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
-        联系我们
+        <span data-i18n="about_cta_btn">联系我们</span>
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
@@ -438,7 +438,7 @@
             </div>
             <span class="font-bold text-xl">ETC Sourcing</span>
           </div>
-          <p class="text-white/70 text-sm leading-relaxed mb-4">
+          <p class="text-white/70 text-sm leading-relaxed mb-4" data-i18n="footer_desc">
             你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。
           </p>
           <div class="space-y-2 text-sm text-white/70">
@@ -446,7 +446,7 @@
               <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               </svg>
-              <span>中国 · 山东省青岛市</span>
+              <span data-i18n="footer_address">中国 · 山东省青岛市</span>
             </div>
             <div class="flex items-center gap-2">
               <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -464,31 +464,31 @@
         </div>
         
         <div>
-          <h4 class="font-semibold text-lg mb-5">快速链接</h4>
+          <h4 class="font-semibold text-lg mb-5" data-i18n="footer_links">快速链接</h4>
           <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="index.html" class="hover:text-white transition-colors">首页</a></li>
-            <li><a href="network.html" class="hover:text-white transition-colors">采购网络</a></li>
-            <li><a href="shipping.html" class="hover:text-white transition-colors">出口方案</a></li>
-            <li><a href="process.html" class="hover:text-white transition-colors">服务流程</a></li>
+            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">首页</a></li>
+            <li><a href="network.html" class="hover:text-white transition-colors" data-i18n="nav_network">采购网络</a></li>
+            <li><a href="shipping.html" class="hover:text-white transition-colors" data-i18n="nav_shipping">出口方案</a></li>
+            <li><a href="process.html" class="hover:text-white transition-colors" data-i18n="nav_process">服务流程</a></li>
           </ul>
         </div>
         
         <div>
-          <h4 class="font-semibold text-lg mb-5">服务</h4>
+          <h4 class="font-semibold text-lg mb-5" data-i18n="footer_services">服务</h4>
           <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="#" class="hover:text-white transition-colors">全国采购网络</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">全品类覆盖</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">第三方品控</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">多港口出口</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_s1">全国采购网络</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_s2">全品类覆盖</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_s3">第三方品控</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_s4">多港口出口</a></li>
           </ul>
         </div>
         
         <div>
-          <h4 class="font-semibold text-lg mb-5">联系我们</h4>
+          <h4 class="font-semibold text-lg mb-5" data-i18n="footer_contact">联系我们</h4>
           <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="contact.html" class="hover:text-white transition-colors">在线咨询</a></li>
-            <li><a href="about.html" class="hover:text-white transition-colors">关于我们</a></li>
-            <li><a href="cases.html" class="hover:text-white transition-colors">成功案例</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors" data-i18n="footer_online">在线咨询</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors" data-i18n="nav_about">关于我们</a></li>
+            <li><a href="cases.html" class="hover:text-white transition-colors" data-i18n="nav_cases">成功案例</a></li>
           </ul>
         </div>
       </div>
@@ -500,12 +500,241 @@
   </footer>
 
   <script>
+    const i18nData = {
+      zh: {
+        // Navigation
+        nav_home: "首页",
+        nav_network: "采购网络",
+        nav_shipping: "出口方案",
+        nav_process: "服务流程",
+        nav_about: "关于我们",
+        nav_cases: "成功案例",
+        nav_contact: "联系我们",
+        // Page title
+        about_title: "关于 ETC Sourcing — 你的中国采购部",
+        // Hero
+        about_hero_badge: "你的中国采购部",
+        about_hero_title: "关于 ETC Sourcing",
+        about_hero_subtitle: "从青岛港出发，连接中国制造与全球市场",
+        // Story
+        about_story_badge: "公司故事",
+        about_story_title: "我们的故事",
+        about_story_p1: "ETC Sourcing 成立于青岛——中国北方最大的港口城市之一。",
+        about_story_p2: "不同于传统贸易公司专注单一品类，或采购代理固守单一市场，我们选择了一条\"轻资产、广覆盖\"的道路：",
+        about_story_quote: "\"做客户的中国采购部，而非简单的中介。\"",
+        about_story_p3: "十年间，我们从青岛港的本地服务商，发展成为覆盖五大产业带、整合全国供应网络的采购平台。我们不养庞大的驻厂团队，而是深耕各产业带的合作资源；我们不赚信息不对称的差价，而是靠整合能力创造价值。",
+        about_story_p4: "今天，我们服务的客户遍布欧美、日韩、东南亚、中亚，采购的品类从机械装备到日用百货，从工业零配件到消费电子。无论你在哪里，无论你需要什么，我们都能从中国的某个产业带，找到最优的解决方案。",
+        // Qingdao
+        about_qingdao_badge: "总部基地",
+        about_qingdao_title: "为什么选择青岛作为总部",
+        about_port_title: "港口优势",
+        about_port_1: "青岛港是全球前十集装箱港，更是日韩航线的黄金通道",
+        about_port_2: "从青岛到釜山仅需2-3天，比上海快2天，比深圳快4天",
+        about_port_3: "对于日韩市场，这是无可替代的地理优势",
+        about_industry_title: "产业优势",
+        about_industry_1: "山东是中国制造业大省",
+        about_industry_2: "机械、化工、农产品加工产业发达",
+        about_industry_3: "以青岛为圆心，3小时车程覆盖烟台、潍坊、威海、临沂等产业带",
+        about_network_title: "我们的网络",
+        about_network_desc: "依托青岛港的物流优势，我们逐步建立起：",
+        about_network_1: "• 长三角（宁波/苏州）机械五金网络",
+        about_network_2: "• 珠三角（深圳）电子电器网络",
+        about_network_3: "• 浙江（义乌）日用消费品网络",
+        about_network_4: "• 中西部（重庆）汽摩配件网络",
+        // Team
+        about_team_badge: "核心团队",
+        about_team_title: "认识我们的团队",
+        about_bg: "背景：",
+        about_expertise: "专长：",
+        about_responsible: "负责：",
+        about_team1_role: "创始人 / 总经理",
+        about_team1_bg: "15年外贸经验，前大型国企进出口公司部门经理",
+        about_team1_exp: "供应商开发、国际贸易风险管控、中亚/日韩市场",
+        about_team1_resp: "战略规划、大客户对接",
+        about_team2_role: "采购总监",
+        about_team2_bg: "10年义乌/宁波小商品采购经验，服务过50+欧美客户",
+        about_team2_exp: "日用消费品、价格谈判、供应商管理",
+        about_team2_resp: "日用百货/五金品类采购",
+        about_team3_role: "工业采购经理",
+        about_team3_bg: "8年机械行业经验，熟悉长三角/环渤海装备制造",
+        about_team3_exp: "机械设备、工业零配件、技术规格确认",
+        about_team3_resp: "机械/工业品类采购",
+        about_team4_role: "物流经理",
+        about_team4_bg: "10年货代经验，熟悉青岛/宁波/上海港操作",
+        about_team4_exp: "多式联运、报关报检、物流成本优化",
+        about_team4_resp: "出口物流方案设计、港口协调",
+        about_team5_role: "质检协调员",
+        about_team5_bg: "5年第三方检测机构（SGS）工作经验",
+        about_team5_exp: "质量标准制定、第三方检测协调、不合格品处理",
+        about_team5_resp: "质量管控体系、检测机构对接",
+        // Stats
+        about_stats_badge: "公司数据",
+        about_stats_title: "用数字说话",
+        about_stat1: "成立年份",
+        about_stat2: "服务客户",
+        about_stat3: "年采购额",
+        about_stat4: "合作工厂",
+        about_stat5: "出口港口",
+        about_stat6: "客户复购率",
+        // Certifications
+        about_cert_badge: "资质与认证",
+        about_cert_title: "值得信赖的合作伙伴",
+        about_cert1_title: "营业执照 / 进出口权",
+        about_cert1_desc: "正规注册，合法经营",
+        about_cert2_title: "ISO9001质量管理体系",
+        about_cert2_desc: "标准化管理流程",
+        about_cert3_title: "AEO认证企业",
+        about_cert3_desc: "海关高级认证，通关便利",
+        about_cert4_title: "合作检测机构",
+        about_cert4_desc: "SGS、Bureau Veritas、Intertek",
+        // CTA
+        about_cta_title: "想了解更多？",
+        about_cta_desc: "欢迎联系我们，获取更详细的公司介绍和合作方案",
+        about_cta_btn: "联系我们",
+        // Footer
+        footer_desc: "你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。",
+        footer_address: "中国 · 山东省青岛市",
+        footer_links: "快速链接",
+        footer_services: "服务",
+        footer_s1: "全国采购网络",
+        footer_s2: "全品类覆盖",
+        footer_s3: "第三方品控",
+        footer_s4: "多港口出口",
+        footer_contact: "联系我们",
+        footer_online: "在线咨询"
+      },
+      en: {
+        // Navigation
+        nav_home: "Home",
+        nav_network: "Sourcing Network",
+        nav_shipping: "Export Solutions",
+        nav_process: "Service Process",
+        nav_about: "About Us",
+        nav_cases: "Case Studies",
+        nav_contact: "Contact Us",
+        // Page title
+        about_title: "About ETC Sourcing — Your China Procurement Department",
+        // Hero
+        about_hero_badge: "Your China Procurement Department",
+        about_hero_title: "About ETC Sourcing",
+        about_hero_subtitle: "From Qingdao Port, Connecting Chinese Manufacturing with Global Markets",
+        // Story
+        about_story_badge: "Our Story",
+        about_story_title: "Our Story",
+        about_story_p1: "ETC Sourcing was founded in Qingdao — one of the largest port cities in northern China.",
+        about_story_p2: "Unlike traditional trading companies focused on single categories, or sourcing agents stuck in single markets, we chose a path of \"light assets, broad coverage\":",
+        about_story_quote: "\"Be your China procurement department, not just a simple intermediary.\"",
+        about_story_p3: "Over the past decade, we have grown from a local service provider at Qingdao Port into a sourcing platform covering five major industrial belts and integrating a nationwide supply network. We don't maintain large on-site teams; instead, we deeply cultivate cooperative resources across industrial belts. We don't profit from information asymmetry, but create value through integration capabilities.",
+        about_story_p4: "Today, our clients span Europe, America, Japan, Korea, Southeast Asia, and Central Asia. We source everything from machinery and equipment to daily necessities, from industrial parts to consumer electronics. No matter where you are or what you need, we can find the optimal solution from one of China's industrial belts.",
+        // Qingdao
+        about_qingdao_badge: "Headquarters",
+        about_qingdao_title: "Why Qingdao as Our Headquarters",
+        about_port_title: "Port Advantage",
+        about_port_1: "Qingdao Port is among the world's top ten container ports and the golden gateway to Japan and Korea routes",
+        about_port_2: "From Qingdao to Busan takes only 2-3 days, 2 days faster than Shanghai, 4 days faster than Shenzhen",
+        about_port_3: "For the Japan and Korea markets, this is an irreplaceable geographical advantage",
+        about_industry_title: "Industry Advantage",
+        about_industry_1: "Shandong is a major manufacturing province in China",
+        about_industry_2: "Well-developed machinery, chemical, and agricultural product processing industries",
+        about_industry_3: "With Qingdao as the center, a 3-hour drive covers industrial belts in Yantai, Weifang, Weihai, and Linyi",
+        about_network_title: "Our Network",
+        about_network_desc: "Leveraging Qingdao Port's logistics advantages, we have gradually established:",
+        about_network_1: "• Yangtze River Delta (Ningbo/Suzhou) machinery and hardware network",
+        about_network_2: "• Pearl River Delta (Shenzhen) electronics and appliances network",
+        about_network_3: "• Zhejiang (Yiwu) daily consumer goods network",
+        about_network_4: "• Central-West (Chongqing) auto and motorcycle parts network",
+        // Team
+        about_team_badge: "Core Team",
+        about_team_title: "Meet Our Team",
+        about_bg: "Background: ",
+        about_expertise: "Expertise: ",
+        about_responsible: "Responsible for: ",
+        about_team1_role: "Founder / General Manager",
+        about_team1_bg: "15 years of foreign trade experience, former department manager at a large state-owned import/export company",
+        about_team1_exp: "Supplier development, international trade risk management, Central Asia/Japan & Korea markets",
+        about_team1_resp: "Strategic planning, key account management",
+        about_team2_role: "Purchasing Director",
+        about_team2_bg: "10 years of Yiwu/Ningbo small commodities sourcing experience, served 50+ European and American clients",
+        about_team2_exp: "Daily consumer goods, price negotiation, supplier management",
+        about_team2_resp: "Daily necessities/hardware category procurement",
+        about_team3_role: "Industrial Purchasing Manager",
+        about_team3_bg: "8 years of machinery industry experience, familiar with Yangtze River Delta/Bohai Rim equipment manufacturing",
+        about_team3_exp: "Mechanical equipment, industrial parts, technical specification confirmation",
+        about_team3_resp: "Machinery/industrial category procurement",
+        about_team4_role: "Logistics Manager",
+        about_team4_bg: "10 years of freight forwarding experience, familiar with Qingdao/Ningbo/Shanghai port operations",
+        about_team4_exp: "Multimodal transport, customs clearance, logistics cost optimization",
+        about_team4_resp: "Export logistics solution design, port coordination",
+        about_team5_role: "Quality Inspection Coordinator",
+        about_team5_bg: "5 years of experience at third-party testing agency (SGS)",
+        about_team5_exp: "Quality standard formulation, third-party inspection coordination, non-conforming product handling",
+        about_team5_resp: "Quality control system, testing agency liaison",
+        // Stats
+        about_stats_badge: "Company Data",
+        about_stats_title: "By The Numbers",
+        about_stat1: "Year Founded",
+        about_stat2: "Clients Served",
+        about_stat3: "Annual Procurement",
+        about_stat4: "Partner Factories",
+        about_stat5: "Export Ports",
+        about_stat6: "Client Repurchase Rate",
+        // Certifications
+        about_cert_badge: "Certifications",
+        about_cert_title: "A Trusted Partner",
+        about_cert1_title: "Business License / Import & Export Rights",
+        about_cert1_desc: "Legally registered and compliant",
+        about_cert2_title: "ISO9001 Quality Management System",
+        about_cert2_desc: "Standardized management processes",
+        about_cert3_title: "AEO Certified Enterprise",
+        about_cert3_desc: "Customs advanced certification for smooth clearance",
+        about_cert4_title: "Partner Testing Agencies",
+        about_cert4_desc: "SGS, Bureau Veritas, Intertek",
+        // CTA
+        about_cta_title: "Want to Learn More?",
+        about_cta_desc: "Contact us for a detailed company introduction and cooperation proposal",
+        about_cta_btn: "Contact Us",
+        // Footer
+        footer_desc: "Your China supply chain integration partner. Cross-category, cross-industrial-belt, multi-port exports — making global sourcing simpler.",
+        footer_address: "Qingdao, Shandong, China",
+        footer_links: "Quick Links",
+        footer_services: "Services",
+        footer_s1: "National Sourcing Network",
+        footer_s2: "Full Category Coverage",
+        footer_s3: "Third-Party QC",
+        footer_s4: "Multi-Port Export",
+        footer_contact: "Contact Us",
+        footer_online: "Online Inquiry"
+      }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'zh';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18nData[lang] && i18nData[lang][key]) {
+          if (el.tagName === 'TITLE') {
+            document.title = i18nData[lang][key];
+          } else {
+            el.textContent = i18nData[lang][key];
+          }
+        }
+      });
+      document.getElementById('lang-text').textContent = lang === 'zh' ? 'EN' : '中文';
+    }
+
+    function toggleLang() {
+      setLanguage(currentLang === 'zh' ? 'en' : 'zh');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+    });
+
     function toggleMobileMenu() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
-    }
-    function toggleLang() {
-      const text = document.getElementById('lang-text');
-      text.textContent = text.textContent === 'EN' ? '中文' : 'EN';
     }
   </script>
 </body>
