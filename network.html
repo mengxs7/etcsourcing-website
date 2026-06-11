@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>中国采购网络 — ETC Sourcing</title>
+  <title data-i18n="network_title">中国采购网络 — ETC Sourcing</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
@@ -76,9 +76,6 @@
     .lang-btn:hover {
       background: rgba(255,255,255,0.2);
     }
-    
-    /* 点击区已删除 */
-    /* 点击区已删除 */
   </style>
 </head>
 <body class="bg-white">
@@ -96,12 +93,12 @@
         </a>
         
         <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">首页</a>
-          <a href="network.html" class="text-vibrant-orange text-sm font-medium">采购网络</a>
-          <a href="shipping.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">出口方案</a>
-          <a href="process.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">服务流程</a>
-          <a href="testimonials.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">客户评价</a>
-          <a href="cta.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors">联系我们</a>
+          <a href="index.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="nav_home">首页</a>
+          <a href="network.html" class="text-vibrant-orange text-sm font-medium" data-i18n="nav_network">采购网络</a>
+          <a href="shipping.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="nav_shipping">出口方案</a>
+          <a href="process.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="nav_process">服务流程</a>
+          <a href="testimonials.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="nav_testimonials">客户评价</a>
+          <a href="cta.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors" data-i18n="nav_contact">联系我们</a>
           <button onclick="toggleLang()" class="lang-btn flex items-center gap-2 px-3 py-1.5 rounded-full text-white text-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
@@ -120,11 +117,11 @@
     
     <div id="mobile-menu" class="hidden md:hidden bg-deep-blue border-t border-white/10">
       <div class="px-6 py-4 space-y-3">
-        <a href="index.html" class="block text-white/80 hover:text-white py-2">首页</a>
-        <a href="network.html" class="block text-vibrant-orange py-2">采购网络</a>
-        <a href="shipping.html" class="block text-white/80 hover:text-white py-2">出口方案</a>
-        <a href="process.html" class="block text-white/80 hover:text-white py-2">服务流程</a>
-        <a href="cta.html" class="block bg-vibrant-orange text-white text-center py-2 rounded-lg">联系我们</a>
+        <a href="index.html" class="block text-white/80 hover:text-white py-2" data-i18n="nav_home">首页</a>
+        <a href="network.html" class="block text-vibrant-orange py-2" data-i18n="nav_network">采购网络</a>
+        <a href="shipping.html" class="block text-white/80 hover:text-white py-2" data-i18n="nav_shipping">出口方案</a>
+        <a href="process.html" class="block text-white/80 hover:text-white py-2" data-i18n="nav_process">服务流程</a>
+        <a href="cta.html" class="block bg-vibrant-orange text-white text-center py-2 rounded-lg" data-i18n="nav_contact">联系我们</a>
       </div>
     </div>
   </nav>
@@ -141,15 +138,15 @@
           <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
           </svg>
-          <span class="text-white/90 text-sm font-medium">全国制造，一键触达</span>
+          <span class="text-white/90 text-sm font-medium" data-i18n="hero_badge">全国制造，一键触达</span>
         </div>
         
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-          中国采购网络
-          <span class="block text-vibrant-orange mt-2 text-3xl md:text-4xl">覆盖四大产业带，匹配最优产地</span>
+          <span data-i18n="hero_title">中国采购网络</span>
+          <span class="block text-vibrant-orange mt-2 text-3xl md:text-4xl" data-i18n="hero_subtitle">覆盖四大产业带，匹配最优产地</span>
         </h1>
         
-        <p class="text-lg text-white/80 max-w-3xl mx-auto mb-10">
+        <p class="text-lg text-white/80 max-w-3xl mx-auto mb-10" data-i18n="hero_desc">
           从珠三角电子到长三角机械，从环渤海装备到义乌日用<br>
           我们整合中国核心产区，为你匹配最具竞争力的供应方案
         </p>
@@ -157,19 +154,19 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1" data-count="4">4</div>
-            <div class="text-white/70 text-sm">大核心产业带</div>
+            <div class="text-white/70 text-sm" data-i18n="stat_zones">大核心产业带</div>
           </div>
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1" data-count="15">15</div>
-            <div class="text-white/70 text-sm">+采购城市</div>
+            <div class="text-white/70 text-sm" data-i18n="stat_cities">+采购城市</div>
           </div>
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1" data-count="200">200</div>
-            <div class="text-white/70 text-sm">+合作工厂</div>
+            <div class="text-white/70 text-sm" data-i18n="stat_factories">+合作工厂</div>
           </div>
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1" data-count="7">7</div>
-            <div class="text-white/70 text-sm">大出口港口</div>
+            <div class="text-white/70 text-sm" data-i18n="stat_ports">大出口港口</div>
           </div>
         </div>
       </div>
@@ -180,8 +177,8 @@
   <section class="py-16 bg-dark-bg relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/20 text-vibrant-orange text-sm font-medium rounded-full mb-4">全国采购网络</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">四大核心产业带分布</h2>
+        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/20 text-vibrant-orange text-sm font-medium rounded-full mb-4" data-i18n="map_badge">全国采购网络</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="map_title">四大核心产业带分布</h2>
       </div>
       
       <!-- 中国产业带地图 - 图片+点击区 -->
@@ -189,8 +186,8 @@
         
         <!-- 标题 -->
         <div style="text-align: center; margin-bottom: 20px;">
-          <h3 style="color: #e5e7eb; font-size: 18px; margin: 0;">ETC Sourcing 全国采购网络</h3>
-          <p style="color: #94a3b8; font-size: 12px; margin: 5px 0 0 0;">覆盖四大核心产业带，匹配最优产地</p>
+          <h3 style="color: #e5e7eb; font-size: 18px; margin: 0;" data-i18n="map_chart_title">ETC Sourcing 全国采购网络</h3>
+          <p style="color: #94a3b8; font-size: 12px; margin: 5px 0 0 0;" data-i18n="map_chart_subtitle">覆盖四大核心产业带，匹配最优产地</p>
         </div>
         
         <!-- 地图容器 -->
@@ -210,19 +207,19 @@
         <div style="display: flex; justify-content: center; gap: 20px; margin-top: 25px; flex-wrap: wrap;">
           <div style="display: flex; align-items: center; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 6px 12px; border-radius: 8px;">
             <div style="width: 14px; height: 14px; background: #ef4444; border: 2px solid #fff; border-radius: 50%;"></div>
-            <span style="color: #e5e7eb; font-size: 13px;">环渤海</span>
+            <span style="color: #e5e7eb; font-size: 13px;" data-i18n="legend_bohai">环渤海</span>
           </div>
           <div style="display: flex; align-items: center; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 6px 12px; border-radius: 8px;">
             <div style="width: 14px; height: 14px; background: #eab308; border: 2px solid #fff; border-radius: 50%;"></div>
-            <span style="color: #e5e7eb; font-size: 13px;">长三角+浙江</span>
+            <span style="color: #e5e7eb; font-size: 13px;" data-i18n="legend_yrd">长三角+浙江</span>
           </div>
           <div style="display: flex; align-items: center; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 6px 12px; border-radius: 8px;">
             <div style="width: 14px; height: 14px; background: #22c55e; border: 2px solid #fff; border-radius: 50%;"></div>
-            <span style="color: #e5e7eb; font-size: 13px;">珠三角</span>
+            <span style="color: #e5e7eb; font-size: 13px;" data-i18n="legend_prd">珠三角</span>
           </div>
           <div style="display: flex; align-items: center; gap: 8px; background: rgba(15, 23, 42, 0.6); padding: 6px 12px; border-radius: 8px;">
             <div style="width: 14px; height: 14px; background: #3b82f6; border: 2px solid #fff; border-radius: 50%;"></div>
-            <span style="color: #e5e7eb; font-size: 13px;">中西部</span>
+            <span style="color: #e5e7eb; font-size: 13px;" data-i18n="legend_central">中西部</span>
           </div>
         </div>
         
@@ -230,34 +227,34 @@
         
         <!-- 环渤海产业带 -->
         <div id="zone-bohai" style="margin-top: 50px; padding: 30px; background: #0f172a; border-radius: 12px; border-left: 4px solid #ef4444;">
-          <h3 style="color: #ef4444; font-size: 20px; margin-bottom: 15px;">环渤海产业带</h3>
-          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;">覆盖城市：</strong>青岛、天津、烟台、大连</p>
-          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;">核心产品：</strong>机械设备、化工产品、金属制品、农产品加工设备</p>
-          <p style="color: #94a3b8;"><strong style="color: #e5e7eb;">出口优势：</strong>日韩航线最短（3-5天），中亚海铁联运枢纽，ETC总部基地</p>
+          <h3 style="color: #ef4444; font-size: 20px; margin-bottom: 15px;" data-i18n="zone_bohai_title">环渤海产业带</h3>
+          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;" data-i18n="label_cities">覆盖城市：</strong><span data-i18n="zone_bohai_cities">青岛、天津、烟台、大连</span></p>
+          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;" data-i18n="label_products">核心产品：</strong><span data-i18n="zone_bohai_products">机械设备、化工产品、金属制品、农产品加工设备</span></p>
+          <p style="color: #94a3b8;"><strong style="color: #e5e7eb;" data-i18n="label_advantage">出口优势：</strong><span data-i18n="zone_bohai_advantage">日韩航线最短（3-5天），中亚海铁联运枢纽，ETC总部基地</span></p>
         </div>
         
         <!-- 长三角+浙江合并产业带 -->
         <div id="zone-yrd" style="margin-top: 30px; padding: 30px; background: #0f172a; border-radius: 12px; border-left: 4px solid #eab308;">
-          <h3 style="color: #eab308; font-size: 20px; margin-bottom: 15px;">长三角+浙江产业带</h3>
-          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;">覆盖城市：</strong>上海、宁波、苏州、杭州、义乌、温州</p>
-          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;">核心产品：</strong>五金工具、机械设备、汽车零部件、模具制造、日用百货、小商品、纺织服装、箱包鞋帽</p>
-          <p style="color: #94a3b8;"><strong style="color: #e5e7eb;">出口优势：</strong>全球最大港口群，欧洲航线优势，海运16-22天到欧洲；小商品品类最全，拼箱便利成本低</p>
+          <h3 style="color: #eab308; font-size: 20px; margin-bottom: 15px;" data-i18n="zone_yrd_title">长三角+浙江产业带</h3>
+          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;" data-i18n="label_cities">覆盖城市：</strong><span data-i18n="zone_yrd_cities">上海、宁波、苏州、杭州、义乌、温州</span></p>
+          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;" data-i18n="label_products">核心产品：</strong><span data-i18n="zone_yrd_products">五金工具、机械设备、汽车零部件、模具制造、日用百货、小商品、纺织服装、箱包鞋帽</span></p>
+          <p style="color: #94a3b8;"><strong style="color: #e5e7eb;" data-i18n="label_advantage">出口优势：</strong><span data-i18n="zone_yrd_advantage">全球最大港口群，欧洲航线优势，海运16-22天到欧洲；小商品品类最全，拼箱便利成本低</span></p>
         </div>
         
         <!-- 珠三角产业带 -->
         <div id="zone-prd" style="margin-top: 30px; padding: 30px; background: #0f172a; border-radius: 12px; border-left: 4px solid #22c55e;">
-          <h3 style="color: #22c55e; font-size: 20px; margin-bottom: 15px;">珠三角产业带</h3>
-          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;">覆盖城市：</strong>深圳、广州、东莞</p>
-          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;">核心产品：</strong>消费电子、家用电器、塑料制品、LED照明</p>
-          <p style="color: #94a3b8;"><strong style="color: #e5e7eb;">出口优势：</strong>欧美航线密集，空运便利，海运14-18天到美西</p>
+          <h3 style="color: #22c55e; font-size: 20px; margin-bottom: 15px;" data-i18n="zone_prd_title">珠三角产业带</h3>
+          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;" data-i18n="label_cities">覆盖城市：</strong><span data-i18n="zone_prd_cities">深圳、广州、东莞</span></p>
+          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;" data-i18n="label_products">核心产品：</strong><span data-i18n="zone_prd_products">消费电子、家用电器、塑料制品、LED照明</span></p>
+          <p style="color: #94a3b8;"><strong style="color: #e5e7eb;" data-i18n="label_advantage">出口优势：</strong><span data-i18n="zone_prd_advantage">欧美航线密集，空运便利，海运14-18天到美西</span></p>
         </div>
         
         <!-- 中西部产业带 -->
         <div id="zone-central" style="margin-top: 30px; padding: 30px; background: #0f172a; border-radius: 12px; border-left: 4px solid #3b82f6;">
-          <h3 style="color: #3b82f6; font-size: 20px; margin-bottom: 15px;">中西部产业带</h3>
-          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;">覆盖城市：</strong>重庆、西安、武汉、成都</p>
-          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;">核心产品：</strong>汽摩配件、电子元器件、装备制造、消费电子代工</p>
-          <p style="color: #94a3b8;"><strong style="color: #e5e7eb;">出口优势：</strong>劳动力成本优势，中欧班列到欧洲12-14天（比海运快10天）</p>
+          <h3 style="color: #3b82f6; font-size: 20px; margin-bottom: 15px;" data-i18n="zone_central_title">中西部产业带</h3>
+          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;" data-i18n="label_cities">覆盖城市：</strong><span data-i18n="zone_central_cities">重庆、西安、武汉、成都</span></p>
+          <p style="color: #94a3b8; margin-bottom: 10px;"><strong style="color: #e5e7eb;" data-i18n="label_products">核心产品：</strong><span data-i18n="zone_central_products">汽摩配件、电子元器件、装备制造、消费电子代工</span></p>
+          <p style="color: #94a3b8;"><strong style="color: #e5e7eb;" data-i18n="label_advantage">出口优势：</strong><span data-i18n="zone_central_advantage">劳动力成本优势，中欧班列到欧洲12-14天（比海运快10天）</span></p>
         </div>
         
       </div>
@@ -269,38 +266,38 @@
     <div class="max-w-4xl mx-auto px-6 lg:px-12">
       <div class="bg-gradient-to-br from-deep-blue to-[#1a5a9e] rounded-3xl p-8 lg:p-12 shadow-2xl">
         <div class="text-center mb-8">
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">产业带智能推荐工具</h2>
-          <p class="text-white/70">根据您的产品和目的地，推荐最优产业带</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2" data-i18n="tool_title">产业带智能推荐工具</h2>
+          <p class="text-white/70" data-i18n="tool_subtitle">根据您的产品和目的地，推荐最优产业带</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div>
-            <label class="block text-white/80 text-sm mb-2">产品类别</label>
+            <label class="block text-white/80 text-sm mb-2" data-i18n="label_product">产品类别</label>
             <select id="product-type" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange">
-              <option value="" class="text-gray-900">请选择产品类别</option>
-              <option value="electronics" class="text-gray-900">消费电子</option>
-              <option value="machinery" class="text-gray-900">机械设备</option>
-              <option value="daily" class="text-gray-900">日用百货</option>
-              <option value="hardware" class="text-gray-900">五金工具</option>
-              <option value="auto" class="text-gray-900">汽摩配件</option>
-              <option value="chemical" class="text-gray-900">化工产品</option>
+              <option value="" class="text-gray-900" data-i18n="select_product">请选择产品类别</option>
+              <option value="electronics" class="text-gray-900" data-i18n="opt_electronics">消费电子</option>
+              <option value="machinery" class="text-gray-900" data-i18n="opt_machinery">机械设备</option>
+              <option value="daily" class="text-gray-900" data-i18n="opt_daily">日用百货</option>
+              <option value="hardware" class="text-gray-900" data-i18n="opt_hardware">五金工具</option>
+              <option value="auto" class="text-gray-900" data-i18n="opt_auto">汽摩配件</option>
+              <option value="chemical" class="text-gray-900" data-i18n="opt_chemical">化工产品</option>
             </select>
           </div>
           <div>
-            <label class="block text-white/80 text-sm mb-2">目标市场</label>
+            <label class="block text-white/80 text-sm mb-2" data-i18n="label_market">目标市场</label>
             <select id="target-market" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange">
-              <option value="" class="text-gray-900">请选择目标市场</option>
-              <option value="europe" class="text-gray-900">欧洲</option>
-              <option value="usa" class="text-gray-900">美国</option>
-              <option value="japan-korea" class="text-gray-900">日韩</option>
-              <option value="sea" class="text-gray-900">东南亚</option>
-              <option value="central-asia" class="text-gray-900">中亚</option>
-              <option value="middle-east" class="text-gray-900">中东</option>
+              <option value="" class="text-gray-900" data-i18n="select_market">请选择目标市场</option>
+              <option value="europe" class="text-gray-900" data-i18n="opt_europe">欧洲</option>
+              <option value="usa" class="text-gray-900" data-i18n="opt_usa">美国</option>
+              <option value="japan-korea" class="text-gray-900" data-i18n="opt_japan_korea">日韩</option>
+              <option value="sea" class="text-gray-900" data-i18n="opt_sea">东南亚</option>
+              <option value="central-asia" class="text-gray-900" data-i18n="opt_central_asia">中亚</option>
+              <option value="middle-east" class="text-gray-900" data-i18n="opt_middle_east">中东</option>
             </select>
           </div>
         </div>
         
-        <button onclick="getRecommendation()" class="w-full bg-vibrant-orange hover:bg-vibrant-orange/90 text-white py-4 rounded-xl font-semibold transition-colors">
+        <button onclick="getRecommendation()" class="w-full bg-vibrant-orange hover:bg-vibrant-orange/90 text-white py-4 rounded-xl font-semibold transition-colors" data-i18n="btn_recommend">
           获取推荐方案
         </button>
         
@@ -311,7 +308,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
             </div>
-            <h3 class="text-white font-semibold">推荐方案</h3>
+            <h3 class="text-white font-semibold" data-i18n="result_title">推荐方案</h3>
           </div>
           <p id="recommendation-text" class="text-white/80 text-sm"></p>
         </div>
@@ -322,10 +319,10 @@
   <!-- CTA Section -->
   <section class="py-16 bg-light-gray">
     <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">不确定哪个产业带最适合？</h2>
-      <p class="text-gray-600 mb-8">让我们的采购专家为您分析，匹配最优供应方案</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4" data-i18n="cta_title">不确定哪个产业带最适合？</h2>
+      <p class="text-gray-600 mb-8" data-i18n="cta_desc">让我们的采购专家为您分析，匹配最优供应方案</p>
       <a href="index.html#cta" class="inline-flex items-center gap-2 bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
-        免费获取采购方案
+        <span data-i18n="cta_btn">免费获取采购方案</span>
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
@@ -346,7 +343,7 @@
             </div>
             <span class="font-bold text-xl">ETC Sourcing</span>
           </div>
-          <p class="text-white/70 text-sm leading-relaxed mb-4">
+          <p class="text-white/70 text-sm leading-relaxed mb-4" data-i18n="footer_desc">
             你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。
           </p>
           <div class="space-y-2 text-sm text-white/70">
@@ -354,7 +351,7 @@
               <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               </svg>
-              <span>中国 · 山东省青岛市</span>
+              <span data-i18n="footer_address">中国 · 山东省青岛市</span>
             </div>
             <div class="flex items-center gap-2">
               <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -366,37 +363,37 @@
               <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
               </svg>
-              <span>WeChat: 0086 18766270137</span>
+              <span data-i18n="footer_wechat">WeChat: 0086 18766270137</span>
             </div>
           </div>
         </div>
         
         <div>
-          <h4 class="font-semibold text-lg mb-5">快速链接</h4>
+          <h4 class="font-semibold text-lg mb-5" data-i18n="footer_quicklinks">快速链接</h4>
           <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="index.html" class="hover:text-white transition-colors">首页</a></li>
-            <li><a href="network.html" class="hover:text-white transition-colors">采购网络</a></li>
-            <li><a href="shipping.html" class="hover:text-white transition-colors">出口方案</a></li>
-            <li><a href="index.html#process" class="hover:text-white transition-colors">服务流程</a></li>
+            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav_home">首页</a></li>
+            <li><a href="network.html" class="hover:text-white transition-colors" data-i18n="nav_network">采购网络</a></li>
+            <li><a href="shipping.html" class="hover:text-white transition-colors" data-i18n="nav_shipping">出口方案</a></li>
+            <li><a href="index.html#process" class="hover:text-white transition-colors" data-i18n="nav_process">服务流程</a></li>
           </ul>
         </div>
         
         <div>
-          <h4 class="font-semibold text-lg mb-5">服务</h4>
+          <h4 class="font-semibold text-lg mb-5" data-i18n="footer_services">服务</h4>
           <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="#" class="hover:text-white transition-colors">全国采购网络</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">全品类覆盖</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">第三方品控</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">多港口出口</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_service1">全国采购网络</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_service2">全品类覆盖</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_service3">第三方品控</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_service4">多港口出口</a></li>
           </ul>
         </div>
         
         <div>
-          <h4 class="font-semibold text-lg mb-5">联系我们</h4>
+          <h4 class="font-semibold text-lg mb-5" data-i18n="footer_contact">联系我们</h4>
           <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="index.html#cta" class="hover:text-white transition-colors">在线咨询</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">关于我们</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">加入我们</a></li>
+            <li><a href="index.html#cta" class="hover:text-white transition-colors" data-i18n="footer_online">在线咨询</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_about">关于我们</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footer_join">加入我们</a></li>
           </ul>
           <div class="flex items-center gap-3 mt-4">
             <a href="#" class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
@@ -420,15 +417,299 @@
   </footer>
 
   <script>
+    // ========== 多语言数据 ==========
+    const i18nData = {
+      zh: {
+        // 页面标题
+        network_title: "中国采购网络 — ETC Sourcing",
+        
+        // 导航
+        nav_home: "首页",
+        nav_network: "采购网络",
+        nav_shipping: "出口方案",
+        nav_process: "服务流程",
+        nav_testimonials: "客户评价",
+        nav_contact: "联系我们",
+        
+        // Hero
+        hero_badge: "全国制造，一键触达",
+        hero_title: "中国采购网络",
+        hero_subtitle: "覆盖四大产业带，匹配最优产地",
+        hero_desc: "从珠三角电子到长三角机械，从环渤海装备到义乌日用<br>我们整合中国核心产区，为你匹配最具竞争力的供应方案",
+        stat_zones: "大核心产业带",
+        stat_cities: "+采购城市",
+        stat_factories: "+合作工厂",
+        stat_ports: "大出口港口",
+        
+        // 地图
+        map_badge: "全国采购网络",
+        map_title: "四大核心产业带分布",
+        map_chart_title: "ETC Sourcing 全国采购网络",
+        map_chart_subtitle: "覆盖四大核心产业带，匹配最优产地",
+        
+        // 图例
+        legend_bohai: "环渤海",
+        legend_yrd: "长三角+浙江",
+        legend_prd: "珠三角",
+        legend_central: "中西部",
+        
+        // 通用标签
+        label_cities: "覆盖城市：",
+        label_products: "核心产品：",
+        label_advantage: "出口优势：",
+        
+        // 环渤海
+        zone_bohai_title: "环渤海产业带",
+        zone_bohai_cities: "青岛、天津、烟台、大连",
+        zone_bohai_products: "机械设备、化工产品、金属制品、农产品加工设备",
+        zone_bohai_advantage: "日韩航线最短（3-5天），中亚海铁联运枢纽，ETC总部基地",
+        
+        // 长三角
+        zone_yrd_title: "长三角+浙江产业带",
+        zone_yrd_cities: "上海、宁波、苏州、杭州、义乌、温州",
+        zone_yrd_products: "五金工具、机械设备、汽车零部件、模具制造、日用百货、小商品、纺织服装、箱包鞋帽",
+        zone_yrd_advantage: "全球最大港口群，欧洲航线优势，海运16-22天到欧洲；小商品品类最全，拼箱便利成本低",
+        
+        // 珠三角
+        zone_prd_title: "珠三角产业带",
+        zone_prd_cities: "深圳、广州、东莞",
+        zone_prd_products: "消费电子、家用电器、塑料制品、LED照明",
+        zone_prd_advantage: "欧美航线密集，空运便利，海运14-18天到美西",
+        
+        // 中西部
+        zone_central_title: "中西部产业带",
+        zone_central_cities: "重庆、西安、武汉、成都",
+        zone_central_products: "汽摩配件、电子元器件、装备制造、消费电子代工",
+        zone_central_advantage: "劳动力成本优势，中欧班列到欧洲12-14天（比海运快10天）",
+        
+        // 推荐工具
+        tool_title: "产业带智能推荐工具",
+        tool_subtitle: "根据您的产品和目的地，推荐最优产业带",
+        label_product: "产品类别",
+        label_market: "目标市场",
+        select_product: "请选择产品类别",
+        select_market: "请选择目标市场",
+        opt_electronics: "消费电子",
+        opt_machinery: "机械设备",
+        opt_daily: "日用百货",
+        opt_hardware: "五金工具",
+        opt_auto: "汽摩配件",
+        opt_chemical: "化工产品",
+        opt_europe: "欧洲",
+        opt_usa: "美国",
+        opt_japan_korea: "日韩",
+        opt_sea: "东南亚",
+        opt_central_asia: "中亚",
+        opt_middle_east: "中东",
+        btn_recommend: "获取推荐方案",
+        result_title: "推荐方案",
+        alert_select: "请选择产品类别和目标市场",
+        
+        // CTA
+        cta_title: "不确定哪个产业带最适合？",
+        cta_desc: "让我们的采购专家为您分析，匹配最优供应方案",
+        cta_btn: "免费获取采购方案",
+        
+        // Footer
+        footer_desc: "你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。",
+        footer_address: "中国 · 山东省青岛市",
+        footer_wechat: "WeChat: 0086 18766270137",
+        footer_quicklinks: "快速链接",
+        footer_services: "服务",
+        footer_service1: "全国采购网络",
+        footer_service2: "全品类覆盖",
+        footer_service3: "第三方品控",
+        footer_service4: "多港口出口",
+        footer_contact: "联系我们",
+        footer_online: "在线咨询",
+        footer_about: "关于我们",
+        footer_join: "加入我们",
+        
+        // 推荐结果
+        rec_electronics_usa: "推荐：珠三角产业带 + 深圳港出口。电子产品制造中心，美西快线14-18天直达。",
+        rec_electronics_europe: "推荐：长三角+浙江产业带 + 宁波港出口。欧洲航线优势，16-22天到欧洲主要港口。",
+        rec_machinery_japan_korea: "推荐：环渤海产业带 + 青岛港出口。距离日韩最近，3-5天快速直达。",
+        rec_machinery_central_asia: "推荐：环渤海产业带 + 青岛港/天津港出口。中亚海铁联运枢纽，陆路运输便利。",
+        rec_daily_europe: "推荐：长三角+浙江产业带 + 宁波港出口。小商品品类最全，拼箱成本低，欧洲航线成熟。",
+        rec_hardware_sea: "推荐：长三角+浙江产业带 + 宁波港出口。五金工具制造中心，东南亚航线密集。",
+        rec_auto_central_asia: "推荐：中西部产业带 + 中欧班列出口。汽摩配件制造基地，中欧班列12-14天直达。",
+        rec_chemical_middle_east: "推荐：环渤海产业带 + 青岛港出口。化工产业集聚，中东航线便利。",
+        rec_default: "推荐：长三角+浙江产业带 + 宁波港出口。综合制造能力最强，港口设施最完善，适合大多数产品出口。"
+      },
+      en: {
+        // 页面标题
+        network_title: "China Sourcing Network — ETC Sourcing",
+        
+        // 导航
+        nav_home: "Home",
+        nav_network: "Sourcing Network",
+        nav_shipping: "Export Solutions",
+        nav_process: "Service Process",
+        nav_testimonials: "Testimonials",
+        nav_contact: "Contact Us",
+        
+        // Hero
+        hero_badge: "Nationwide Manufacturing, One-Click Access",
+        hero_title: "China Sourcing Network",
+        hero_subtitle: "Covering 4 Major Industrial Zones, Matching Optimal Origins",
+        hero_desc: "From PRD electronics to YRD machinery, from Bohai Rim equipment to Yiwu daily goods<br>We integrate China's core production regions to match you with the most competitive supply solutions",
+        stat_zones: "Major Industrial Zones",
+        stat_cities: "+ Sourcing Cities",
+        stat_factories: "+ Partner Factories",
+        stat_ports: "Major Export Ports",
+        
+        // 地图
+        map_badge: "Nationwide Sourcing Network",
+        map_title: "Distribution of 4 Core Industrial Zones",
+        map_chart_title: "ETC Sourcing Nationwide Network",
+        map_chart_subtitle: "Covering 4 core industrial zones, matching optimal origins",
+        
+        // 图例
+        legend_bohai: "Bohai Rim",
+        legend_yrd: "YRD + Zhejiang",
+        legend_prd: "Pearl River Delta",
+        legend_central: "Central & Western",
+        
+        // 通用标签
+        label_cities: "Covered Cities: ",
+        label_products: "Core Products: ",
+        label_advantage: "Export Advantage: ",
+        
+        // 环渤海
+        zone_bohai_title: "Bohai Rim Industrial Zone",
+        zone_bohai_cities: "Qingdao, Tianjin, Yantai, Dalian",
+        zone_bohai_products: "Machinery Equipment, Chemical Products, Metal Products, Agricultural Processing Equipment",
+        zone_bohai_advantage: "Shortest route to Japan/Korea (3-5 days), Central Asia sea-rail intermodal hub, ETC headquarters",
+        
+        // 长三角
+        zone_yrd_title: "YRD + Zhejiang Industrial Zone",
+        zone_yrd_cities: "Shanghai, Ningbo, Suzhou, Hangzhou, Yiwu, Wenzhou",
+        zone_yrd_products: "Hardware Tools, Machinery Equipment, Auto Parts, Mold Manufacturing, Daily Goods, Small Commodities, Textiles & Apparel, Bags & Shoes",
+        zone_yrd_advantage: "World's largest port cluster, advantage on Europe routes, 16-22 days by sea to Europe; most complete small commodity categories, convenient and low-cost LCL",
+        
+        // 珠三角
+        zone_prd_title: "Pearl River Delta Industrial Zone",
+        zone_prd_cities: "Shenzhen, Guangzhou, Dongguan",
+        zone_prd_products: "Consumer Electronics, Home Appliances, Plastic Products, LED Lighting",
+        zone_prd_advantage: "Dense routes to Europe and America, convenient air freight, 14-18 days by sea to US West Coast",
+        
+        // 中西部
+        zone_central_title: "Central & Western Industrial Zone",
+        zone_central_cities: "Chongqing, Xi'an, Wuhan, Chengdu",
+        zone_central_products: "Auto & Motorcycle Parts, Electronic Components, Equipment Manufacturing, Consumer Electronics OEM",
+        zone_central_advantage: "Labor cost advantage, China-Europe Railway Express to Europe in 12-14 days (10 days faster than sea freight)",
+        
+        // 推荐工具
+        tool_title: "Industrial Zone Smart Recommendation Tool",
+        tool_subtitle: "Recommend the optimal industrial zone based on your product and destination",
+        label_product: "Product Category",
+        label_market: "Target Market",
+        select_product: "Please select product category",
+        select_market: "Please select target market",
+        opt_electronics: "Consumer Electronics",
+        opt_machinery: "Machinery Equipment",
+        opt_daily: "Daily Goods",
+        opt_hardware: "Hardware Tools",
+        opt_auto: "Auto & Motorcycle Parts",
+        opt_chemical: "Chemical Products",
+        opt_europe: "Europe",
+        opt_usa: "USA",
+        opt_japan_korea: "Japan & Korea",
+        opt_sea: "Southeast Asia",
+        opt_central_asia: "Central Asia",
+        opt_middle_east: "Middle East",
+        btn_recommend: "Get Recommendation",
+        result_title: "Recommendation",
+        alert_select: "Please select product category and target market",
+        
+        // CTA
+        cta_title: "Not sure which industrial zone fits best?",
+        cta_desc: "Let our sourcing experts analyze and match the optimal supply solution for you",
+        cta_btn: "Get Free Sourcing Plan",
+        
+        // Footer
+        footer_desc: "Your China supply chain integration partner. Cross-category, cross-industrial-zone, multi-port export, making global sourcing easier.",
+        footer_address: "Qingdao, Shandong, China",
+        footer_wechat: "WeChat: 0086 18766270137",
+        footer_quicklinks: "Quick Links",
+        footer_services: "Services",
+        footer_service1: "Nationwide Sourcing Network",
+        footer_service2: "Full Category Coverage",
+        footer_service3: "Third-Party QC",
+        footer_service4: "Multi-Port Export",
+        footer_contact: "Contact Us",
+        footer_online: "Online Inquiry",
+        footer_about: "About Us",
+        footer_join: "Join Us",
+        
+        // 推荐结果
+        rec_electronics_usa: "Recommended: PRD Industrial Zone + Shenzhen Port Export. Electronics manufacturing center, US West Coast express line 14-18 days direct.",
+        rec_electronics_europe: "Recommended: YRD + Zhejiang Industrial Zone + Ningbo Port Export. Advantage on Europe routes, 16-22 days to major European ports.",
+        rec_machinery_japan_korea: "Recommended: Bohai Rim Industrial Zone + Qingdao Port Export. Closest to Japan/Korea, 3-5 days fast direct.",
+        rec_machinery_central_asia: "Recommended: Bohai Rim Industrial Zone + Qingdao/Tianjin Port Export. Central Asia sea-rail intermodal hub, convenient land transport.",
+        rec_daily_europe: "Recommended: YRD + Zhejiang Industrial Zone + Ningbo Port Export. Most complete small commodity categories, low LCL cost, mature Europe routes.",
+        rec_hardware_sea: "Recommended: YRD + Zhejiang Industrial Zone + Ningbo Port Export. Hardware tools manufacturing center, dense Southeast Asia routes.",
+        rec_auto_central_asia: "Recommended: Central & Western Industrial Zone + China-Europe Railway Express Export. Auto parts manufacturing base, 12-14 days direct via railway.",
+        rec_chemical_middle_east: "Recommended: Bohai Rim Industrial Zone + Qingdao Port Export. Chemical industry cluster, convenient Middle East routes.",
+        rec_default: "Recommended: YRD + Zhejiang Industrial Zone + Ningbo Port Export. Strongest comprehensive manufacturing capability, most complete port facilities, suitable for most product exports."
+      }
+    };
+
+    // ========== 语言切换函数 ==========
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('etclang', lang);
+      document.getElementById('lang-text').textContent = lang === 'zh' ? 'EN' : '中文';
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      
+      // 遍历所有带 data-i18n 的元素
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18nData[lang][key]) {
+          // 如果是 input/select 的 placeholder 或 option，需要特殊处理
+          if (el.tagName === 'OPTION') {
+            el.textContent = i18nData[lang][key];
+          } else {
+            el.innerHTML = i18nData[lang][key];
+          }
+        }
+      });
+      
+      // 更新 select option 文本
+      updateSelectOptions(lang);
+    }
+
+    function updateSelectOptions(lang) {
+      const productSelect = document.getElementById('product-type');
+      const marketSelect = document.getElementById('target-market');
+      
+      const productOptions = ['select_product', 'opt_electronics', 'opt_machinery', 'opt_daily', 'opt_hardware', 'opt_auto', 'opt_chemical'];
+      const marketOptions = ['select_market', 'opt_europe', 'opt_usa', 'opt_japan_korea', 'opt_sea', 'opt_central_asia', 'opt_middle_east'];
+      
+      productOptions.forEach((key, idx) => {
+        if (productSelect.options[idx]) productSelect.options[idx].textContent = i18nData[lang][key];
+      });
+      
+      marketOptions.forEach((key, idx) => {
+        if (marketSelect.options[idx]) marketSelect.options[idx].textContent = i18nData[lang][key];
+      });
+    }
+
+    function toggleLang() {
+      const newLang = currentLang === 'zh' ? 'en' : 'zh';
+      setLanguage(newLang);
+    }
+
+    // ========== 页面加载时自动应用语言 ==========
+    let currentLang = localStorage.getItem('etclang') || 'zh';
+    document.addEventListener('DOMContentLoaded', function() {
+      setLanguage(currentLang);
+    });
+
+    // ========== 原有功能函数 ==========
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
-    }
-    
-    let currentLang = 'zh';
-    function toggleLang() {
-      currentLang = currentLang === 'zh' ? 'en' : 'zh';
-      document.getElementById('lang-text').textContent = currentLang === 'zh' ? 'EN' : '中文';
     }
     
     function getRecommendation() {
@@ -438,12 +719,26 @@
       const resultText = document.getElementById('recommendation-text');
       
       if (!product || !market) {
-        alert('请选择产品类别和目标市场');
+        alert(i18nData[currentLang].alert_select);
         return;
       }
       
+      const key = product + '-' + market;
       const recommendations = {
-        'electronics-usa': '推荐：珠三角产业带 + 深圳港出口。电子产品制造中心，美西快线14-18天直达。',
-        'electronics-europe': '推荐：长三角+浙江产业带 + 宁波港出口。欧洲航线优势，16-22天到欧洲主要港口。',
-        'machinery-japan-korea': '推荐：环渤海产业带 + 青岛港出口。距离日韩最近，3-5天快速直达。',
-        'machinery-central-asia': '推荐
+        'electronics-usa': 'rec_electronics_usa',
+        'electronics-europe': 'rec_electronics_europe',
+        'machinery-japan-korea': 'rec_machinery_japan_korea',
+        'machinery-central-asia': 'rec_machinery_central_asia',
+        'daily-europe': 'rec_daily_europe',
+        'hardware-sea': 'rec_hardware_sea',
+        'auto-central-asia': 'rec_auto_central_asia',
+        'chemical-middle-east': 'rec_chemical_middle_east'
+      };
+      
+      const recKey = recommendations[key] || 'rec_default';
+      resultText.textContent = i18nData[currentLang][recKey];
+      resultDiv.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
