@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service Process — ETC Sourcing</title>
+  <title data-i18n="process_page_title">服务流程 — ETC Sourcing</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
@@ -162,7 +162,7 @@
                     <li data-i18n="process_step1_deliver_3">• 预估成本与交期</li>
                   </ul>
                 </div>
-                <span data-i18n="process_step1_free" class="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">免费</span>
+                <span data-i18n="label_free" class="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">免费</span>
               </div>
             </div>
           </div>
@@ -205,7 +205,7 @@
                     <li data-i18n="process_step2_receive_2">• 样品安排（免费寄送，快递费到付）</li>
                   </ul>
                 </div>
-                <span data-i18n="process_step1_free" class="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">免费</span>
+                <span data-i18n="label_free" class="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">免费</span>
               </div>
             </div>
           </div>
@@ -557,6 +557,7 @@
     // ========== 多语言系统 ==========
     const i18nData = {
       zh: {
+        process_page_title: "服务流程 — ETC Sourcing",
         nav_home: "首页",
         nav_network: "采购网络",
         nav_shipping: "出口方案",
@@ -569,7 +570,7 @@
         process_hero_badge: "轻资产整合模式",
         process_hero_title: "服务流程",
         process_hero_subtitle: "轻资产整合，重结果交付",
-        process_hero_desc: "不同于传统采购代理驻厂跟进，我们采用"远程管理+第三方验证"模式，在保证质量的同时，为你节省成本、提高效率、扩大覆盖范围。",
+        process_hero_desc: "不同于传统采购代理驻厂跟进，我们采用\"远程管理+第三方验证\"模式，在保证质量的同时，为你节省成本、提高效率、扩大覆盖范围。",
 
         process_step_badge: "五步完成从需求到出口",
         process_step_title: "How We Work",
@@ -583,7 +584,7 @@
         process_step1_deliver_1: "• 可行性评估（是否适合中国采购）",
         process_step1_deliver_2: "• 推荐最优产业带（匹配工厂资源）",
         process_step1_deliver_3: "• 预估成本与交期",
-        process_step1_free: "免费",
+        label_free: "免费",
 
         process_step2_num: "2",
         process_step2_title: "供应商匹配",
@@ -626,7 +627,7 @@
         process_step5_arrange: "我们安排：",
         process_step5_arrange_1: "• 选择最优出口港（成本/时效/航线综合考量）",
         process_step5_arrange_2: "• 出口报关、订舱、装柜",
-        process_step5_arrange_3: "• 海运/空运/铁路运输",
+        process_step5arrange_3: "• 海运/空运/铁路运输",
         process_step5_arrange_4: "• 目的港清关单据准备",
         process_step5_deliver: "<strong>交付：</strong>",
         process_step5_deliver_desc: "门到门或FOB/CIF，按你需求",
@@ -694,6 +695,7 @@
       },
 
       en: {
+        process_page_title: "Service Process — ETC Sourcing",
         nav_home: "Home",
         nav_network: "Sourcing Network",
         nav_shipping: "Export Solutions",
@@ -706,7 +708,7 @@
         process_hero_badge: "Light-Asset Integration",
         process_hero_title: "Service Process",
         process_hero_subtitle: "Light Assets, Heavy Results",
-        process_hero_desc: "Unlike traditional sourcing agents who station staff at factories, we adopt a "Remote Management + Third-Party Verification" model to save costs, improve efficiency, and expand coverage while ensuring quality.",
+        process_hero_desc: "Unlike traditional sourcing agents who station staff at factories, we adopt a \"Remote Management + Third-Party Verification\" model to save costs, improve efficiency, and expand coverage while ensuring quality.",
 
         process_step_badge: "5 Steps from Inquiry to Export",
         process_step_title: "How We Work",
@@ -720,7 +722,7 @@
         process_step1_deliver_1: "• Feasibility assessment (suitability for China sourcing)",
         process_step1_deliver_2: "• Optimal industry belt recommendation (matching factory resources)",
         process_step1_deliver_3: "• Estimated cost & lead time",
-        process_step1_free: "Free",
+        label_free: "Free",
 
         process_step2_num: "2",
         process_step2_title: "Supplier Matching",
@@ -831,23 +833,14 @@
       }
     };
 
-    let currentLang = 'zh';
-    try {
-      const saved = localStorage.getItem('etcsourcing-lang');
-      if (saved && i18nData[saved]) {
-        currentLang = saved;
-      }
-    } catch (e) {
-      console.log('localStorage not available');
-    }
+    // ========== 语言切换函数（与 index.html / network.html 完全一致） ==========
+    let currentLang = localStorage.getItem('etclang') || 'zh';
 
     function setLanguage(lang) {
       if (!i18nData[lang]) return;
       currentLang = lang;
-      try {
-        localStorage.setItem('etcsourcing-lang', lang);
-      } catch (e) {}
-
+      localStorage.setItem('etclang', lang);
+      
       document.querySelectorAll('[data-i18n]').forEach(function(el) {
         const key = el.getAttribute('data-i18n');
         if (i18nData[lang][key]) {
@@ -856,12 +849,11 @@
       });
 
       const langBtn = document.getElementById('lang-text');
-      if (langBtn && i18nData[lang].nav_lang) {
-        langBtn.textContent = i18nData[lang].nav_lang;
+      if (langBtn) {
+        langBtn.textContent = lang === 'zh' ? 'EN' : '中文';
       }
 
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-      document.title = lang === 'zh' ? '服务流程 — ETC Sourcing' : 'Service Process — ETC Sourcing';
     }
 
     function toggleLang() {
