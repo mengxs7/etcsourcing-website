@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>多港口出口方案 — ETC Sourcing</title>
+  <title data-i18n="pageTitle">多港口出口方案 — ETC Sourcing</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
@@ -26,7 +26,6 @@
     * { scroll-behavior: smooth; }
     body { font-family: 'Inter', system-ui, sans-serif; }
     
-    /* Card hover effect */
     .card-hover {
       transition: all 0.3s ease;
     }
@@ -35,12 +34,10 @@
       box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
     }
     
-    /* Port card highlighted */
     .port-highlight {
       background: linear-gradient(135deg, #0F4C81 0%, #1a5a9e 100%);
     }
     
-    /* Table styling */
     .route-table th {
       background: #0F4C81;
       color: white;
@@ -49,7 +46,6 @@
       background: #F8FAFC;
     }
     
-    /* Language switch */
     .lang-btn {
       transition: all 0.2s ease;
     }
@@ -57,7 +53,6 @@
       background: rgba(255,255,255,0.2);
     }
     
-    /* Pulse animation for featured port */
     @keyframes pulse-glow {
       0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
       50% { box-shadow: 0 0 20px 10px rgba(249, 115, 22, 0.2); }
@@ -72,51 +67,40 @@
   <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-blue/95 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
         <a href="index.html" class="flex items-center gap-3">
-          <div class="w-9 h-9 bg-vibrant-orange rounded-lg flex items-center justify-center">
-            
-          </div>
+          <div class="w-9 h-9 bg-vibrant-orange rounded-lg flex items-center justify-center"></div>
           <span class="text-white font-bold text-lg">ETC Sourcing</span>
         </a>
         
-        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">首页</a>
-          <a href="network.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">采购网络</a>
-          <a href="shipping.html" class="text-vibrant-orange text-sm font-medium">出口方案</a>
-          <a href="process.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">服务流程</a>
-          <a href="testimonials.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors">客户评价</a>
-          <a href="cta.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors">联系我们</a>
-          <!-- Language Switch -->
+          <a href="index.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="navHome">首页</a>
+          <a href="network.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="navNetwork">采购网络</a>
+          <a href="shipping.html" class="text-vibrant-orange text-sm font-medium" data-i18n="navShipping">出口方案</a>
+          <a href="process.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="navProcess">服务流程</a>
+          <a href="testimonials.html" class="text-white/80 hover:text-white text-sm font-medium transition-colors" data-i18n="navTestimonials">客户评价</a>
+          <a href="cta.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors" data-i18n="navContact">联系我们</a>
           <button onclick="toggleLang()" class="lang-btn flex items-center gap-2 px-3 py-1.5 rounded-full text-white text-sm">
-            
             <span id="lang-text">EN</span>
           </button>
         </div>
         
-        <!-- Mobile Menu Button -->
-        <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2">
-          
-        </button>
+        <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2">☰</button>
       </div>
     </div>
     
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-deep-blue border-t border-white/10">
       <div class="px-6 py-4 space-y-3">
-        <a href="index.html" class="block text-white/80 hover:text-white py-2">首页</a>
-        <a href="network.html" class="block text-white/80 hover:text-white py-2">采购网络</a>
-        <a href="shipping.html" class="block text-vibrant-orange py-2">出口方案</a>
-        <a href="process.html" class="block text-white/80 hover:text-white py-2">服务流程</a>
-        <a href="cta.html" class="block bg-vibrant-orange text-white text-center py-2 rounded-lg">联系我们</a>
+        <a href="index.html" class="block text-white/80 hover:text-white py-2" data-i18n="navHome">首页</a>
+        <a href="network.html" class="block text-white/80 hover:text-white py-2" data-i18n="navNetwork">采购网络</a>
+        <a href="shipping.html" class="block text-vibrant-orange py-2" data-i18n="navShipping">出口方案</a>
+        <a href="process.html" class="block text-white/80 hover:text-white py-2" data-i18n="navProcess">服务流程</a>
+        <a href="cta.html" class="block bg-vibrant-orange text-white text-center py-2 rounded-lg" data-i18n="navContact">联系我们</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="pt-24 pb-16 bg-gradient-to-br from-deep-blue via-[#1a5a9e] to-deep-blue relative overflow-hidden">
-    <!-- Background Image -->
     <div class="absolute inset-0">
       <img src="qingdao-port-detail.jpg" alt="Qingdao Port" class="w-full h-full object-cover opacity-30">
       <div class="absolute inset-0 bg-gradient-to-b from-deep-blue/80 via-deep-blue/70 to-deep-blue/90"></div>
@@ -124,41 +108,35 @@
     
     <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
       <div class="text-center py-12">
-        <!-- Badge -->
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-          
-          <span class="text-white/90 text-sm font-medium">多港口灵活调配</span>
+          <span class="text-white/90 text-sm font-medium" data-i18n="heroBadge">多港口灵活调配</span>
         </div>
         
-        <!-- Title -->
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-          不只是青岛，更是全国港口
-          <span class="block text-vibrant-orange mt-2 text-3xl md:text-4xl">最优路径出海</span>
+          <span data-i18n="heroTitle1">不只是青岛，更是全国港口</span>
+          <span class="block text-vibrant-orange mt-2 text-3xl md:text-4xl" data-i18n="heroTitle2">最优路径出海</span>
         </h1>
         
-        <!-- Subtitle -->
-        <p class="text-lg text-white/80 max-w-3xl mx-auto mb-10">
+        <p class="text-lg text-white/80 max-w-3xl mx-auto mb-10" data-i18n="heroSubtitle">
           根据你的产品、目的地、时效要求，灵活选择最优出口港<br>
           降低物流成本，缩短交货周期
         </p>
         
-        <!-- Stats -->
         <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1">7</div>
-            <div class="text-white/70 text-sm">大常用出口港</div>
+            <div class="text-white/70 text-sm" data-i18n="stat1">大常用出口港</div>
           </div>
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1">100+</div>
-            <div class="text-white/70 text-sm">覆盖目的港</div>
+            <div class="text-white/70 text-sm" data-i18n="stat2">覆盖目的港</div>
           </div>
           <div class="text-center">
             <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1">15-25%</div>
-            <div class="text-white/70 text-sm">平均节省物流成本</div>
+            <div class="text-white/70 text-sm" data-i18n="stat3">平均节省物流成本</div>
           </div>
         </div>
-
-        
+      </div>
     </div>
   </section>
 
@@ -166,11 +144,10 @@
   <section class="py-16 bg-dark-bg relative overflow-hidden" style="background-color: #1E293B;">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/20 text-vibrant-orange text-sm font-medium rounded-full mb-4">中国沿海港口网络</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">从产业带到港口，最优路径</h2>
+        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/20 text-vibrant-orange text-sm font-medium rounded-full mb-4" data-i18n="mapBadge">中国沿海港口网络</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="mapTitle">从产业带到港口，最优路径</h2>
       </div>
       
-      <!-- Map Visualization -->
       <div class="relative aspect-[16/9] bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden shadow-2xl">
         <img src="china-ports-map20260518.png" 
              style="width: 100%; height: 100%; object-fit: contain; display: block;"
@@ -183,46 +160,41 @@
   <section class="py-16 bg-light-gray">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4">七大核心港口</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">选择最适合你的出口港</h2>
+        <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4" data-i18n="portBadge">七大核心港口</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="portTitle">选择最适合你的出口港</h2>
       </div>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- Qingdao Port (Highlighted) -->
+        <!-- Qingdao Port -->
         <div class="card-hover port-highlight rounded-2xl p-6 lg:p-8 text-white shadow-xl lg:col-span-2">
           <div class="flex flex-col lg:flex-row lg:items-start gap-6">
             <div class="flex-1">
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
-                  
-                </div>
+                <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center"></div>
                 <div>
-                  <h3 class="text-2xl font-bold">青岛港</h3>
+                  <h3 class="text-2xl font-bold" data-i18n="qingdaoName">青岛港</h3>
                   <div class="flex items-center gap-2 mt-1">
-                    <span class="px-2 py-0.5 bg-vibrant-orange text-white text-xs rounded-full">ETC总部基地港</span>
-                    <span class="text-white/70 text-sm">山东半岛，黄海之滨</span>
+                    <span class="px-2 py-0.5 bg-vibrant-orange text-white text-xs rounded-full" data-i18n="qingdaoTag">ETC总部基地港</span>
+                    <span class="text-white/70 text-sm" data-i18n="qingdaoLocation">山东半岛，黄海之滨</span>
                   </div>
                 </div>
               </div>
               
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div>
-                  <h4 class="font-semibold mb-2 flex items-center gap-2">
-                    
-                    核心优势
-                  </h4>
+                  <h4 class="font-semibold mb-2 flex items-center gap-2" data-i18n="coreAdvantages">核心优势</h4>
                   <ul class="space-y-1 text-sm text-white/80">
-                    <li>• 距离日韩最近：3-5天到釜山/横滨/大阪</li>
-                    <li>• 中亚海铁联运枢纽：到中亚5-7天</li>
-                    <li>• 北方冷链物流中心</li>
-                    <li>• ETC主场：十年本地深耕</li>
+                    <li data-i18n="qingdaoAdv1">• 距离日韩最近：3-5天到釜山/横滨/大阪</li>
+                    <li data-i18n="qingdaoAdv2">• 中亚海铁联运枢纽：到中亚5-7天</li>
+                    <li data-i18n="qingdaoAdv3">• 北方冷链物流中心</li>
+                    <li data-i18n="qingdaoAdv4">• ETC主场：十年本地深耕</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 class="font-semibold mb-2">适合产品</h4>
-                  <p class="text-sm text-white/80">机械设备、化工品、农产品、日韩航线货物、中亚班列货物</p>
-                  <h4 class="font-semibold mb-2 mt-3">主要航线</h4>
-                  <p class="text-sm text-white/80">日韩、东南亚、美西、欧洲、中亚（铁路）</p>
+                  <h4 class="font-semibold mb-2" data-i18n="suitableProducts">适合产品</h4>
+                  <p class="text-sm text-white/80" data-i18n="qingdaoProducts">机械设备、化工品、农产品、日韩航线货物、中亚班列货物</p>
+                  <h4 class="font-semibold mb-2 mt-3" data-i18n="mainRoutes">主要航线</h4>
+                  <p class="text-sm text-white/80" data-i18n="qingdaoRoutes">日韩、东南亚、美西、欧洲、中亚（铁路）</p>
                 </div>
               </div>
             </div>
@@ -232,85 +204,75 @@
         <!-- Ningbo Port -->
         <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-              
-            </div>
+            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center"></div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900">宁波港</h3>
-              <span class="text-sm text-gray-500">全球最大港口</span>
+              <h3 class="text-xl font-bold text-gray-900" data-i18n="ningboName">宁波港</h3>
+              <span class="text-sm text-gray-500" data-i18n="ningboTag">全球最大港口</span>
             </div>
           </div>
           <div class="space-y-2 text-sm text-gray-600">
-            <p><strong class="text-gray-900">核心优势：</strong>吞吐量全球第一，欧洲航线优势，义乌小商品最近主港</p>
-            <p><strong class="text-gray-900">适合产品：</strong>日用消费品、五金工具、电子产品</p>
+            <p><strong class="text-gray-900" data-i18n="coreAdvantages">核心优势：</strong><span data-i18n="ningboAdv">吞吐量全球第一，欧洲航线优势，义乌小商品最近主港</span></p>
+            <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="ningboProducts">日用消费品、五金工具、电子产品</span></p>
           </div>
         </div>
         
         <!-- Shanghai Port -->
         <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-              
-            </div>
+            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center"></div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900">上海港</h3>
-              <span class="text-sm text-gray-500">国际航运中心</span>
+              <h3 class="text-xl font-bold text-gray-900" data-i18n="shanghaiName">上海港</h3>
+              <span class="text-sm text-gray-500" data-i18n="shanghaiTag">国际航运中心</span>
             </div>
           </div>
           <div class="space-y-2 text-sm text-gray-600">
-            <p><strong class="text-gray-900">核心优势：</strong>航线最密集，高端制造首选，空运衔接便利</p>
-            <p><strong class="text-gray-900">适合产品：</strong>高货值产品、紧急订单</p>
+            <p><strong class="text-gray-900" data-i18n="coreAdvantages">核心优势：</strong><span data-i18n="shanghaiAdv">航线最密集，高端制造首选，空运衔接便利</span></p>
+            <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="shanghaiProducts">高货值产品、紧急订单</span></p>
           </div>
         </div>
         
         <!-- Shenzhen Port -->
         <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-              
-            </div>
+            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"></div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900">深圳港</h3>
-              <span class="text-sm text-gray-500">华南枢纽</span>
+              <h3 class="text-xl font-bold text-gray-900" data-i18n="shenzhenName">深圳港</h3>
+              <span class="text-sm text-gray-500" data-i18n="shenzhenTag">华南枢纽</span>
             </div>
           </div>
           <div class="space-y-2 text-sm text-gray-600">
-            <p><strong class="text-gray-900">核心优势：</strong>电子产品出口最快，美西快线，跨境电商首选</p>
-            <p><strong class="text-gray-900">适合产品：</strong>消费电子、电器、跨境电商货物</p>
+            <p><strong class="text-gray-900" data-i18n="coreAdvantages">核心优势：</strong><span data-i18n="shenzhenAdv">电子产品出口最快，美西快线，跨境电商首选</span></p>
+            <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="shenzhenProducts">消费电子、电器、跨境电商货物</span></p>
           </div>
         </div>
         
         <!-- Tianjin Port -->
         <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
-              
-            </div>
+            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center"></div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900">天津港</h3>
-              <span class="text-sm text-gray-500">北方国际航运中心</span>
+              <h3 class="text-xl font-bold text-gray-900" data-i18n="tianjinName">天津港</h3>
+              <span class="text-sm text-gray-500" data-i18n="tianjinTag">北方国际航运中心</span>
             </div>
           </div>
           <div class="space-y-2 text-sm text-gray-600">
-            <p><strong class="text-gray-900">核心优势：</strong>首都经济圈出海口，蒙古/俄罗斯中转，汽车出口</p>
-            <p><strong class="text-gray-900">适合产品：</strong>机械设备、汽车、钢材、华北产地货物</p>
+            <p><strong class="text-gray-900" data-i18n="coreAdvantages">核心优势：</strong><span data-i18n="tianjinAdv">首都经济圈出海口，蒙古/俄罗斯中转，汽车出口</span></p>
+            <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="tianjinProducts">机械设备、汽车、钢材、华北产地货物</span></p>
           </div>
         </div>
         
         <!-- Xiamen Port -->
         <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-              
-            </div>
+            <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center"></div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900">厦门港</h3>
-              <span class="text-sm text-gray-500">海峡西岸</span>
+              <h3 class="text-xl font-bold text-gray-900" data-i18n="xiamenName">厦门港</h3>
+              <span class="text-sm text-gray-500" data-i18n="xiamenTag">海峡西岸</span>
             </div>
           </div>
           <div class="space-y-2 text-sm text-gray-600">
-            <p><strong class="text-gray-900">核心优势：</strong>对台贸易最便利，东南亚快线，石材建材出口</p>
-            <p><strong class="text-gray-900">适合产品：</strong>建材、石材、对台/东南亚货物</p>
+            <p><strong class="text-gray-900" data-i18n="coreAdvantages">核心优势：</strong><span data-i18n="xiamenAdv">对台贸易最便利，东南亚快线，石材建材出口</span></p>
+            <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="xiamenProducts">建材、石材、对台/东南亚货物</span></p>
           </div>
         </div>
 
@@ -323,16 +285,16 @@
               </svg>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900">大连港</h3>
-              <span class="text-sm text-gray-500">东北门户</span>
+              <h3 class="text-xl font-bold text-gray-900" data-i18n="dalianName">大连港</h3>
+              <span class="text-sm text-gray-500" data-i18n="dalianTag">东北门户</span>
             </div>
           </div>
           <div class="space-y-2 text-sm text-gray-600">
-            <p><strong class="text-gray-900">核心优势：</strong>东北地区出海门户，日韩俄航线最近，冷链物流优势，RCEP成员国全覆盖</p>
-            <p><strong class="text-gray-900">适合产品：</strong>化工品、机电设备、汽车零部件、粮食深加工、冻品、对日韩俄贸易货物</p>
+            <p><strong class="text-gray-900" data-i18n="coreAdvantages">核心优势：</strong><span data-i18n="dalianAdv">东北地区出海门户，日韩俄航线最近，冷链物流优势，RCEP成员国全覆盖</span></p>
+            <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="dalianProducts">化工品、机电设备、汽车零部件、粮食深加工、冻品、对日韩俄贸易货物</span></p>
           </div>
         </div>
-        
+      </div>
     </div>
   </section>
 
@@ -341,67 +303,64 @@
     <div class="max-w-4xl mx-auto px-6 lg:px-12">
       <div class="bg-gradient-to-br from-deep-blue to-[#1a5a9e] rounded-3xl p-8 lg:p-12 shadow-2xl">
         <div class="text-center mb-8">
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">智能港口推荐工具</h2>
-          <p class="text-white/70">输入您的出货信息，获取最优港口推荐</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2" data-i18n="toolTitle">智能港口推荐工具</h2>
+          <p class="text-white/70" data-i18n="toolSubtitle">输入您的出货信息，获取最优港口推荐</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
-            <label class="block text-white/80 text-sm mb-2">产品产地</label>
+            <label class="block text-white/80 text-sm mb-2" data-i18n="labelOrigin">产品产地</label>
             <select id="origin" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange">
-              <option value="" class="text-gray-900">请选择产地</option>
-              <option value="prd" class="text-gray-900">珠三角（深圳/东莞/广州）</option>
-              <option value="yrd" class="text-gray-900">长三角（宁波/苏州/上海）</option>
-              <option value="bohai" class="text-gray-900">环渤海（青岛/天津/烟台）</option>
-              <option value="zhejiang" class="text-gray-900">浙江（义乌/台州/金华）</option>
-              <option value="central" class="text-gray-900">中西部（重庆/西安/武汉）</option>
+              <option value="" class="text-gray-900" data-i18n="selectOrigin">请选择产地</option>
+              <option value="prd" class="text-gray-900" data-i18n="optPRD">珠三角（深圳/东莞/广州）</option>
+              <option value="yrd" class="text-gray-900" data-i18n="optYRD">长三角（宁波/苏州/上海）</option>
+              <option value="bohai" class="text-gray-900" data-i18n="optBohai">环渤海（青岛/天津/烟台）</option>
+              <option value="zhejiang" class="text-gray-900" data-i18n="optZhejiang">浙江（义乌/台州/金华）</option>
+              <option value="central" class="text-gray-900" data-i18n="optCentral">中西部（重庆/西安/武汉）</option>
             </select>
           </div>
           <div>
-            <label class="block text-white/80 text-sm mb-2">目的地</label>
+            <label class="block text-white/80 text-sm mb-2" data-i18n="labelDestination">目的地</label>
             <select id="destination" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange">
-              <option value="" class="text-gray-900">请选择目的地</option>
-              <option value="europe" class="text-gray-900">欧洲</option>
-              <option value="usa" class="text-gray-900">美国</option>
-              <option value="japan-korea" class="text-gray-900">日韩</option>
-              <option value="sea" class="text-gray-900">东南亚</option>
-              <option value="central-asia" class="text-gray-900">中亚</option>
-              <option value="middle-east" class="text-gray-900">中东</option>
+              <option value="" class="text-gray-900" data-i18n="selectDest">请选择目的地</option>
+              <option value="europe" class="text-gray-900" data-i18n="optEurope">欧洲</option>
+              <option value="usa" class="text-gray-900" data-i18n="optUSA">美国</option>
+              <option value="japan-korea" class="text-gray-900" data-i18n="optJapanKorea">日韩</option>
+              <option value="sea" class="text-gray-900" data-i18n="optSEA">东南亚</option>
+              <option value="central-asia" class="text-gray-900" data-i18n="optCentralAsia">中亚</option>
+              <option value="middle-east" class="text-gray-900" data-i18n="optMiddleEast">中东</option>
             </select>
           </div>
           <div>
-            <label class="block text-white/80 text-sm mb-2">货量</label>
+            <label class="block text-white/80 text-sm mb-2" data-i18n="labelVolume">货量</label>
             <select id="volume" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange">
-              <option value="" class="text-gray-900">请选择货量</option>
-              <option value="lcl" class="text-gray-900">拼箱（LCL）</option>
-              <option value="20gp" class="text-gray-900">20尺柜</option>
-              <option value="40gp" class="text-gray-900">40尺柜</option>
-              <option value="40hq" class="text-gray-900">40尺高柜</option>
-              <option value="bulk" class="text-gray-900">大宗货物</option>
+              <option value="" class="text-gray-900" data-i18n="selectVolume">请选择货量</option>
+              <option value="lcl" class="text-gray-900" data-i18n="optLCL">拼箱（LCL）</option>
+              <option value="20gp" class="text-gray-900" data-i18n="opt20GP">20尺柜</option>
+              <option value="40gp" class="text-gray-900" data-i18n="opt40GP">40尺柜</option>
+              <option value="40hq" class="text-gray-900" data-i18n="opt40HQ">40尺高柜</option>
+              <option value="bulk" class="text-gray-900" data-i18n="optBulk">大宗货物</option>
             </select>
           </div>
           <div>
-            <label class="block text-white/80 text-sm mb-2">时效要求</label>
+            <label class="block text-white/80 text-sm mb-2" data-i18n="labelUrgency">时效要求</label>
             <select id="urgency" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange">
-              <option value="" class="text-gray-900">请选择时效</option>
-              <option value="normal" class="text-gray-900">标准（成本优先）</option>
-              <option value="fast" class="text-gray-900">快速（时效优先）</option>
-              <option value="express" class="text-gray-900">特急（空运考虑）</option>
+              <option value="" class="text-gray-900" data-i18n="selectUrgency">请选择时效</option>
+              <option value="normal" class="text-gray-900" data-i18n="optNormal">标准（成本优先）</option>
+              <option value="fast" class="text-gray-900" data-i18n="optFast">快速（时效优先）</option>
+              <option value="express" class="text-gray-900" data-i18n="optExpress">特急（空运考虑）</option>
             </select>
           </div>
         </div>
         
-        <button onclick="getPortRecommendation()" class="w-full bg-vibrant-orange hover:bg-vibrant-orange/90 text-white py-4 rounded-xl font-semibold transition-colors">
+        <button onclick="getPortRecommendation()" class="w-full bg-vibrant-orange hover:bg-vibrant-orange/90 text-white py-4 rounded-xl font-semibold transition-colors" data-i18n="btnGetRecommend">
           获取港口推荐
         </button>
         
-        <!-- Result Area -->
         <div id="port-result" class="hidden mt-6 p-6 bg-white/10 rounded-xl backdrop-blur-sm">
           <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 bg-vibrant-orange rounded-lg flex items-center justify-center">
-              
-            </div>
-            <h3 class="text-white font-semibold">推荐方案</h3>
+            <div class="w-10 h-10 bg-vibrant-orange rounded-lg flex items-center justify-center"></div>
+            <h3 class="text-white font-semibold" data-i18n="recommendTitle">推荐方案</h3>
           </div>
           <div id="port-result-content" class="text-white/80 text-sm space-y-2"></div>
         </div>
@@ -413,80 +372,54 @@
   <section class="py-16 bg-light-gray">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/10 text-vibrant-orange text-sm font-medium rounded-full mb-4">为什么选择青岛港</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">青岛港深度优势</h2>
+        <span class="inline-block px-4 py-1.5 bg-vibrant-orange/10 text-vibrant-orange text-sm font-medium rounded-full mb-4" data-i18n="deepBadge">为什么选择青岛港</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="deepTitle">青岛港深度优势</h2>
       </div>
       
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-        <!-- Geographic Advantage -->
         <div class="bg-white rounded-2xl p-6 shadow-lg">
-          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-            
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">地理优势</h3>
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4"></div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="geoTitle">地理优势</h3>
           <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              
-              <span>中国北方最大港口之一，全球前十</span>
-            </li>
-            <li class="flex items-start gap-2">
-              
-              <span>日韩黄金通道：到釜山仅300海里，比上海快2天</span>
-            </li>
-            <li class="flex items-start gap-2">
-              
-              <span>一带一路节点：中亚班列起点</span>
-            </li>
+            <li class="flex items-start gap-2" data-i18n="geo1">中国北方最大港口之一，全球前十</li>
+            <li class="flex items-start gap-2" data-i18n="geo2">日韩黄金通道：到釜山仅300海里，比上海快2天</li>
+            <li class="flex items-start gap-2" data-i18n="geo3">一带一路节点：中亚班列起点</li>
           </ul>
         </div>
         
-        <!-- Local Advantage -->
         <div class="bg-white rounded-2xl p-6 shadow-lg">
-          <div class="w-12 h-12 bg-vibrant-orange/10 rounded-xl flex items-center justify-center mb-4">
-            
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">我们的本地优势</h3>
+          <div class="w-12 h-12 bg-vibrant-orange/10 rounded-xl flex items-center justify-center mb-4"></div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="localTitle">我们的本地优势</h3>
           <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              
-              <span>十年青岛港操作经验</span>
-            </li>
-            <li class="flex items-start gap-2">
-              
-              <span>与MSK、MSC、COSCO等船公司深度关系</span>
-            </li>
-            <li class="flex items-start gap-2">
-              
-              <span>自有保税仓库资源</span>
-            </li>
+            <li class="flex items-start gap-2" data-i18n="local1">十年青岛港操作经验</li>
+            <li class="flex items-start gap-2" data-i18n="local2">与MSK、MSC、COSCO等船公司深度关系</li>
+            <li class="flex items-start gap-2" data-i18n="local3">自有保税仓库资源</li>
           </ul>
         </div>
         
-        <!-- Route Table -->
         <div class="bg-white rounded-2xl p-6 shadow-lg lg:col-span-1">
-          <h3 class="text-xl font-bold text-gray-900 mb-4">青岛港航线时效</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-4" data-i18n="routeTableTitle">青岛港航线时效</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-sm route-table">
               <thead>
                 <tr>
-                  <th class="px-3 py-2 text-left rounded-tl-lg">目的地</th>
-                  <th class="px-3 py-2 text-center">天数</th>
-                  <th class="px-3 py-2 text-center rounded-tr-lg">船期</th>
+                  <th class="px-3 py-2 text-left rounded-tl-lg" data-i18n="thDest">目的地</th>
+                  <th class="px-3 py-2 text-center" data-i18n="thDays">天数</th>
+                  <th class="px-3 py-2 text-center rounded-tr-lg" data-i18n="thFreq">船期</th>
                 </tr>
               </thead>
               <tbody class="text-gray-600">
-                <tr><td class="px-3 py-2">韩国釜山</td><td class="px-3 py-2 text-center">2-3天</td><td class="px-3 py-2 text-center">每日</td></tr>
-                <tr><td class="px-3 py-2">日本横滨</td><td class="px-3 py-2 text-center">3-5天</td><td class="px-3 py-2 text-center">每日</td></tr>
-                <tr><td class="px-3 py-2">泰国曼谷</td><td class="px-3 py-2 text-center">7-9天</td><td class="px-3 py-2 text-center">每周3班</td></tr>
-                <tr><td class="px-3 py-2">洛杉矶</td><td class="px-3 py-2 text-center">13-15天</td><td class="px-3 py-2 text-center">每周5班</td></tr>
-                <tr><td class="px-3 py-2">鹿特丹</td><td class="px-3 py-2 text-center">22-25天</td><td class="px-3 py-2 text-center">每周2班</td></tr>
-                <tr><td class="px-3 py-2">阿拉木图</td><td class="px-3 py-2 text-center">5-7天</td><td class="px-3 py-2 text-center">每周2班</td></tr>
+                <tr><td class="px-3 py-2" data-i18n="destBusan">韩国釜山</td><td class="px-3 py-2 text-center">2-3天</td><td class="px-3 py-2 text-center" data-i18n="freqDaily">每日</td></tr>
+                <tr><td class="px-3 py-2" data-i18n="destYokohama">日本横滨</td><td class="px-3 py-2 text-center">3-5天</td><td class="px-3 py-2 text-center" data-i18n="freqDaily">每日</td></tr>
+                <tr><td class="px-3 py-2" data-i18n="destBangkok">泰国曼谷</td><td class="px-3 py-2 text-center">7-9天</td><td class="px-3 py-2 text-center" data-i18n="freq3Weekly">每周3班</td></tr>
+                <tr><td class="px-3 py-2" data-i18n="destLA">洛杉矶</td><td class="px-3 py-2 text-center">13-15天</td><td class="px-3 py-2 text-center" data-i18n="freq5Weekly">每周5班</td></tr>
+                <tr><td class="px-3 py-2" data-i18n="destRotterdam">鹿特丹</td><td class="px-3 py-2 text-center">22-25天</td><td class="px-3 py-2 text-center" data-i18n="freq2Weekly">每周2班</td></tr>
+                <tr><td class="px-3 py-2" data-i18n="destAlmaty">阿拉木图</td><td class="px-3 py-2 text-center">5-7天</td><td class="px-3 py-2 text-center" data-i18n="freq2Weekly">每周2班</td></tr>
               </tbody>
             </table>
           </div>
         </div>
-
-        
+      </div>
     </div>
   </section>
 
@@ -494,28 +427,27 @@
   <section class="py-16 bg-white">
     <div class="max-w-3xl mx-auto px-6 lg:px-12">
       <div class="bg-gradient-to-br from-deep-blue to-[#1a5a9e] rounded-3xl p-8 lg:p-12 shadow-2xl text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">告诉我们你的目的地，我们算最优路径</h2>
-        <p class="text-white/70 mb-8">获取定制化的物流方案与报价</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4" data-i18n="ctaTitle">告诉我们你的目的地，我们算最优路径</h2>
+        <p class="text-white/70 mb-8" data-i18n="ctaSubtitle">获取定制化的物流方案与报价</p>
         
-        <form class="space-y-4 text-left" onsubmit="event.preventDefault(); alert('感谢您的咨询，我们的物流专家将在24小时内与您联系！');">
+        <form class="space-y-4 text-left" onsubmit="event.preventDefault(); alert(currentLang === 'zh' ? '感谢您的咨询，我们的物流专家将在24小时内与您联系！' : 'Thank you for your inquiry. Our logistics expert will contact you within 24 hours!');">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" placeholder="起运地" class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-vibrant-orange">
-            <input type="text" placeholder="目的地" class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-vibrant-orange">
+            <input type="text" placeholder="起运地" class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-vibrant-orange" data-i18n-placeholder="placeholderOrigin">
+            <input type="text" placeholder="目的地" class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-vibrant-orange" data-i18n-placeholder="placeholderDest">
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" placeholder="货量（如：1个20尺柜）" class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-vibrant-orange">
+            <input type="text" placeholder="货量（如：1个20尺柜）" class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-vibrant-orange" data-i18n-placeholder="placeholderVolume">
             <select class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange">
-              <option value="" class="text-gray-900">时效要求</option>
-              <option value="normal" class="text-gray-900">标准</option>
-              <option value="fast" class="text-gray-900">快速</option>
-              <option value="express" class="text-gray-900">特急</option>
+              <option value="" class="text-gray-900" data-i18n="selectUrgency">时效要求</option>
+              <option value="normal" class="text-gray-900" data-i18n="optNormal">标准</option>
+              <option value="fast" class="text-gray-900" data-i18n="optFast">快速</option>
+              <option value="express" class="text-gray-900" data-i18n="optExpress">特急</option>
             </select>
           </div>
-          <input type="email" placeholder="联系邮箱" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-vibrant-orange">
+          <input type="email" placeholder="联系邮箱" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-vibrant-orange" data-i18n-placeholder="placeholderEmail">
           
-          <button type="submit" class="w-full bg-vibrant-orange hover:bg-vibrant-orange/90 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2">
+          <button type="submit" class="w-full bg-vibrant-orange hover:bg-vibrant-orange/90 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2" data-i18n="btnSubmit">
             获取物流方案与报价
-            
           </button>
         </form>
       </div>
@@ -526,62 +458,53 @@
   <footer class="bg-deep-blue text-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        <!-- Brand -->
         <div class="lg:col-span-1">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 bg-vibrant-orange rounded-lg flex items-center justify-center">
-              
-            </div>
+            <div class="w-10 h-10 bg-vibrant-orange rounded-lg flex items-center justify-center"></div>
             <span class="font-bold text-xl">ETC Sourcing</span>
           </div>
-          <p class="text-white/70 text-sm leading-relaxed mb-4">
+          <p class="text-white/70 text-sm leading-relaxed mb-4" data-i18n="footerDesc">
             你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。
           </p>
           <div class="space-y-2 text-sm text-white/70">
             <div class="flex items-center gap-2">
-              
-              <span>中国 · 山东省青岛市</span>
+              <span data-i18n="footerLocation">中国 · 山东省青岛市</span>
             </div>
             <div class="flex items-center gap-2">
-              
               <span>contact@etcsourcing.cn</span>
             </div>
             <div class="flex items-center gap-2">
-              
               <span>WeChat: 0086 18766270137</span>
             </div>
           </div>
         </div>
         
-        <!-- Quick Links -->
         <div>
-          <h4 class="font-semibold text-lg mb-5">快速链接</h4>
+          <h4 class="font-semibold text-lg mb-5" data-i18n="footerLinks">快速链接</h4>
           <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="index.html" class="hover:text-white transition-colors">首页</a></li>
-            <li><a href="network.html" class="hover:text-white transition-colors">采购网络</a></li>
-            <li><a href="shipping.html" class="hover:text-white transition-colors">出口方案</a></li>
-            <li><a href="index.html#process" class="hover:text-white transition-colors">服务流程</a></li>
+            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="navHome">首页</a></li>
+            <li><a href="network.html" class="hover:text-white transition-colors" data-i18n="navNetwork">采购网络</a></li>
+            <li><a href="shipping.html" class="hover:text-white transition-colors" data-i18n="navShipping">出口方案</a></li>
+            <li><a href="index.html#process" class="hover:text-white transition-colors" data-i18n="navProcess">服务流程</a></li>
           </ul>
         </div>
         
-        <!-- Services -->
         <div>
-          <h4 class="font-semibold text-lg mb-5">服务</h4>
+          <h4 class="font-semibold text-lg mb-5" data-i18n="footerServices">服务</h4>
           <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="#" class="hover:text-white transition-colors">全国采购网络</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">全品类覆盖</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">第三方品控</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">多港口出口</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="svcNetwork">全国采购网络</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="svcCategories">全品类覆盖</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="svcQC">第三方品控</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="svcPorts">多港口出口</a></li>
           </ul>
         </div>
         
-        <!-- Contact -->
         <div>
-          <h4 class="font-semibold text-lg mb-5">联系我们</h4>
+          <h4 class="font-semibold text-lg mb-5" data-i18n="footerContact">联系我们</h4>
           <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="index.html#cta" class="hover:text-white transition-colors">在线咨询</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">关于我们</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">加入我们</a></li>
+            <li><a href="index.html#cta" class="hover:text-white transition-colors" data-i18n="footerOnline">在线咨询</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footerAbout">关于我们</a></li>
+            <li><a href="#" class="hover:text-white transition-colors" data-i18n="footerJoin">加入我们</a></li>
           </ul>
         </div>
       </div>
@@ -593,91 +516,394 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
+    const i18nData = {
+      zh: {
+        pageTitle: "多港口出口方案 — ETC Sourcing",
+        navHome: "首页",
+        navNetwork: "采购网络",
+        navShipping: "出口方案",
+        navProcess: "服务流程",
+        navTestimonials: "客户评价",
+        navContact: "联系我们",
+        heroBadge: "多港口灵活调配",
+        heroTitle1: "不只是青岛，更是全国港口",
+        heroTitle2: "最优路径出海",
+        heroSubtitle: "根据你的产品、目的地、时效要求，灵活选择最优出口港<br>降低物流成本，缩短交货周期",
+        stat1: "大常用出口港",
+        stat2: "覆盖目的港",
+        stat3: "平均节省物流成本",
+        mapBadge: "中国沿海港口网络",
+        mapTitle: "从产业带到港口，最优路径",
+        portBadge: "七大核心港口",
+        portTitle: "选择最适合你的出口港",
+        qingdaoName: "青岛港",
+        qingdaoTag: "ETC总部基地港",
+        qingdaoLocation: "山东半岛，黄海之滨",
+        coreAdvantages: "核心优势",
+        qingdaoAdv1: "• 距离日韩最近：3-5天到釜山/横滨/大阪",
+        qingdaoAdv2: "• 中亚海铁联运枢纽：到中亚5-7天",
+        qingdaoAdv3: "• 北方冷链物流中心",
+        qingdaoAdv4: "• ETC主场：十年本地深耕",
+        suitableProducts: "适合产品",
+        qingdaoProducts: "机械设备、化工品、农产品、日韩航线货物、中亚班列货物",
+        mainRoutes: "主要航线",
+        qingdaoRoutes: "日韩、东南亚、美西、欧洲、中亚（铁路）",
+        ningboName: "宁波港",
+        ningboTag: "全球最大港口",
+        ningboAdv: "吞吐量全球第一，欧洲航线优势，义乌小商品最近主港",
+        ningboProducts: "日用消费品、五金工具、电子产品",
+        shanghaiName: "上海港",
+        shanghaiTag: "国际航运中心",
+        shanghaiAdv: "航线最密集，高端制造首选，空运衔接便利",
+        shanghaiProducts: "高货值产品、紧急订单",
+        shenzhenName: "深圳港",
+        shenzhenTag: "华南枢纽",
+        shenzhenAdv: "电子产品出口最快，美西快线，跨境电商首选",
+        shenzhenProducts: "消费电子、电器、跨境电商货物",
+        tianjinName: "天津港",
+        tianjinTag: "北方国际航运中心",
+        tianjinAdv: "首都经济圈出海口，蒙古/俄罗斯中转，汽车出口",
+        tianjinProducts: "机械设备、汽车、钢材、华北产地货物",
+        xiamenName: "厦门港",
+        xiamenTag: "海峡西岸",
+        xiamenAdv: "对台贸易最便利，东南亚快线，石材建材出口",
+        xiamenProducts: "建材、石材、对台/东南亚货物",
+        dalianName: "大连港",
+        dalianTag: "东北门户",
+        dalianAdv: "东北地区出海门户，日韩俄航线最近，冷链物流优势，RCEP成员国全覆盖",
+        dalianProducts: "化工品、机电设备、汽车零部件、粮食深加工、冻品、对日韩俄贸易货物",
+        toolTitle: "智能港口推荐工具",
+        toolSubtitle: "输入您的出货信息，获取最优港口推荐",
+        labelOrigin: "产品产地",
+        selectOrigin: "请选择产地",
+        optPRD: "珠三角（深圳/东莞/广州）",
+        optYRD: "长三角（宁波/苏州/上海）",
+        optBohai: "环渤海（青岛/天津/烟台）",
+        optZhejiang: "浙江（义乌/台州/金华）",
+        optCentral: "中西部（重庆/西安/武汉）",
+        labelDestination: "目的地",
+        selectDest: "请选择目的地",
+        optEurope: "欧洲",
+        optUSA: "美国",
+        optJapanKorea: "日韩",
+        optSEA: "东南亚",
+        optCentralAsia: "中亚",
+        optMiddleEast: "中东",
+        labelVolume: "货量",
+        selectVolume: "请选择货量",
+        optLCL: "拼箱（LCL）",
+        opt20GP: "20尺柜",
+        opt40GP: "40尺柜",
+        opt40HQ: "40尺高柜",
+        optBulk: "大宗货物",
+        labelUrgency: "时效要求",
+        selectUrgency: "请选择时效",
+        optNormal: "标准（成本优先）",
+        optFast: "快速（时效优先）",
+        optExpress: "特急（空运考虑）",
+        btnGetRecommend: "获取港口推荐",
+        recommendTitle: "推荐方案",
+        recPort: "推荐港口",
+        recReason: "推荐理由",
+        recTime: "预估时效",
+        recCost: "成本水平",
+        deepBadge: "为什么选择青岛港",
+        deepTitle: "青岛港深度优势",
+        geoTitle: "地理优势",
+        geo1: "中国北方最大港口之一，全球前十",
+        geo2: "日韩黄金通道：到釜山仅300海里，比上海快2天",
+        geo3: "一带一路节点：中亚班列起点",
+        localTitle: "我们的本地优势",
+        local1: "十年青岛港操作经验",
+        local2: "与MSK、MSC、COSCO等船公司深度关系",
+        local3: "自有保税仓库资源",
+        routeTableTitle: "青岛港航线时效",
+        thDest: "目的地",
+        thDays: "天数",
+        thFreq: "船期",
+        destBusan: "韩国釜山",
+        destYokohama: "日本横滨",
+        destBangkok: "泰国曼谷",
+        destLA: "洛杉矶",
+        destRotterdam: "鹿特丹",
+        destAlmaty: "阿拉木图",
+        freqDaily: "每日",
+        freq3Weekly: "每周3班",
+        freq5Weekly: "每周5班",
+        freq2Weekly: "每周2班",
+        ctaTitle: "告诉我们你的目的地，我们算最优路径",
+        ctaSubtitle: "获取定制化的物流方案与报价",
+        placeholderOrigin: "起运地",
+        placeholderDest: "目的地",
+        placeholderVolume: "货量（如：1个20尺柜）",
+        placeholderEmail: "联系邮箱",
+        btnSubmit: "获取物流方案与报价",
+        footerDesc: "你的中国供应链整合伙伴。跨品类、跨产业带、多港口出口，让全球采购更简单。",
+        footerLocation: "中国 · 山东省青岛市",
+        footerLinks: "快速链接",
+        footerServices: "服务",
+        footerContact: "联系我们",
+        svcNetwork: "全国采购网络",
+        svcCategories: "全品类覆盖",
+        svcQC: "第三方品控",
+        svcPorts: "多港口出口",
+        footerOnline: "在线咨询",
+        footerAbout: "关于我们",
+        footerJoin: "加入我们",
+        alertSelect: "请选择产品产地和目的地",
+        alertThanks: "感谢您的咨询，我们的物流专家将在24小时内与您联系！"
+      },
+      en: {
+        pageTitle: "Multi-Port Export Solutions — ETC Sourcing",
+        navHome: "Home",
+        navNetwork: "Sourcing Network",
+        navShipping: "Export Solutions",
+        navProcess: "Service Process",
+        navTestimonials: "Testimonials",
+        navContact: "Contact Us",
+        heroBadge: "Flexible Multi-Port Allocation",
+        heroTitle1: "Not Just Qingdao, But All China Ports",
+        heroTitle2: "Optimal Route to Global Markets",
+        heroSubtitle: "Choose the optimal export port based on your product, destination, and delivery requirements.<br>Reduce logistics costs and shorten lead times.",
+        stat1: "Major Export Ports",
+        stat2: "Destinations Covered",
+        stat3: "Average Logistics Savings",
+        mapBadge: "China Coastal Port Network",
+        mapTitle: "From Industrial Belt to Port, Optimal Route",
+        portBadge: "Seven Core Ports",
+        portTitle: "Choose Your Best Export Port",
+        qingdaoName: "Qingdao Port",
+        qingdaoTag: "ETC HQ Base Port",
+        qingdaoLocation: "Shandong Peninsula, Yellow Sea",
+        coreAdvantages: "Core Advantages",
+        qingdaoAdv1: "• Closest to Japan & Korea: 3-5 days to Busan/Yokohama/Osaka",
+        qingdaoAdv2: "• Central Asia Rail-Sea Hub: 5-7 days to Central Asia",
+        qingdaoAdv3: "• Northern Cold Chain Logistics Center",
+        qingdaoAdv4: "• ETC Home Base: 10 Years Local Expertise",
+        suitableProducts: "Suitable Products",
+        qingdaoProducts: "Machinery, Chemicals, Agricultural Products, Japan/Korea Routes, Central Asia Rail Cargo",
+        mainRoutes: "Main Routes",
+        qingdaoRoutes: "Japan/Korea, Southeast Asia, US West Coast, Europe, Central Asia (Rail)",
+        ningboName: "Ningbo Port",
+        ningboTag: "World's Largest Port",
+        ningboAdv: "World's #1 throughput, Europe route advantage, closest main port for Yiwu small commodities",
+        ningboProducts: "Daily Consumer Goods, Hardware Tools, Electronics",
+        shanghaiName: "Shanghai Port",
+        shanghaiTag: "International Shipping Center",
+        shanghaiAdv: "Most dense routes, preferred for high-end manufacturing, convenient air freight connection",
+        shanghaiProducts: "High-value Products, Urgent Orders",
+        shenzhenName: "Shenzhen Port",
+        shenzhenTag: "South China Hub",
+        shenzhenAdv: "Fastest electronics export, US West Coast express, preferred for cross-border e-commerce",
+        shenzhenProducts: "Consumer Electronics, Appliances, Cross-border E-commerce Cargo",
+        tianjinName: "Tianjin Port",
+        tianjinTag: "Northern International Shipping Center",
+        tianjinAdv: "Capital economic zone seaport, Mongolia/Russia transit, automobile export",
+        tianjinProducts: "Machinery, Automobiles, Steel, North China Origin Goods",
+        xiamenName: "Xiamen Port",
+        xiamenTag: "West Coast of Taiwan Strait",
+        xiamenAdv: "Most convenient for Taiwan trade, Southeast Asia express, stone/building materials export",
+        xiamenProducts: "Building Materials, Stone, Taiwan/Southeast Asia Cargo",
+        dalianName: "Dalian Port",
+        dalianTag: "Northeast Gateway",
+        dalianAdv: "Northeast China seaport gateway, closest Japan/Korea/Russia routes, cold chain advantage, full RCEP coverage",
+        dalianProducts: "Chemicals, Electromechanical Equipment, Auto Parts, Grain Processing, Frozen Goods, Japan/Korea/Russia Trade",
+        toolTitle: "Smart Port Recommendation Tool",
+        toolSubtitle: "Enter your shipping info to get the optimal port recommendation",
+        labelOrigin: "Product Origin",
+        selectOrigin: "Select Origin",
+        optPRD: "Pearl River Delta (Shenzhen/Dongguan/Guangzhou)",
+        optYRD: "Yangtze River Delta (Ningbo/Suzhou/Shanghai)",
+        optBohai: "Bohai Rim (Qingdao/Tianjin/Yantai)",
+        optZhejiang: "Zhejiang (Yiwu/Taizhou/Jinhua)",
+        optCentral: "Central/West (Chongqing/Xi'an/Wuhan)",
+        labelDestination: "Destination",
+        selectDest: "Select Destination",
+        optEurope: "Europe",
+        optUSA: "USA",
+        optJapanKorea: "Japan & Korea",
+        optSEA: "Southeast Asia",
+        optCentralAsia: "Central Asia",
+        optMiddleEast: "Middle East",
+        labelVolume: "Volume",
+        selectVolume: "Select Volume",
+        optLCL: "LCL (Less than Container Load)",
+        opt20GP: "20' GP",
+        opt40GP: "40' GP",
+        opt40HQ: "40' HQ",
+        optBulk: "Bulk Cargo",
+        labelUrgency: "Urgency",
+        selectUrgency: "Select Urgency",
+        optNormal: "Standard (Cost Priority)",
+        optFast: "Fast (Time Priority)",
+        optExpress: "Express (Air Freight Considered)",
+        btnGetRecommend: "Get Port Recommendation",
+        recommendTitle: "Recommended Solution",
+        recPort: "Recommended Port",
+        recReason: "Reason",
+        recTime: "Est. Transit Time",
+        recCost: "Cost Level",
+        deepBadge: "Why Qingdao Port",
+        deepTitle: "Qingdao Port In-Depth Advantages",
+        geoTitle: "Geographic Advantages",
+        geo1: "One of China's largest northern ports, top 10 globally",
+        geo2: "Japan/Korea Golden Channel: Only 300nm to Busan, 2 days faster than Shanghai",
+        geo3: "Belt & Road Node: Central Asia Rail starting point",
+        localTitle: "Our Local Advantages",
+        local1: "10 years of Qingdao Port operation experience",
+        local2: "Deep relationships with MSK, MSC, COSCO and other carriers",
+        local3: "Own bonded warehouse resources",
+        routeTableTitle: "Qingdao Port Route Transit Times",
+        thDest: "Destination",
+        thDays: "Days",
+        thFreq: "Frequency",
+        destBusan: "Busan, Korea",
+        destYokohama: "Yokohama, Japan",
+        destBangkok: "Bangkok, Thailand",
+        destLA: "Los Angeles",
+        destRotterdam: "Rotterdam",
+        destAlmaty: "Almaty",
+        freqDaily: "Daily",
+        freq3Weekly: "3x Weekly",
+        freq5Weekly: "5x Weekly",
+        freq2Weekly: "2x Weekly",
+        ctaTitle: "Tell Us Your Destination, We'll Calculate the Optimal Route",
+        ctaSubtitle: "Get customized logistics solutions and quotes",
+        placeholderOrigin: "Origin",
+        placeholderDest: "Destination",
+        placeholderVolume: "Volume (e.g., 1x 20' GP)",
+        placeholderEmail: "Email",
+        btnSubmit: "Get Logistics Solution & Quote",
+        footerDesc: "Your China supply chain integration partner. Cross-category, cross-industrial-belt, multi-port export — making global sourcing easier.",
+        footerLocation: "Qingdao, Shandong, China",
+        footerLinks: "Quick Links",
+        footerServices: "Services",
+        footerContact: "Contact Us",
+        svcNetwork: "Nationwide Sourcing Network",
+        svcCategories: "Full Category Coverage",
+        svcQC: "Third-party QC",
+        svcPorts: "Multi-Port Export",
+        footerOnline: "Online Inquiry",
+        footerAbout: "About Us",
+        footerJoin: "Join Us",
+        alertSelect: "Please select product origin and destination",
+        alertThanks: "Thank you for your inquiry. Our logistics expert will contact you within 24 hours!"
+      }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'zh';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      document.getElementById('lang-text').textContent = lang === 'zh' ? 'EN' : '中文';
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18nData[lang][key]) {
+          if (el.tagName === 'TITLE') {
+            document.title = i18nData[lang][key];
+          } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = i18nData[lang][key];
+          } else {
+            el.innerHTML = i18nData[lang][key];
+          }
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (i18nData[lang][key]) {
+          el.placeholder = i18nData[lang][key];
+        }
+      });
+    }
+
+    function toggleLang() {
+      const newLang = currentLang === 'zh' ? 'en' : 'zh';
+      setLanguage(newLang);
+    }
+
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       menu.classList.toggle('hidden');
     }
-    
-    // Language toggle
-    let currentLang = 'zh';
-    function toggleLang() {
-      currentLang = currentLang === 'zh' ? 'en' : 'zh';
-      document.getElementById('lang-text').textContent = currentLang === 'zh' ? 'EN' : '中文';
-    }
-    
-    // Port recommendation tool
+
     function getPortRecommendation() {
       const origin = document.getElementById('origin').value;
       const destination = document.getElementById('destination').value;
-      const volume = document.getElementById('volume').value;
-      const urgency = document.getElementById('urgency').value;
       const resultDiv = document.getElementById('port-result');
       const resultContent = document.getElementById('port-result-content');
-      
+
       if (!origin || !destination) {
-        alert('请选择产品产地和目的地');
+        alert(i18nData[currentLang].alertSelect);
         return;
       }
-      
+
       const recommendations = {
         'bohai-japan-korea': {
-          port: '青岛港',
-          reason: '距离日韩最近，3-5天直达',
-          time: '3-5天',
-          cost: '中等'
+          port: currentLang === 'zh' ? '青岛港' : 'Qingdao Port',
+          reason: currentLang === 'zh' ? '距离日韩最近，3-5天直达' : 'Closest to Japan & Korea, 3-5 days direct',
+          time: '3-5天 / 3-5 days',
+          cost: currentLang === 'zh' ? '中等' : 'Medium'
         },
         'bohai-central-asia': {
-          port: '青岛港',
-          reason: '中亚海铁联运枢纽，ETC主场优势',
-          time: '5-7天（铁路）',
-          cost: '较低'
+          port: currentLang === 'zh' ? '青岛港' : 'Qingdao Port',
+          reason: currentLang === 'zh' ? '中亚海铁联运枢纽，ETC主场优势' : 'Central Asia rail-sea hub, ETC home advantage',
+          time: currentLang === 'zh' ? '5-7天（铁路）' : '5-7 days (Rail)',
+          cost: currentLang === 'zh' ? '较低' : 'Lower'
         },
         'yrd-europe': {
-          port: '宁波港/上海港',
-          reason: '欧洲航线优势，船期密集',
-          time: '16-22天',
-          cost: '中等'
+          port: currentLang === 'zh' ? '宁波港/上海港' : 'Ningbo/Shanghai Port',
+          reason: currentLang === 'zh' ? '欧洲航线优势，船期密集' : 'Europe route advantage, dense schedules',
+          time: '16-22天 / 16-22 days',
+          cost: currentLang === 'zh' ? '中等' : 'Medium'
         },
         'prd-usa': {
-          port: '深圳港',
-          reason: '美西快线，电子产品出口最快',
-          time: '14-18天',
-          cost: '中等'
+          port: currentLang === 'zh' ? '深圳港' : 'Shenzhen Port',
+          reason: currentLang === 'zh' ? '美西快线，电子产品出口最快' : 'US West Coast express, fastest electronics export',
+          time: '14-18天 / 14-18 days',
+          cost: currentLang === 'zh' ? '中等' : 'Medium'
         },
         'zhejiang-sea': {
-          port: '宁波港',
-          reason: '小商品最近主港，拼箱便利',
-          time: '7-12天',
-          cost: '较低'
+          port: currentLang === 'zh' ? '宁波港' : 'Ningbo Port',
+          reason: currentLang === 'zh' ? '小商品最近主港，拼箱便利' : 'Closest main port for small commodities, convenient LCL',
+          time: '7-12天 / 7-12 days',
+          cost: currentLang === 'zh' ? '较低' : 'Lower'
         },
         'central-europe': {
-          port: '中欧班列（经西安/重庆）',
-          reason: '比海运快10天，适合时效要求高的货物',
-          time: '12-14天',
-          cost: '较高'
+          port: currentLang === 'zh' ? '中欧班列（经西安/重庆）' : 'China-Europe Rail (via Xi\'an/Chongqing)',
+          reason: currentLang === 'zh' ? '比海运快10天，适合时效要求高的货物' : '10 days faster than sea, for time-sensitive cargo',
+          time: '12-14天 / 12-14 days',
+          cost: currentLang === 'zh' ? '较高' : 'Higher'
         }
       };
-      
+
       const key = origin + '-' + destination;
       const rec = recommendations[key];
-      
+      const t = i18nData[currentLang];
+
       if (rec) {
         resultContent.innerHTML = `
-          <p><strong>推荐港口：</strong>${rec.port}</p>
-          <p><strong>推荐理由：</strong>${rec.reason}</p>
-          <p><strong>预估时效：</strong>${rec.time}</p>
-          <p><strong>成本水平：</strong>${rec.cost}</p>
+          <p><strong>${t.recPort}：</strong>${rec.port}</p>
+          <p><strong>${t.recReason}：</strong>${rec.reason}</p>
+          <p><strong>${t.recTime}：</strong>${rec.time}</p>
+          <p><strong>${t.recCost}：</strong>${rec.cost}</p>
         `;
       } else {
         resultContent.innerHTML = `
-          <p>根据您的出货信息，我们建议联系我们的物流专家获取定制化方案。</p>
-          <p>多个港口可能适合您的需求，具体取决于您的成本与时效偏好。</p>
+          <p>${currentLang === 'zh' ? '根据您的出货信息，我们建议联系我们的物流专家获取定制化方案。' : 'Based on your shipping info, we recommend contacting our logistics expert for a customized solution.'}</p>
+          <p>${currentLang === 'zh' ? '多个港口可能适合您的需求，具体取决于您的成本与时效偏好。' : 'Multiple ports may suit your needs, depending on your cost and time preferences.'}</p>
         `;
       }
-      
+
       resultDiv.classList.remove('hidden');
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+    });
   </script>
 </body>
 </html>
