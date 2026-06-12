@@ -694,10 +694,10 @@ const industryCenters = [
 ];
 
 const industryInfo = {
-    'Bohai Rim': { title: 'Bohai Rim Industrial Belt', desc: 'Covering Beijing-Tianjin-Hebei, Shandong Peninsula, and Liaodong Peninsula. Strong in heavy industries including equipment manufacturing, chemicals, steel, and auto parts. Supported by Qingdao, Tianjin, and Dalian ports.', tags: ['Equipment Mfg.', 'Chemicals', 'Steel', 'Auto Parts'] },
-    'Yangtze Delta': { title: 'Yangtze River Delta + Zhejiang', desc: 'Centered on Shanghai, Hangzhou, Ningbo, and Suzhou. Dense clusters of machinery, hardware, daily goods, small commodities, textiles, and electronic components. Ningbo and Shanghai are the world\'s busiest ports.', tags: ['Machinery', 'Daily Goods', 'Small Commodities', 'Textiles'] },
-    'Pearl River Delta': { title: 'Pearl River Delta Industrial Belt', desc: 'Centered on Guangzhou, Shenzhen, Dongguan, and Foshan. Leading in electronics, consumer electronics, communication equipment, home appliances, and LED. Shenzhen and Guangzhou are the main southern export hubs.', tags: ['Electronics', 'Consumer Elec.', 'Comm. Equipment', 'Home Appliances'] },
-    'Central & Western': { title: 'Central & Western China Belt', desc: 'Centered on Chongqing, Chengdu, Wuhan, and Xi\'an. Fast-growing industries include automotive electronics, equipment manufacturing, optoelectronics, and new materials. Cost advantages with Yangtze River shipping and China-Europe Railway links.', tags: ['Auto Electronics', 'Equipment Mfg.', 'Optoelectronics', 'New Materials'] }
+    'Bohai Rim': { title: 'Bohai Rim Industrial Belt', desc: 'Beijing-Tianjin-Hebei, Shandong & Liaodong Peninsulas. Heavy industries: equipment, chemicals, steel, auto parts.', tags: ['Equipment Mfg.', 'Chemicals', 'Steel', 'Auto Parts'] },
+    'Yangtze Delta': { title: 'Yangtze River Delta + Zhejiang', desc: 'Shanghai, Hangzhou, Ningbo, Suzhou. Machinery, hardware, textiles, electronics. Ningbo & Shanghai: world's busiest ports.', tags: ['Machinery', 'Daily Goods', 'Small Commodities', 'Textiles'] },
+    'Pearl River Delta': { title: 'Pearl River Delta Industrial Belt', desc: 'Guangzhou, Shenzhen, Dongguan, Foshan. Electronics, consumer electronics, home appliances, LED.', tags: ['Electronics', 'Consumer Elec.', 'Comm. Equipment', 'Home Appliances'] },
+    'Central & Western': { title: 'Central & Western China Belt', desc: 'Chongqing, Chengdu, Wuhan, Xi'an. Auto electronics, equipment, optoelectronics, new materials.', tags: ['Auto Electronics', 'Equipment Mfg.', 'Optoelectronics', 'New Materials'] }
 };
 
 const ports = [
@@ -711,13 +711,13 @@ const ports = [
 ];
 
 const portInfo = {
-    'Dalian Port': { title: 'Dalian Port', desc: 'A major international shipping hub in Northeast Asia. Deep-water port and the largest comprehensive port in Northeast China, connecting Japan, Korea, and Russia Far East routes.', tags: ['NE Asia Hub', 'Deep-Water', 'Japan/Korea Routes'] },
-    'Tianjin Port': { title: 'Tianjin Port', desc: 'The maritime gateway to Beijing-Tianjin-Hebei. The largest comprehensive port in Northern China with top global container throughput. The most important export channel for North China.', tags: ['Beijing-Tianjin Gateway', 'Comprehensive Port', 'North China Hub'] },
-    'Qingdao Port': { title: 'Qingdao Port', desc: 'The largest container port in Northern China. World-leading automated terminal connecting Japan, Korea, Southeast Asia, Europe, and Americas.', tags: ['North China Largest Container', 'Automated Terminal', 'Global Routes'] },
-    'Shanghai Port': { title: 'Shanghai Port', desc: 'World\'s #1 container port by throughput. Located at the Yangtze River mouth, an international shipping center connecting 200+ countries and regions.', tags: ['Container #1 Global', 'Int\'l Shipping Center', 'Yangtze Gateway'] },
-    'Ningbo Port': { title: 'Ningbo Port', desc: 'World\'s #1 cargo port by throughput. Deep-water port with top-3 global container volume. The core foreign trade hub of the Yangtze Delta.', tags: ['Cargo #1 Global', 'Deep-Water', 'Trade Core Hub'] },
-    'Xiamen Port': { title: 'Xiamen Port', desc: 'A major container port on the Southeast coast. Key channel for Taiwan trade, connecting Southeast Asia and Japan/Korea routes. Main export gateway for the West Coast Economic Zone.', tags: ['Taiwan Trade', 'Southeast Coast', 'West Coast Zone'] },
-    'Shenzhen Port': { title: 'Shenzhen Port', desc: 'The largest container port in South China. Adjacent to Hong Kong, the main export channel for electronics and high-tech products, connecting major global routes.', tags: ['South China Largest Container', 'Electronics Export', 'Shenzhen-HK Link'] }
+    'Dalian Port': { title: 'Dalian Port', desc: 'NE Asia hub. Deep-water port, largest in Northeast China. Routes to Japan, Korea, Russia Far East.', tags: ['NE Asia Hub', 'Deep-Water', 'Japan/Korea Routes'] },
+    'Tianjin Port': { title: 'Tianjin Port', desc: 'Gateway to Beijing-Tianjin-Hebei. Largest comprehensive port in North China. Top global container throughput.', tags: ['Beijing-Tianjin Gateway', 'Comprehensive Port', 'North China Hub'] },
+    'Qingdao Port': { title: 'Qingdao Port', desc: 'Largest container port in North China. Automated terminal. Routes to Japan, Korea, SE Asia, Europe, Americas.', tags: ['North China Largest Container', 'Automated Terminal', 'Global Routes'] },
+    'Shanghai Port': { title: 'Shanghai Port', desc: 'World's #1 container port. Yangtze River mouth. Connects 200+ countries.', tags: ['Container #1 Global', 'Int\'l Shipping Center', 'Yangtze Gateway'] },
+    'Ningbo Port': { title: 'Ningbo Port', desc: 'World's #1 cargo port. Top-3 container volume. Core trade hub of Yangtze Delta.', tags: ['Cargo #1 Global', 'Deep-Water', 'Trade Core Hub'] },
+    'Xiamen Port': { title: 'Major SE coast container port. Taiwan trade channel. Routes to SE Asia, Japan, Korea.', tags: ['Taiwan Trade', 'Southeast Coast', 'West Coast Zone'] },
+    'Shenzhen Port': { title: 'Shenzhen Port', desc: 'Largest container port in South China. Adjacent to Hong Kong. Main channel for electronics & high-tech exports.', tags: ['South China Largest Container', 'Electronics Export', 'Shenzhen-HK Link'] }
 };
 
 function generateCirclePoints(center, radiusKm, numPoints) {
