@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ETC Sourcing — 你的中国供应链整合伙伴</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./echarts.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -271,69 +272,7 @@
         <p data-i18n="network_subtitle" class="text-gray-400 max-w-2xl mx-auto">从产业带到港口，为你匹配最优供应方案</p>
       </div>
       
-<div class="relative aspect-[16/9] bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden shadow-2xl mb-12">
-  <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 30px 30px;"></div>
-  
-  <svg viewBox="0 0 800 500" class="absolute inset-0 w-full h-full">
-    <!-- 中国轮廓背景 -->
-    <path d="M150,150 Q200,120 280,130 L350,125 Q450,115 520,145 L600,165 Q680,190 720,260 L740,320 Q720,380 660,430 L580,470 Q480,500 380,490 L280,470 Q200,450 150,410 L100,350 Q80,280 100,210 Q120,160 150,150 Z" 
-          fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
-    
-    <!-- 珠三角 -->
-    <g class="map-zone" onclick="window.location.href='network.html#prd'" style="cursor: pointer;">
-      <ellipse cx="520" cy="400" rx="75" ry="55" fill="#3B82F6" fill-opacity="0.35" stroke="#60A5FA" stroke-width="2.5"/>
-      <text x="520" y="382" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">珠三角</text>
-      <circle cx="520" cy="400" r="8" fill="#60A5FA"/>
-      <text x="520" y="420" text-anchor="middle" fill="#93C5FD" font-size="10">电子电器 · 消费电子</text>
-      <text x="520" y="445" text-anchor="middle" fill="#FDBA74" font-size="9" font-weight="500">深圳港</text>
-    </g>
-    
-<!-- 长三角+浙江（合并为一个产业带） -->
-<g class="map-zone" onclick="window.location.href='network.html#yrd'" style="cursor: pointer;">
-  <ellipse cx="590" cy="300" rx="100" ry="80" fill="#6B7280" fill-opacity="0.35" stroke="#9CA3AF" stroke-width="2.5"/>
-  <text x="590" y="275" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">长三角+浙江</text>
-  <circle cx="590" cy="295" r="8" fill="#9CA3AF"/>
-  <text x="590" y="315" text-anchor="middle" fill="#D1D5DB" font-size="10">机械五金 · 日用百货 · 小商品</text>
-  <!-- 城市标注：按实际地理位置分布 -->
-  <text x="650" y="250" text-anchor="middle" fill="#FDBA74" font-size="9" font-weight="500">上海</text>
-  <text x="560" y="265" text-anchor="middle" fill="#FDBA74" font-size="9" font-weight="500">浙江</text>
-  <text x="655" y="300" text-anchor="middle" fill="#FDBA74" font-size="9" font-weight="500">宁波</text>
-  <text x="545" y="330" text-anchor="middle" fill="#FDBA74" font-size="9" font-weight="500">义乌</text>
-</g>
-    
-    <!-- 环渤海 -->
-    <g class="map-zone" onclick="window.location.href='network.html#bohai'" style="cursor: pointer;">
-      <ellipse cx="550" cy="160" rx="95" ry="65" fill="#F97316" fill-opacity="0.25" stroke="#FB923C" stroke-width="3"/>
-      <text x="550" y="142" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">环渤海 ★</text>
-      <circle cx="550" cy="160" r="10" fill="#FB923C"/>
-      <text x="550" y="180" text-anchor="middle" fill="#FDBA74" font-size="10">装备化工 · 核心基地</text>
-      <text x="590" y="135" text-anchor="middle" fill="#FDBA74" font-size="10" font-weight="600">青岛港 ★</text>
-    </g>
-    
-    <!-- 中西部 -->
-    <g class="map-zone" onclick="window.location.href='network.html#central'" style="cursor: pointer;">
-      <ellipse cx="320" cy="300" rx="105" ry="75" fill="#10B981" fill-opacity="0.3" stroke="#34D399" stroke-width="2.5"/>
-      <text x="320" y="282" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">中西部</text>
-      <circle cx="320" cy="300" r="8" fill="#34D399"/>
-      <text x="320" y="320" text-anchor="middle" fill="#6EE7B7" font-size="10">汽摩电子 · 成本优势</text>
-    </g>
-  </svg>
-  
-  <!-- 底部提示 -->
-  <div class="absolute bottom-3 right-4 text-white/40 text-xs">
-    点击产业带查看详情 →
-  </div>
-</div>
-      
-      <div class="text-center">
-        <a href="network.html" class="inline-flex items-center gap-2 bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
-          <span data-i18n="network_cta">探索完整采购网络</span>
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      </div>
-    </div>
+<div id="supply-map" style="width:100%; height:500px; background:#0f172a; border-radius:24px;"></div>
   </section>
 
   <!-- Testimonials -->
@@ -745,6 +684,104 @@
   } else {
     setLanguage(currentLang);
   }
+</script>
+<script>
+const industryCenters = [
+    { name: 'Bohai Rim', coord: [118.5, 39.5], color: '#f97316' },
+    { name: 'Yangtze Delta', coord: [121.0, 31.5], color: '#eab308' },
+    { name: 'Pearl River Delta', coord: [113.5, 23.0], color: '#22c55e' },
+    { name: 'Central & Western', coord: [107.0, 30.0], color: '#38bdf8' }
+];
+
+const industryInfo = {
+    'Bohai Rim': { title: 'Bohai Rim Industrial Belt', desc: 'Covering Beijing-Tianjin-Hebei, Shandong Peninsula, and Liaodong Peninsula. Strong in heavy industries including equipment manufacturing, chemicals, steel, and auto parts. Supported by Qingdao, Tianjin, and Dalian ports.', tags: ['Equipment Mfg.', 'Chemicals', 'Steel', 'Auto Parts'] },
+    'Yangtze Delta': { title: 'Yangtze River Delta + Zhejiang', desc: 'Centered on Shanghai, Hangzhou, Ningbo, and Suzhou. Dense clusters of machinery, hardware, daily goods, small commodities, textiles, and electronic components. Ningbo and Shanghai are the world\'s busiest ports.', tags: ['Machinery', 'Daily Goods', 'Small Commodities', 'Textiles'] },
+    'Pearl River Delta': { title: 'Pearl River Delta Industrial Belt', desc: 'Centered on Guangzhou, Shenzhen, Dongguan, and Foshan. Leading in electronics, consumer electronics, communication equipment, home appliances, and LED. Shenzhen and Guangzhou are the main southern export hubs.', tags: ['Electronics', 'Consumer Elec.', 'Comm. Equipment', 'Home Appliances'] },
+    'Central & Western': { title: 'Central & Western China Belt', desc: 'Centered on Chongqing, Chengdu, Wuhan, and Xi\'an. Fast-growing industries include automotive electronics, equipment manufacturing, optoelectronics, and new materials. Cost advantages with Yangtze River shipping and China-Europe Railway links.', tags: ['Auto Electronics', 'Equipment Mfg.', 'Optoelectronics', 'New Materials'] }
+};
+
+const ports = [
+    { name: 'Dalian Port', coord: [121.6, 38.9], color: '#f97316', labelPos: 'right' },
+    { name: 'Tianjin Port', coord: [117.8, 39.0], color: '#f97316', labelPos: 'left' },
+    { name: 'Qingdao Port', coord: [120.4, 36.1], color: '#f97316', labelPos: 'right' },
+    { name: 'Shanghai Port', coord: [121.5, 31.2], color: '#eab308', labelPos: 'right' },
+    { name: 'Ningbo Port', coord: [121.8, 29.9], color: '#eab308', labelPos: 'right' },
+    { name: 'Xiamen Port', coord: [118.1, 24.5], color: '#22c55e', labelPos: 'right' },
+    { name: 'Shenzhen Port', coord: [114.1, 22.5], color: '#22c55e', labelPos: 'right' }
+];
+
+const portInfo = {
+    'Dalian Port': { title: 'Dalian Port', desc: 'A major international shipping hub in Northeast Asia. Deep-water port and the largest comprehensive port in Northeast China, connecting Japan, Korea, and Russia Far East routes.', tags: ['NE Asia Hub', 'Deep-Water', 'Japan/Korea Routes'] },
+    'Tianjin Port': { title: 'Tianjin Port', desc: 'The maritime gateway to Beijing-Tianjin-Hebei. The largest comprehensive port in Northern China with top global container throughput. The most important export channel for North China.', tags: ['Beijing-Tianjin Gateway', 'Comprehensive Port', 'North China Hub'] },
+    'Qingdao Port': { title: 'Qingdao Port', desc: 'The largest container port in Northern China. World-leading automated terminal connecting Japan, Korea, Southeast Asia, Europe, and Americas.', tags: ['North China Largest Container', 'Automated Terminal', 'Global Routes'] },
+    'Shanghai Port': { title: 'Shanghai Port', desc: 'World\'s #1 container port by throughput. Located at the Yangtze River mouth, an international shipping center connecting 200+ countries and regions.', tags: ['Container #1 Global', 'Int\'l Shipping Center', 'Yangtze Gateway'] },
+    'Ningbo Port': { title: 'Ningbo Port', desc: 'World\'s #1 cargo port by throughput. Deep-water port with top-3 global container volume. The core foreign trade hub of the Yangtze Delta.', tags: ['Cargo #1 Global', 'Deep-Water', 'Trade Core Hub'] },
+    'Xiamen Port': { title: 'Xiamen Port', desc: 'A major container port on the Southeast coast. Key channel for Taiwan trade, connecting Southeast Asia and Japan/Korea routes. Main export gateway for the West Coast Economic Zone.', tags: ['Taiwan Trade', 'Southeast Coast', 'West Coast Zone'] },
+    'Shenzhen Port': { title: 'Shenzhen Port', desc: 'The largest container port in South China. Adjacent to Hong Kong, the main export channel for electronics and high-tech products, connecting major global routes.', tags: ['South China Largest Container', 'Electronics Export', 'Shenzhen-HK Link'] }
+};
+
+function generateCirclePoints(center, radiusKm, numPoints) {
+    const points = [];
+    const R = 6371;
+    const lat0 = center[1] * Math.PI / 180;
+    const lng0 = center[0] * Math.PI / 180;
+    for (let i = 0; i <= numPoints; i++) {
+        const angle = (i / numPoints) * Math.PI * 2;
+        const lat = Math.asin(Math.sin(lat0) * Math.cos(radiusKm / R) + Math.cos(lat0) * Math.sin(radiusKm / R) * Math.cos(angle));
+        const lng = lng0 + Math.atan2(Math.sin(angle) * Math.sin(radiusKm / R) * Math.cos(lat0), Math.cos(radiusKm / R) - Math.sin(lat0) * Math.sin(lat));
+        points.push([lng * 180 / Math.PI, lat * 180 / Math.PI]);
+    }
+    return points;
+}
+
+const chart = echarts.init(document.getElementById('supply-map'));
+
+fetch('./china.json')
+    .then(res => res.json())
+    .then(geoJson => {
+        echarts.registerMap('china', geoJson);
+        const series = [];
+        
+        industryCenters.forEach(center => {
+            const circlePoints = generateCirclePoints(center.coord, 320, 100);
+            series.push({ type: 'scatter', coordinateSystem: 'geo', data: circlePoints.map(p => ({ value: p, itemStyle: { color: center.color, opacity: 0.35 } })), symbolSize: 4, silent: true, z: 2 });
+        });
+        
+        industryCenters.forEach(center => {
+            const circlePoints = generateCirclePoints(center.coord, 260, 80);
+            series.push({ type: 'scatter', coordinateSystem: 'geo', data: circlePoints.map(p => ({ value: p, itemStyle: { color: center.color, opacity: 0.25 } })), symbolSize: 3, silent: true, z: 2 });
+        });
+        
+        series.push({
+            type: 'scatter', coordinateSystem: 'geo',
+            data: industryCenters.map(c => ({ name: c.name, value: c.coord, itemStyle: { color: c.color }, label: { show: true, position: 'top', distance: 15, fontSize: 16, fontWeight: 'bold', color: c.color, formatter: '{b}' } })),
+            symbolSize: 8, z: 5
+        });
+        
+        ports.forEach(p => {
+            series.push({
+                type: 'effectScatter', coordinateSystem: 'geo',
+                data: [{ name: p.name, value: p.coord, itemStyle: { color: p.color } }],
+                symbolSize: 14, showEffectOn: 'render', rippleEffect: { brushType: 'stroke', scale: 3.5, period: 3 },
+                label: { show: true, position: p.labelPos, distance: 10, fontSize: 12, fontWeight: 600, color: p.color, formatter: '{b}' }, z: 4
+            });
+        });
+        
+        chart.setOption({
+            backgroundColor: 'transparent',
+            geo: { map: 'china', roam: true, zoom: 1.15, center: [108, 35], label: { show: false }, itemStyle: { areaColor: 'rgba(30, 41, 59, 0.35)', borderColor: 'rgba(56, 189, 248, 0.12)', borderWidth: 1 }, emphasis: { itemStyle: { areaColor: 'rgba(51, 65, 85, 0.5)' } } },
+            tooltip: { trigger: 'item', backgroundColor: 'rgba(15, 23, 42, 0.95)', borderColor: 'rgba(56, 189, 248, 0.2)', borderWidth: 1, textStyle: { color: '#e2e8f0', fontSize: 13 }, padding: [14, 18], extraCssText: 'border-radius: 10px; max-width: 340px;', formatter: function(params) {
+                const name = params.name;
+                if (industryInfo[name]) { const info = industryInfo[name]; let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#94a3b8;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; }
+                if (portInfo[name]) { const info = portInfo[name]; let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#94a3b8;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; }
+                return params.name;
+            }},
+            series: series
+        });
+    })
+    .catch(err => { console.error('Map load failed:', err); document.getElementById('supply-map').innerHTML = '<div style="color:#64748b;text-align:center;padding-top:200px">Map loading failed. Please ensure echarts.min.js and china.json are in the same folder.</div>'; });
+
+window.addEventListener('resize', () => chart.resize());
 </script>
 
 </body>
