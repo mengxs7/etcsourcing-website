@@ -129,34 +129,39 @@
   </section>
 
   <!-- Company Story -->
-  <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-12">
-      <div class="text-center mb-12">
-        <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4" data-i18n="about_story_badge">公司故事</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="about_story_title">我们的故事</h2>
-      </div>
-      
-      <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
-        <p class="text-xl text-gray-800 font-medium" data-i18n="about_story_p1">
-          ETC Sourcing 成立于青岛——中国北方最大的港口城市之一。
-        </p>
-        <p data-i18n="about_story_p2">
-          不同于传统贸易公司专注单一品类，或采购代理固守单一市场，我们选择了一条"轻资产、广覆盖"的道路：
-        </p>
-        <div class="bg-gradient-to-r from-deep-blue/5 to-vibrant-orange/5 rounded-2xl p-8 my-8">
-          <p class="text-2xl font-bold text-deep-blue text-center" data-i18n="about_story_quote">
-            "做客户的中国采购部，而非简单的中介。"
-          </p>
+<!-- Company Story -->
+<section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12">
+        <div class="text-center mb-12">
+            <span class="inline-block px-4 py-1.5 bg-deep-blue/10 text-deep-blue text-sm font-medium rounded-full mb-4" data-i18n="about_story_badge">公司故事</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="about_story_title">我们的故事</h2>
         </div>
-        <p data-i18n="about_story_p3">
-          十年间，我们从青岛港的本地服务商，发展成为覆盖五大产业带、整合全国供应网络的采购平台。我们不养庞大的驻厂团队，而是深耕各产业带的合作资源；我们不赚信息不对称的差价，而是靠整合能力创造价值。
-        </p>
-        <p data-i18n="about_story_p4">
-          今天，我们服务的客户遍布欧美、日韩、东南亚、中亚，采购的品类从机械装备到日用百货，从工业零配件到消费电子。无论你在哪里，无论你需要什么，我们都能从中国的某个产业带，找到最优的解决方案。
-        </p>
-      </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <!-- 左侧图片 -->
+            <div class="rounded-2xl overflow-hidden shadow-lg">
+                <img src="images/qingdao-port.png" alt="青岛港" class="w-full h-auto object-cover">
+            </div>
+            
+            <!-- 右侧文字 -->
+            <div class="space-y-6">
+                <p class="text-xl text-gray-800 font-medium leading-relaxed" data-i18n="about_story_p1">
+                    ETC Sourcing 成立于青岛——中国北方最大的港口城市之一。
+                </p>
+                
+                <div class="bg-gradient-to-r from-deep-blue/5 to-vibrant-orange/5 rounded-2xl p-6">
+                    <p class="text-xl md:text-2xl font-bold text-deep-blue text-center leading-relaxed" data-i18n="about_story_quote">
+                        "做客户的中国采购部，而非简单的中介。"
+                    </p>
+                </div>
+                
+                <p class="text-gray-600 leading-relaxed" data-i18n="about_story_p4">
+                    服务覆盖欧美、日韩、东南亚、中亚，从机械装备到日用百货，全品类采购。
+                </p>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
   <!-- Why Qingdao -->
   <section class="py-20 bg-light-gray">
@@ -562,10 +567,8 @@
         about_story_badge: "公司故事",
         about_story_title: "我们的故事",
         about_story_p1: "ETC Sourcing 成立于青岛——中国北方最大的港口城市之一。",
-        about_story_p2: "不同于传统贸易公司专注单一品类，或采购代理固守单一市场，我们选择了一条\"轻资产、广覆盖\"的道路：",
         about_story_quote: "\"做客户的中国采购部，而非简单的中介。\"",
-        about_story_p3: "十年间，我们从青岛港的本地服务商，发展成为覆盖五大产业带、整合全国供应网络的采购平台。我们不养庞大的驻厂团队，而是深耕各产业带的合作资源；我们不赚信息不对称的差价，而是靠整合能力创造价值。",
-        about_story_p4: "今天，我们服务的客户遍布欧美、日韩、东南亚、中亚，采购的品类从机械装备到日用百货，从工业零配件到消费电子。无论你在哪里，无论你需要什么，我们都能从中国的某个产业带，找到最优的解决方案。",
+        about_story_p4: "服务覆盖欧美、日韩、东南亚、中亚，从机械装备到日用百货，全品类采购。",
         // Qingdao
         about_qingdao_badge: "总部基地",
         about_qingdao_title: "为什么选择青岛作为总部",
@@ -664,10 +667,8 @@
         about_story_badge: "Our Story",
         about_story_title: "Our Story",
         about_story_p1: "ETC Sourcing was founded in Qingdao — one of the largest port cities in northern China.",
-        about_story_p2: "Unlike traditional trading companies focused on single categories, or sourcing agents stuck in single markets, we chose a path of \"light assets, broad coverage\":",
         about_story_quote: "\"Be your China procurement department, not just a simple intermediary.\"",
-        about_story_p3: "Over the past decade, we have grown from a local service provider at Qingdao Port into a sourcing platform covering five major industrial belts and integrating a nationwide supply network. We don't maintain large on-site teams; instead, we deeply cultivate cooperative resources across industrial belts. We don't profit from information asymmetry, but create value through integration capabilities.",
-        about_story_p4: "Today, our clients span Europe, America, Japan, Korea, Southeast Asia, and Central Asia. We source everything from machinery and equipment to daily necessities, from industrial parts to consumer electronics. No matter where you are or what you need, we can find the optimal solution from one of China's industrial belts.",
+        about_story_p4: "Serving clients across Europe, America, Japan, Korea, Southeast Asia, and Central Asia. From machinery to daily necessities, we cover all categories.",
         // Qingdao
         about_qingdao_badge: "Headquarters",
         about_qingdao_title: "Why Qingdao as Our Headquarters",
