@@ -31,6 +31,31 @@
     .lang-btn:hover { background: rgba(255,255,255,0.2); }
     .team-card:hover .team-photo { transform: scale(1.05); }
     .team-photo { transition: transform 0.3s ease; }
+ .card-image-wrapper {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+}
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.card-hover:hover .card-image {
+    transform: scale(1.08);
+}
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+}
   </style>
 </head>
 <body class="bg-white">
@@ -144,41 +169,39 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Port Advantage -->
         <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-          </div>
+          <div class="card-image-wrapper">
+         <img src="images/qingdao-port.png" alt="青岛港" class="card-image">
+        <div class="image-overlay"></div>
+     </div>
           <h3 class="text-xl font-bold text-gray-900 mb-4" data-i18n="about_port_title">港口优势</h3>
           <ul class="space-y-3 text-gray-600">
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span data-i18n="about_port_1">青岛港是全球前十集装箱港，更是日韩航线的黄金通道</span>
+              <span data-i18n="about_port_1">全球前十集装箱港，年吞吐量超6亿吨，航线覆盖180+国家</span>
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span data-i18n="about_port_2">从青岛到釜山仅需2-3天，比上海快2天，比深圳快4天</span>
+              <span data-i18n="about_port_2">日韩航线2-3天直达，欧美、东南亚高效中转</span>
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-vibrant-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span data-i18n="about_port_3">对于日韩市场，这是无可替代的地理优势</span>
+              <span data-i18n="about_port_3">自动化码头作业效率全球领先，通关便捷</span>
             </li>
           </ul>
         </div>
         
         <!-- Industry Advantage -->
         <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-            </svg>
-          </div>
+        <div class="card-image-wrapper">
+            <img src="images/shandong-factory.png" alt="山东制造业" class="card-image">
+            <div class="image-overlay"></div>
+        </div>
           <h3 class="text-xl font-bold text-gray-900 mb-4" data-i18n="about_industry_title">产业优势</h3>
           <ul class="space-y-3 text-gray-600">
             <li class="flex items-start gap-2">
@@ -204,12 +227,15 @@
         
         <!-- Network -->
         <div class="card-hover bg-white rounded-2xl p-8 shadow-lg">
-          <div class="w-14 h-14 bg-violet-100 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4" data-i18n="about_network_title">我们的网络</h3>
+          <div class="card-image-wrapper">
+        <img src="images/logistics-network.png" alt="物流网络" class="card-image">
+        <div class="image-overlay"></div>
+    </div>
+          <div class="card-image-wrapper">
+    <img src="images/shandong-factory.png" alt="山东制造业" class="card-image">
+    <div class="image-overlay"></div>
+</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4" data-i18n="about_network_title">我们的供应链网络</h3>
           <p class="text-gray-600 mb-4" data-i18n="about_network_desc">依托青岛港的物流优势，我们逐步建立起：</p>
           <ul class="space-y-2 text-sm text-gray-600">
             <li data-i18n="about_network_1">• 长三角（宁波/苏州）机械五金网络</li>
@@ -528,14 +554,14 @@
         about_qingdao_badge: "总部基地",
         about_qingdao_title: "为什么选择青岛作为总部",
         about_port_title: "港口优势",
-        about_port_1: "青岛港是全球前十集装箱港，更是日韩航线的黄金通道",
-        about_port_2: "从青岛到釜山仅需2-3天，比上海快2天，比深圳快4天",
-        about_port_3: "对于日韩市场，这是无可替代的地理优势",
+        about_port_1: "全球前十集装箱港，年吞吐量超6亿吨，航线覆盖180+国家",
+        about_port_2: "日韩航线2-3天直达，欧美、东南亚高效中转",
+        about_port_3: "自动化码头作业效率全球领先，通关便捷",
         about_industry_title: "产业优势",
         about_industry_1: "山东是中国制造业大省",
         about_industry_2: "机械、化工、农产品加工产业发达",
         about_industry_3: "以青岛为圆心，3小时车程覆盖烟台、潍坊、威海、临沂等产业带",
-        about_network_title: "我们的网络",
+        about_network_title: "我们的供应链网络",
         about_network_desc: "依托青岛港的物流优势，我们逐步建立起：",
         about_network_1: "• 长三角（宁波/苏州）机械五金网络",
         about_network_2: "• 珠三角（深圳）电子电器网络",
@@ -630,14 +656,14 @@
         about_qingdao_badge: "Headquarters",
         about_qingdao_title: "Why Qingdao as Our Headquarters",
         about_port_title: "Port Advantage",
-        about_port_1: "Qingdao Port is among the world's top ten container ports and the golden gateway to Japan and Korea routes",
-        about_port_2: "From Qingdao to Busan takes only 2-3 days, 2 days faster than Shanghai, 4 days faster than Shenzhen",
-        about_port_3: "For the Japan and Korea markets, this is an irreplaceable geographical advantage",
+        about_port_1: "Top 10 global container port, annual throughput over 600 million tons, routes covering 180+ countries",
+        about_port_2: "Japan/Korea routes in 2-3 days, efficient transit to Europe, America, and Southeast Asia",
+        about_port_3: "Automated terminal with world-leading operational efficiency, smooth customs clearance",
         about_industry_title: "Industry Advantage",
         about_industry_1: "Shandong is a major manufacturing province in China",
         about_industry_2: "Well-developed machinery, chemical, and agricultural product processing industries",
         about_industry_3: "With Qingdao as the center, a 3-hour drive covers industrial belts in Yantai, Weifang, Weihai, and Linyi",
-        about_network_title: "Our Network",
+        about_network_title: "Our Supply Chain Network",
         about_network_desc: "Leveraging Qingdao Port's logistics advantages, we have gradually established:",
         about_network_1: "• Yangtze River Delta (Ningbo/Suzhou) machinery and hardware network",
         about_network_2: "• Pearl River Delta (Shenzhen) electronics and appliances network",
