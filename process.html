@@ -162,6 +162,28 @@
     .bg-step-3 { background: #8b5cf6; }
     .bg-step-4 { background: #f59e0b; }
     .bg-step-5 { background: #F97316; }
+      /* 上图下介绍卡片样式 */
+    .qa-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+    }
+    .qa-card-body {
+      padding: 20px;
+    }
+    .qa-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid #e5e7eb;
+    }
+    .qa-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+      border-color: #0F4C81;
+    }
   </style>
 </head>
 <body class="bg-white">
@@ -252,6 +274,7 @@
   </section>
 
   <!-- Quality Assurance -->
+    <!-- Quality Assurance -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12">
@@ -261,79 +284,76 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6">
-          <div class="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-            </svg>
+        <!-- 供应商预审 -->
+        <div class="qa-card">
+          <img src="images/供应商筛选.png" alt="供应商筛选" class="qa-card-img">
+          <div class="qa-card-body">
+            <h3 data-i18n="qa1_title" class="text-xl font-bold text-gray-900 mb-3">供应商预审</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span data-i18n="qa1_1">合作前实地考察（或委托当地代理），建立合格供应商库</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span data-i18n="qa1_2">定期评估：交期准确率、质量合格率、配合度</span>
+              </li>
+            </ul>
           </div>
-          <h3 data-i18n="qa1_title" class="text-xl font-bold text-gray-900 mb-3">供应商预审</h3>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span data-i18n="qa1_1">合作前实地考察（或委托当地代理），建立合格供应商库</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span data-i18n="qa1_2">定期评估：交期准确率、质量合格率、配合度</span>
-            </li>
-          </ul>
         </div>
 
-        <div class="card-hover bg-gradient-to-br from-violet-50 to-violet-100 rounded-2xl p-6">
-          <div class="w-14 h-14 bg-violet-500 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
+        <!-- 合同约束 -->
+        <div class="qa-card">
+          <img src="images/合同签订.png" alt="合同签订" class="qa-card-img">
+          <div class="qa-card-body">
+            <h3 data-i18n="qa2_title" class="text-xl font-bold text-gray-900 mb-3">合同约束</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span data-i18n="qa2_1">与我们签约（非直接对工厂），<strong>我们承担交付责任</strong></span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span data-i18n="qa2_2">付款条款：生产前30%，见第三方检测报告后70%</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span data-i18n="qa2_3">违约条款：明确质量标准和赔偿机制</span>
+              </li>
+            </ul>
           </div>
-          <h3 data-i18n="qa2_title" class="text-xl font-bold text-gray-900 mb-3">合同约束</h3>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span data-i18n="qa2_1">与我们签约（非直接对工厂），<strong>我们承担交付责任</strong></span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span data-i18n="qa2_2">付款条款：生产前30%，见第三方检测报告后70%</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-violet-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span data-i18n="qa2_3">违约条款：明确质量标准和赔偿机制</span>
-            </li>
-          </ul>
         </div>
 
-        <div class="card-hover bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-6">
-          <div class="w-14 h-14 bg-amber-500 rounded-xl flex items-center justify-center mb-4">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+        <!-- 第三方验证 -->
+        <div class="qa-card">
+          <img src="images/第三方检测.png" alt="第三方检测" class="qa-card-img">
+          <div class="qa-card-body">
+            <h3 data-i18n="qa3_title" class="text-xl font-bold text-gray-900 mb-3">第三方验证</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span data-i18n="qa3_1">生产完成后必检，国际机构背书</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span data-i18n="qa3_2">报告透明：你直接收到SGS/BV原版报告</span>
+              </li>
+            </ul>
           </div>
-          <h3 data-i18n="qa3_title" class="text-xl font-bold text-gray-900 mb-3">第三方验证</h3>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span data-i18n="qa3_1">生产完成后必检，国际机构背书</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <svg class="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-              </svg>
-              <span data-i18n="qa3_2">报告透明：你直接收到SGS/BV原版报告</span>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
