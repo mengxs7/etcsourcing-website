@@ -66,7 +66,9 @@
       height: 160px;
       object-fit: cover;
       display: block;
-      margin-top: -2px;
+      margin-top: 0;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
     }
     .port-card-with-img {
       overflow: hidden;
@@ -182,8 +184,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-6 lg:px-12">
         <!-- Qingdao Port -->
         <div class="card-hover port-highlight rounded-2xl overflow-hidden text-white shadow-xl lg:col-span-2">
- 　　　　 <img src="images/port-qingdao.jpg" alt="青岛港" class="port-card-img">
- 　　　　　 <div class="p-6 lg:p-8 flex flex-col lg:flex-row lg:items-start gap-6">
+ 　　　　<img src="images/port-qingdao.jpg" alt="青岛港" class="port-card-img">
+ 　　　　<div class="p-6 lg:p-8 flex flex-col lg:flex-row lg:items-start gap-6">
             <div class="flex-1">
               <div class="flex items-center gap-3 mb-4">
                 <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center"></div>
@@ -214,15 +216,14 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-　　　</div>
-      </div>
+　　　　</section>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         <!-- Ningbo Port -->
         <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-  　　　　<img src="images/port-ningbo.jpg" alt="宁波港" class="port-card-img">
-  　　　　　<div class="p-6">
+  　　　<img src="images/port-ningbo.jpg" alt="宁波港" class="port-card-img">
+  　　　<div class="p-6">
     　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center"></div>
             <div>
@@ -239,8 +240,8 @@
         
         <!-- Shanghai Port -->
         <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-  　　　　<img src="images/port-shanghai.jpg" alt="上海港" class="port-card-img">
- 　　　　　 <div class="p-6">
+  　　　<img src="images/port-shanghai.jpg" alt="上海港" class="port-card-img">
+ 　　　　<div class="p-6">
     　　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center"></div>
             <div>
@@ -257,8 +258,8 @@
         
         <!-- Shenzhen Port -->
         <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
- 　　　　 <img src="images/port-shenzhen.jpg" alt="深圳港" class="port-card-img">
-  　　　　<div class="p-6">
+ 　　　　<img src="images/port-shenzhen.jpg" alt="深圳港" class="port-card-img">
+  　　　<div class="p-6">
     　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"></div>
             <div>
@@ -275,8 +276,8 @@
 
         <!-- Xiamen Port -->
         <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-  　　　　<img src="images/port-xiamen.jpg" alt="厦门港" class="port-card-img">
-  　　　　<div class="p-6">
+  　　　<img src="images/port-xiamen.jpg" alt="厦门港" class="port-card-img">
+  　　　<div class="p-6">
     　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center"></div>
             <div>
@@ -293,8 +294,8 @@
         
         <!-- Tianjin Port -->
         <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-  　　　　<img src="images/port-tianjin.jpg" alt="天津港" class="port-card-img">
-  　　　　<div class="p-6">
+  　　　<img src="images/port-tianjin.jpg" alt="天津港" class="port-card-img">
+  　　　<div class="p-6">
     　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center"></div>
             <div>
@@ -311,8 +312,8 @@
 
         <!-- Dalian Port -->
         <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-  　　　　<img src="images/port-dalian.jpg" alt="大连港" class="port-card-img">
-  　　　　　<div class="p-6">
+  　　　<img src="images/port-dalian.jpg" alt="大连港" class="port-card-img">
+  　　　<div class="p-6">
     　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center">
               <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -329,10 +330,7 @@
             <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="dalianProducts">化工品、机电设备、汽车零部件、粮食深加工、冻品、对日韩俄贸易货物</span></p>
           </div>
         </div>
-      </div>
     </div>
-    </div>
-    </div> 
   </section>
 
   <!-- Smart Port Recommendation Tool -->
