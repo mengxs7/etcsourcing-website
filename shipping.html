@@ -60,6 +60,20 @@
     .pulse-glow {
       animation: pulse-glow 2s ease-in-out infinite;
     }
+      /* 港口卡片图片样式 */
+    .port-card-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+    }
+    .port-card-with-img {
+      overflow: hidden;
+      padding: 0 !important;
+    }
+    .port-card-with-img .port-card-content {
+      padding: 20px;
+    }
   </style>
 </head>
 <body class="bg-white">
@@ -166,8 +180,9 @@
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Qingdao Port -->
-        <div class="card-hover port-highlight rounded-2xl p-6 lg:p-8 text-white shadow-xl lg:col-span-2">
-          <div class="flex flex-col lg:flex-row lg:items-start gap-6">
+        <div class="card-hover port-highlight rounded-2xl overflow-hidden text-white shadow-xl lg:col-span-2">
+ 　　　　 <img src="images/port-qingdao.jpg" alt="青岛港" class="port-card-img">
+ 　　　　　 <div class="p-6 lg:p-8 flex flex-col lg:flex-row lg:items-start gap-6">
             <div class="flex-1">
               <div class="flex items-center gap-3 mb-4">
                 <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center"></div>
@@ -200,10 +215,13 @@
             </div>
           </div>
         </div>
+　　　</div>
         
         <!-- Ningbo Port -->
-        <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-          <div class="flex items-center gap-3 mb-4">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+  　　　　<img src="images/port-ningbo.jpg" alt="宁波港" class="port-card-img">
+  　　　　　<div class="p-6">
+    　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center"></div>
             <div>
               <h3 class="text-xl font-bold text-gray-900" data-i18n="ningboName">宁波港</h3>
@@ -215,10 +233,13 @@
             <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="ningboProducts">日用消费品、五金工具、电子产品</span></p>
           </div>
         </div>
+     </div>  
         
         <!-- Shanghai Port -->
-        <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-          <div class="flex items-center gap-3 mb-4">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+  　　　　<img src="images/port-shanghai.jpg" alt="上海港" class="port-card-img">
+ 　　　　　 <div class="p-6">
+    　　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center"></div>
             <div>
               <h3 class="text-xl font-bold text-gray-900" data-i18n="shanghaiName">上海港</h3>
@@ -230,10 +251,13 @@
             <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="shanghaiProducts">高货值产品、紧急订单</span></p>
           </div>
         </div>
+      </div>
         
         <!-- Shenzhen Port -->
-        <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-          <div class="flex items-center gap-3 mb-4">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+ 　　　　 <img src="images/port-shenzhen.jpg" alt="深圳港" class="port-card-img">
+  　　　　<div class="p-6">
+    　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"></div>
             <div>
               <h3 class="text-xl font-bold text-gray-900" data-i18n="shenzhenName">深圳港</h3>
@@ -245,10 +269,14 @@
             <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="shenzhenProducts">消费电子、电器、跨境电商货物</span></p>
           </div>
         </div>
+      </div>
+          
         
         <!-- Tianjin Port -->
-        <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-          <div class="flex items-center gap-3 mb-4">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+  　　　　<img src="images/port-tianjin.jpg" alt="天津港" class="port-card-img">
+  　　　　<div class="p-6">
+    　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center"></div>
             <div>
               <h3 class="text-xl font-bold text-gray-900" data-i18n="tianjinName">天津港</h3>
@@ -260,10 +288,13 @@
             <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="tianjinProducts">机械设备、汽车、钢材、华北产地货物</span></p>
           </div>
         </div>
+      </div>    
         
         <!-- Xiamen Port -->
-        <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-          <div class="flex items-center gap-3 mb-4">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+  　　　　<img src="images/port-xiamen.jpg" alt="厦门港" class="port-card-img">
+  　　　　<div class="p-6">
+    　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center"></div>
             <div>
               <h3 class="text-xl font-bold text-gray-900" data-i18n="xiamenName">厦门港</h3>
@@ -275,10 +306,13 @@
             <p><strong class="text-gray-900" data-i18n="suitableProducts">适合产品：</strong><span data-i18n="xiamenProducts">建材、石材、对台/东南亚货物</span></p>
           </div>
         </div>
+      </div>  
 
         <!-- Dalian Port -->
-        <div class="card-hover bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-          <div class="flex items-center gap-3 mb-4">
+        <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+  　　　　<img src="images/port-dalian.jpg" alt="大连港" class="port-card-img">
+  　　　　　<div class="p-6">
+    　　　　<div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center">
               <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -295,6 +329,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
