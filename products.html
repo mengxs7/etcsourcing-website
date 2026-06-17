@@ -8,15 +8,156 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', 'Noto Sans SC', sans-serif; }
-    .card-hover { transition: all 0.3s ease; }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
-    .tag-pill { display: inline-block; padding: 3px 10px; background: #fff7ed; color: #ea580c; border-radius: 12px; font-size: 11px; margin: 2px; font-weight: 500; }
-    .coming-soon-card { border: 2px dashed #fdba74; background: linear-gradient(135deg, #fff7ed 0%, #fff 100%); }
+
+    /* 毛玻璃卡片 */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(249, 115, 22, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(249, 115, 22, 0.1);
+    }
+
+    /* 渐变边框卡片（白色背景区域用） */
+    .gradient-border-card {
+      background: #ffffff;
+      position: relative;
+      border-radius: 16px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .gradient-border-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1.5px;
+      background: linear-gradient(135deg, rgba(249,115,22,0.3), rgba(30,58,95,0.2), transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .gradient-border-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15), 0 0 0 1px rgba(249, 115, 22, 0.2);
+    }
+
+    /* 图片容器 */
+    .img-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .img-container img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover .img-container img,
+    .gradient-border-card:hover .img-container img {
+      transform: scale(1.08);
+    }
+
+    /* 图片渐变遮罩 */
+    .img-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+      pointer-events: none;
+    }
+
+    /* 标签 */
+    .tag-pill {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(249, 115, 22, 0.15);
+      color: #fb923c;
+      border-radius: 20px;
+      font-size: 11px;
+      margin: 3px;
+      font-weight: 500;
+      border: 1px solid rgba(249, 115, 22, 0.2);
+      transition: all 0.3s ease;
+    }
+    .tag-pill:hover {
+      background: rgba(249, 115, 22, 0.25);
+      transform: scale(1.05);
+    }
+    .tag-pill-light {
+      background: rgba(30, 58, 95, 0.08);
+      color: #1e3a5f;
+      border: 1px solid rgba(30, 58, 95, 0.15);
+    }
+    .tag-pill-light:hover {
+      background: rgba(30, 58, 95, 0.15);
+    }
+
+    /* 即将上线卡片 */
+    .coming-soon-card {
+      background: linear-gradient(135deg, rgba(249,115,22,0.08) 0%, rgba(30,58,95,0.05) 100%);
+      border: 2px dashed rgba(249, 115, 22, 0.3);
+    }
+    .coming-soon-card:hover {
+      border-color: rgba(249, 115, 22, 0.6);
+      background: linear-gradient(135deg, rgba(249,115,22,0.12) 0%, rgba(30,58,95,0.08) 100%);
+    }
+
+    /* 深色区域纹理 */
+    .dark-texture {
+      background-color: #0f172a;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(30, 58, 95, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.08) 0%, transparent 40%);
+    }
+
+    /* 动画 */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-in {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* 序号装饰 */
+    .num-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(249, 115, 22, 0.9);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+    }
+
+    /* 渐变文字 */
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 0%, #fb923c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
   </style>
+<base target="_blank">
 </head>
 <body class="bg-gray-50">
 
-  <!-- Navigation (和现有网站一致的深蓝导航栏) -->
+  <!-- Navigation -->
   <nav class="bg-[#1e3a5f] shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
@@ -41,164 +182,237 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-[#1e3a5f] via-[#2d4a6f] to-[#1e3a5f] text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="inline-block px-4 py-1 bg-white/10 rounded-full text-sm mb-4 text-orange-300" data-i18n="products_badge">产品目录</div>
-      <h1 class="text-3xl md:text-4xl font-bold mb-3" data-i18n="products_hero_title">全品类一站式采购</h1>
-      <p class="text-gray-300 max-w-2xl mx-auto" data-i18n="products_hero_subtitle">从机械五金到日用消费品，跨品类整合供应，让全球采购更简单</p>
+  <!-- Hero Section - 深蓝渐变 -->
+  <section class="relative bg-gradient-to-br from-[#0f172a] via-[#1e3a5f] to-[#0f172a] text-white py-20 overflow-hidden">
+    <!-- 背景装饰 -->
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+      <div class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-sm mb-5 text-orange-300 border border-white/10" data-i18n="products_badge">产品目录</div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text" data-i18n="products_hero_title">全品类一站式采购</h1>
+      <p class="text-gray-400 max-w-2xl mx-auto text-base leading-relaxed" data-i18n="products_hero_subtitle">从机械五金到日用消费品，跨品类整合供应，让全球采购更简单</p>
+      <!-- 装饰线 -->
+      <div class="mt-8 flex justify-center">
+        <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+      </div>
     </div>
   </section>
 
-  <!-- Products Grid -->
-  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  <!-- Products Section - 深色背景 + 毛玻璃卡片 -->
+  <section class="dark-texture py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <!-- 1. 机械五金 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-        <div class="h-44 bg-gray-100 flex items-center justify-center overflow-hidden">
-          <img src="images/products/mechanical.jpg" alt="机械五金" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:48px;\'>⚙️</div>'">
+      <!-- 标题区 -->
+      <div class="text-center mb-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-3" data-i18n="products_section_title">核心产品品类</h2>
+        <p class="text-gray-400 text-sm" data-i18n="products_section_subtitle">覆盖六大核心领域，持续拓展更多品类</p>
+        <div class="mt-4 flex justify-center">
+          <div class="w-16 h-0.5 bg-orange-500/60 rounded-full"></div>
         </div>
-        <div class="p-5">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+        <!-- 1. 日用消费品 -->
+        <div class="glass-card rounded-2xl overflow-hidden group">
+          <div class="num-badge">01</div>
+          <div class="img-container h-52">
+            <img src="images/products/daily.jpg" alt="日用消费品" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b 0%, #334155 100%)'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;\'><span style=\'font-size:56px;opacity:0.3\'>🧴</span></div>'">
+            <div class="img-overlay"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors" data-i18n="cat_daily">日用消费品</h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="cat_daily_desc">湿巾、无纺布袋、家居清洁用品、个人护理产品</p>
+            <div class="flex flex-wrap">
+              <span class="tag-pill">湿巾</span>
+              <span class="tag-pill">无纺布袋</span>
+              <span class="tag-pill">家居清洁</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. 纺织服装 -->
+        <div class="glass-card rounded-2xl overflow-hidden group">
+          <div class="num-badge">02</div>
+          <div class="img-container h-52">
+            <img src="images/products/textile.jpg" alt="纺织服装" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b 0%, #334155 100%)'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;\'><span style=\'font-size:56px;opacity:0.3\'>🛏️</span></div>'">
+            <div class="img-overlay"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors" data-i18n="cat_textile">纺织服装</h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="cat_textile_desc">床上用品、记忆棉床垫、服装辅料、家纺产品</p>
+            <div class="flex flex-wrap">
+              <span class="tag-pill">床上用品</span>
+              <span class="tag-pill">记忆棉床垫</span>
+              <span class="tag-pill">家纺</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 珠宝首饰 -->
+        <div class="glass-card rounded-2xl overflow-hidden group">
+          <div class="num-badge">03</div>
+          <div class="img-container h-52">
+            <img src="images/products/jewelry.jpg" alt="珠宝首饰" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b 0%, #334155 100%)'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;\'><span style=\'font-size:56px;opacity:0.3\'>💎</span></div>'">
+            <div class="img-overlay"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors" data-i18n="cat_jewelry">珠宝首饰</h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="cat_jewelry_desc">银饰、合金饰品、定制首饰、时尚配饰</p>
+            <div class="flex flex-wrap">
+              <span class="tag-pill">银饰</span>
+              <span class="tag-pill">合金饰品</span>
+              <span class="tag-pill">定制首饰</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 汽摩配件 -->
+        <div class="glass-card rounded-2xl overflow-hidden group">
+          <div class="num-badge">04</div>
+          <div class="img-container h-52">
+            <img src="images/products/auto.jpg" alt="汽摩配件" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b 0%, #334155 100%)'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;\'><span style=\'font-size:56px;opacity:0.3\'>🚗</span></div>'">
+            <div class="img-overlay"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors" data-i18n="cat_auto">汽摩配件</h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="cat_auto_desc">工业脚轮、汽车配件、摩托车配件、维修工具</p>
+            <div class="flex flex-wrap">
+              <span class="tag-pill">工业脚轮</span>
+              <span class="tag-pill">汽车配件</span>
+              <span class="tag-pill">维修工具</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 空调配件 -->
+        <div class="glass-card rounded-2xl overflow-hidden group">
+          <div class="num-badge">05</div>
+          <div class="img-container h-52">
+            <img src="images/products/hvac.jpg" alt="空调配件" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b 0%, #334155 100%)'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;\'><span style=\'font-size:56px;opacity:0.3\'>❄️</span></div>'">
+            <div class="img-overlay"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors" data-i18n="cat_hvac">空调配件</h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="cat_hvac_desc">空调支架、铜管、制冷配件、通风管道及配件</p>
+            <div class="flex flex-wrap">
+              <span class="tag-pill">空调支架</span>
+              <span class="tag-pill">铜管</span>
+              <span class="tag-pill">制冷配件</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. 电子电器 -->
+        <div class="glass-card rounded-2xl overflow-hidden group">
+          <div class="num-badge">06</div>
+          <div class="img-container h-52">
+            <img src="images/products/electronics.jpg" alt="电子电器" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b 0%, #334155 100%)'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;\'><span style=\'font-size:56px;opacity:0.3\'>⚡</span></div>'">
+            <div class="img-overlay"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition-colors" data-i18n="cat_electronics">电子电器</h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="cat_electronics_desc">LED驱动、变压器、电池、电缆、开关控制、照明显示、半导体元器件</p>
+            <div class="flex flex-wrap">
+              <span class="tag-pill">LED驱动</span>
+              <span class="tag-pill">变压器</span>
+              <span class="tag-pill">开关控制</span>
+              <span class="tag-pill">半导体</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 更多品类 Section - 白色背景 + 渐变边框卡片 -->
+  <section class="bg-gray-50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#1e3a5f] mb-3" data-i18n="more_section_title">更多品类 · 持续拓展</h2>
+        <p class="text-gray-500 text-sm" data-i18n="more_section_subtitle">以下品类正在积极筹备中，敬请期待</p>
+        <div class="mt-4 flex justify-center">
+          <div class="w-16 h-0.5 bg-orange-500/60 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- 机械五金 -->
+        <div class="gradient-border-card p-6 group hover:bg-orange-50/30 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+            <span class="text-white text-xl">⚙️</span>
+          </div>
           <h3 class="text-base font-bold text-gray-900 mb-2" data-i18n="cat_mechanical">机械五金</h3>
-          <p class="text-gray-500 text-xs mb-3 leading-relaxed" data-i18n="cat_mechanical_desc">阀门、管件、法兰、紧固件、工业设备及配件</p>
+          <p class="text-gray-500 text-xs leading-relaxed mb-3" data-i18n="cat_mechanical_desc">阀门、管件、法兰、紧固件、工业设备及配件</p>
           <div class="flex flex-wrap">
-            <span class="tag-pill">阀门</span><span class="tag-pill">管件</span><span class="tag-pill">法兰</span><span class="tag-pill">紧固件</span>
+            <span class="tag-pill tag-pill-light">阀门</span>
+            <span class="tag-pill tag-pill-light">管件</span>
+            <span class="tag-pill tag-pill-light">法兰</span>
           </div>
         </div>
-      </div>
 
-      <!-- 2. 电子电器 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-        <div class="h-44 bg-gray-100 flex items-center justify-center overflow-hidden">
-          <img src="images/products/electronics.jpg" alt="电子电器" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:48px;\'>💡</div>'">
-        </div>
-        <div class="p-5">
-          <h3 class="text-base font-bold text-gray-900 mb-2" data-i18n="cat_electronics">电子电器</h3>
-          <p class="text-gray-500 text-xs mb-3 leading-relaxed" data-i18n="cat_electronics_desc">LED驱动、变压器、电池、电缆、电子元件</p>
-          <div class="flex flex-wrap">
-            <span class="tag-pill">LED驱动</span><span class="tag-pill">变压器</span><span class="tag-pill">电池</span><span class="tag-pill">电缆</span>
+        <!-- 化工建材 -->
+        <div class="gradient-border-card p-6 group hover:bg-orange-50/30 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+            <span class="text-white text-xl">🏗️</span>
           </div>
-        </div>
-      </div>
-
-      <!-- 3. 日用消费品 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-        <div class="h-44 bg-gray-100 flex items-center justify-center overflow-hidden">
-          <img src="images/products/daily.jpg" alt="日用消费品" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:48px;\'>🧴</div>'">
-        </div>
-        <div class="p-5">
-          <h3 class="text-base font-bold text-gray-900 mb-2" data-i18n="cat_daily">日用消费品</h3>
-          <p class="text-gray-500 text-xs mb-3 leading-relaxed" data-i18n="cat_daily_desc">湿巾、无纺布袋、家居清洁用品、个人护理</p>
-          <div class="flex flex-wrap">
-            <span class="tag-pill">湿巾</span><span class="tag-pill">无纺布袋</span><span class="tag-pill">家居用品</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. 纺织服装 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-        <div class="h-44 bg-gray-100 flex items-center justify-center overflow-hidden">
-          <img src="images/products/textile.jpg" alt="纺织服装" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:48px;\'>🛏️</div>'">
-        </div>
-        <div class="p-5">
-          <h3 class="text-base font-bold text-gray-900 mb-2" data-i18n="cat_textile">纺织服装</h3>
-          <p class="text-gray-500 text-xs mb-3 leading-relaxed" data-i18n="cat_textile_desc">床上用品、记忆棉床垫、服装辅料、家纺</p>
-          <div class="flex flex-wrap">
-            <span class="tag-pill">床上用品</span><span class="tag-pill">床垫</span><span class="tag-pill">服装辅料</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. 化工建材 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-        <div class="h-44 bg-gray-100 flex items-center justify-center overflow-hidden">
-          <img src="images/products/chemical.jpg" alt="化工建材" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:48px;\'>🏗️</div>'">
-        </div>
-        <div class="p-5">
           <h3 class="text-base font-bold text-gray-900 mb-2" data-i18n="cat_chemical">化工建材</h3>
-          <p class="text-gray-500 text-xs mb-3 leading-relaxed" data-i18n="cat_chemical_desc">焊接材料、涂料、HDPE管件、钢材、镀锌产品</p>
+          <p class="text-gray-500 text-xs leading-relaxed mb-3" data-i18n="cat_chemical_desc">焊接材料、涂料、HDPE管件、钢材、镀锌产品</p>
           <div class="flex flex-wrap">
-            <span class="tag-pill">焊接材料</span><span class="tag-pill">HDPE管件</span><span class="tag-pill">钢材</span>
+            <span class="tag-pill tag-pill-light">焊接材料</span>
+            <span class="tag-pill tag-pill-light">HDPE管件</span>
           </div>
         </div>
-      </div>
 
-      <!-- 6. 珠宝首饰 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-        <div class="h-44 bg-gray-100 flex items-center justify-center overflow-hidden">
-          <img src="images/products/jewelry.jpg" alt="珠宝首饰" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:48px;\'>💎</div>'">
-        </div>
-        <div class="p-5">
-          <h3 class="text-base font-bold text-gray-900 mb-2" data-i18n="cat_jewelry">珠宝首饰</h3>
-          <p class="text-gray-500 text-xs mb-3 leading-relaxed" data-i18n="cat_jewelry_desc">银饰、合金饰品、定制首饰、时尚配饰</p>
-          <div class="flex flex-wrap">
-            <span class="tag-pill">银饰</span><span class="tag-pill">合金饰品</span><span class="tag-pill">定制首饰</span>
+        <!-- 新能源 -->
+        <div class="gradient-border-card p-6 group hover:bg-orange-50/30 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#1e3a5f] to-[#2d4a6f] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+            <span class="text-white text-xl">☀️</span>
           </div>
-        </div>
-      </div>
-
-      <!-- 7. 汽摩配件 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-        <div class="h-44 bg-gray-100 flex items-center justify-center overflow-hidden">
-          <img src="images/products/auto.jpg" alt="汽摩配件" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:48px;\'>🚗</div>'">
-        </div>
-        <div class="p-5">
-          <h3 class="text-base font-bold text-gray-900 mb-2" data-i18n="cat_auto">汽摩配件</h3>
-          <p class="text-gray-500 text-xs mb-3 leading-relaxed" data-i18n="cat_auto_desc">工业脚轮、汽车配件、摩托车配件、维修工具</p>
-          <div class="flex flex-wrap">
-            <span class="tag-pill">工业脚轮</span><span class="tag-pill">汽车配件</span><span class="tag-pill">维修工具</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. 新能源 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-        <div class="h-44 bg-gray-100 flex items-center justify-center overflow-hidden">
-          <img src="images/products/newenergy.jpg" alt="新能源" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:48px;\'>☀️</div>'">
-        </div>
-        <div class="p-5">
           <h3 class="text-base font-bold text-gray-900 mb-2" data-i18n="cat_newenergy">新能源</h3>
-          <p class="text-gray-500 text-xs mb-3 leading-relaxed" data-i18n="cat_newenergy_desc">光伏组件、储能电池、太阳能配件、充电设备</p>
+          <p class="text-gray-500 text-xs leading-relaxed mb-3" data-i18n="cat_newenergy_desc">光伏组件、储能电池、太阳能配件、充电设备</p>
           <div class="flex flex-wrap">
-            <span class="tag-pill">光伏组件</span><span class="tag-pill">储能电池</span><span class="tag-pill">太阳能配件</span>
+            <span class="tag-pill tag-pill-light">光伏组件</span>
+            <span class="tag-pill tag-pill-light">储能电池</span>
           </div>
         </div>
-      </div>
 
-      <!-- 9. 更多品类，持续更新 -->
-      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover coming-soon-card">
-        <div class="h-44 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
-          <div class="text-center">
-            <div style="font-size:48px;" class="mb-1">➕</div>
-            <span class="text-orange-500 font-medium text-xs px-3 py-1 bg-white rounded-full" data-i18n="coming_soon_badge">即将上线</span>
+        <!-- 更多 -->
+        <div class="gradient-border-card coming-soon-card p-6 group">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg shadow-orange-200">
+            <span class="text-white text-xl">➕</span>
           </div>
-        </div>
-        <div class="p-5">
           <h3 class="text-base font-bold text-gray-900 mb-2" data-i18n="cat_more">更多品类</h3>
-          <p class="text-gray-500 text-xs mb-3 leading-relaxed" data-i18n="cat_more_desc">医疗器械、食品包装、户外运动、宠物用品等更多品类正在筹备中</p>
+          <p class="text-gray-500 text-xs leading-relaxed mb-3" data-i18n="cat_more_desc">医疗器械、食品包装、户外运动、宠物用品等更多品类正在筹备中</p>
           <div class="flex flex-wrap">
-            <span class="tag-pill" style="background:#fff7ed;color:#f97316;">医疗器械</span>
-            <span class="tag-pill" style="background:#fff7ed;color:#f97316;">食品包装</span>
-            <span class="tag-pill" style="background:#fff7ed;color:#f97316;">户外运动</span>
+            <span class="tag-pill" style="background:rgba(249,115,22,0.1);color:#f97316;border-color:rgba(249,115,22,0.2);">医疗器械</span>
+            <span class="tag-pill" style="background:rgba(249,115,22,0.1);color:#f97316;border-color:rgba(249,115,22,0.2);">食品包装</span>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="bg-[#1e3a5f] text-white py-14">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold mb-3" data-i18n="products_cta_title">没有找到您需要的产品？</h2>
-      <p class="text-gray-400 mb-6 text-sm" data-i18n="products_cta_desc">告诉我们您的采购需求，我们的采购团队将为您寻找合适的供应商</p>
-      <a href="contact.html" class="inline-block bg-orange-500 text-white px-6 py-2.5 rounded-lg hover:bg-orange-600 transition font-medium text-sm" data-i18n="products_cta_btn">提交采购需求</a>
+  <!-- CTA Section - 深蓝 -->
+  <section class="relative bg-gradient-to-br from-[#1e3a5f] via-[#2d4a6f] to-[#1e3a5f] text-white py-16 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="products_cta_title">没有找到您需要的产品？</h2>
+      <p class="text-gray-400 mb-8 text-sm" data-i18n="products_cta_desc">告诉我们您的采购需求，我们的采购团队将为您寻找合适的供应商</p>
+      <a href="contact.html" class="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-3 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 font-medium text-sm shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5" data-i18n="products_cta_btn">提交采购需求</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 py-6">
+  <footer class="bg-[#0f172a] text-gray-500 py-8 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 text-center text-sm">
       <p>© 2024 ETC Sourcing. All rights reserved.</p>
     </div>
@@ -219,25 +433,30 @@
         products_badge: "产品目录",
         products_hero_title: "全品类一站式采购",
         products_hero_subtitle: "从机械五金到日用消费品，跨品类整合供应，让全球采购更简单",
-        cat_mechanical: "机械五金",
-        cat_mechanical_desc: "阀门、管件、法兰、紧固件、工业设备及配件",
-        cat_electronics: "电子电器",
-        cat_electronics_desc: "LED驱动、变压器、电池、电缆、电子元件",
+        products_section_title: "核心产品品类",
+        products_section_subtitle: "覆盖六大核心领域，持续拓展更多品类",
+        more_section_title: "更多品类 · 持续拓展",
+        more_section_subtitle: "以下品类正在积极筹备中，敬请期待",
         cat_daily: "日用消费品",
-        cat_daily_desc: "湿巾、无纺布袋、家居清洁用品、个人护理",
+        cat_daily_desc: "湿巾、无纺布袋、家居清洁用品、个人护理产品",
         cat_textile: "纺织服装",
-        cat_textile_desc: "床上用品、记忆棉床垫、服装辅料、家纺",
-        cat_chemical: "化工建材",
-        cat_chemical_desc: "焊接材料、涂料、HDPE管件、钢材、镀锌产品",
+        cat_textile_desc: "床上用品、记忆棉床垫、服装辅料、家纺产品",
         cat_jewelry: "珠宝首饰",
         cat_jewelry_desc: "银饰、合金饰品、定制首饰、时尚配饰",
         cat_auto: "汽摩配件",
         cat_auto_desc: "工业脚轮、汽车配件、摩托车配件、维修工具",
+        cat_hvac: "空调配件",
+        cat_hvac_desc: "空调支架、铜管、制冷配件、通风管道及配件",
+        cat_electronics: "电子电器",
+        cat_electronics_desc: "LED驱动、变压器、电池、电缆、开关控制、照明显示、半导体元器件",
+        cat_mechanical: "机械五金",
+        cat_mechanical_desc: "阀门、管件、法兰、紧固件、工业设备及配件",
+        cat_chemical: "化工建材",
+        cat_chemical_desc: "焊接材料、涂料、HDPE管件、钢材、镀锌产品",
         cat_newenergy: "新能源",
         cat_newenergy_desc: "光伏组件、储能电池、太阳能配件、充电设备",
         cat_more: "更多品类",
         cat_more_desc: "医疗器械、食品包装、户外运动、宠物用品等更多品类正在筹备中",
-        coming_soon_badge: "即将上线",
         products_cta_title: "没有找到您需要的产品？",
         products_cta_desc: "告诉我们您的采购需求，我们的采购团队将为您寻找合适的供应商",
         products_cta_btn: "提交采购需求"
@@ -254,25 +473,30 @@
         products_badge: "Product Catalog",
         products_hero_title: "One-Stop Product Sourcing",
         products_hero_subtitle: "From mechanical hardware to consumer goods, cross-category integrated supply for easier global procurement",
-        cat_mechanical: "Mechanical & Hardware",
-        cat_mechanical_desc: "Valves, pipe fittings, flanges, fasteners, industrial equipment & parts",
-        cat_electronics: "Electronics",
-        cat_electronics_desc: "LED drivers, transformers, batteries, cables, electronic components",
+        products_section_title: "Core Product Categories",
+        products_section_subtitle: "Covering six core areas, continuously expanding",
+        more_section_title: "More Categories · Coming Soon",
+        more_section_subtitle: "The following categories are actively being prepared",
         cat_daily: "Daily Consumer Goods",
         cat_daily_desc: "Wet wipes, non-woven bags, home cleaning, personal care",
         cat_textile: "Textile & Apparel",
         cat_textile_desc: "Bedding, memory foam mattresses, garment accessories, home textiles",
-        cat_chemical: "Chemical & Building",
-        cat_chemical_desc: "Welding materials, coatings, HDPE fittings, steel, galvanized products",
         cat_jewelry: "Jewelry & Accessories",
         cat_jewelry_desc: "Silver jewelry, alloy accessories, custom jewelry, fashion accessories",
         cat_auto: "Auto & Motorcycle Parts",
         cat_auto_desc: "Industrial casters, auto parts, motorcycle parts, repair tools",
+        cat_hvac: "HVAC Accessories",
+        cat_hvac_desc: "AC brackets, copper pipes, refrigeration parts, ventilation ducts",
+        cat_electronics: "Electronics",
+        cat_electronics_desc: "LED drivers, transformers, batteries, cables, switches, lighting, semiconductors",
+        cat_mechanical: "Mechanical & Hardware",
+        cat_mechanical_desc: "Valves, pipe fittings, flanges, fasteners, industrial equipment",
+        cat_chemical: "Chemical & Building",
+        cat_chemical_desc: "Welding materials, coatings, HDPE fittings, steel, galvanized products",
         cat_newenergy: "New Energy",
         cat_newenergy_desc: "PV modules, energy storage batteries, solar accessories, charging equipment",
         cat_more: "More Categories",
         cat_more_desc: "Medical devices, food packaging, outdoor sports, pet supplies and more coming soon",
-        coming_soon_badge: "Coming Soon",
         products_cta_title: "Can't find what you need?",
         products_cta_desc: "Tell us your sourcing requirements, our team will find the right suppliers for you",
         products_cta_btn: "Submit Sourcing Request"
