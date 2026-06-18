@@ -274,7 +274,7 @@
         <p data-i18n="network_subtitle" class="text-gray-400 max-w-2xl mx-auto">从产业带到港口，为你匹配最优供应方案</p>
       </div>
       
-<div id="supply-map" style="width:100%; height:800px; background:#0f172a; border-radius:24px; overflow: hidden;"></div>
+<div id="supply-map" style="width:100%; height:800px; background:linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); border-radius:24px; overflow: hidden;"></div>
   </section>
 
   <!-- Testimonials -->
@@ -690,9 +690,9 @@
 </script>
 <script>
 const industryCenters = [
-    { name: 'Bohai Rim', coord: [118.5, 39.5], color: '#f97316' },
-    { name: 'Yangtze Delta', coord: [121.0, 31.5], color: '#eab308' },
-    { name: 'Pearl River Delta', coord: [113.5, 23.0], color: '#22c55e' },
+    { name: 'Bohai Rim', coord: [118.5, 39.5], color: '#fb923c' },
+    { name: 'Yangtze Delta', coord: [121.0, 31.5], color: '#facc15' },
+    { name: 'Pearl River Delta', coord: [113.5, 23.0], color: '#4ade80' },
     { name: 'Central & Western', coord: [107.0, 30.0], color: '#38bdf8' }
 ];
 
@@ -704,13 +704,13 @@ const industryInfo = {
 };
 
 const ports = [
-    { name: 'Dalian Port', coord: [121.6, 38.9], color: '#f97316', labelPos: 'right' },
-    { name: 'Tianjin Port', coord: [117.8, 39.0], color: '#f97316', labelPos: 'left' },
-    { name: 'Qingdao Port', coord: [120.4, 36.1], color: '#f97316', labelPos: 'right' },
-    { name: 'Shanghai Port', coord: [121.5, 31.2], color: '#eab308', labelPos: 'right' },
-    { name: 'Ningbo Port', coord: [121.8, 29.9], color: '#eab308', labelPos: 'right' },
-    { name: 'Xiamen Port', coord: [118.1, 24.5], color: '#22c55e', labelPos: 'right' },
-    { name: 'Shenzhen Port', coord: [114.1, 22.5], color: '#22c55e', labelPos: 'right' }
+    { name: 'Dalian Port', coord: [121.6, 38.9], color: '#fb923c', labelPos: 'right' },
+    { name: 'Tianjin Port', coord: [117.8, 39.0], color: '#fb923c', labelPos: 'left' },
+    { name: 'Qingdao Port', coord: [120.4, 36.1], color: '#fb923c', labelPos: 'right' },
+    { name: 'Shanghai Port', coord: [121.5, 31.2], color: '#facc15', labelPos: 'right' },
+    { name: 'Ningbo Port', coord: [121.8, 29.9], color: '#facc15', labelPos: 'right' },
+    { name: 'Xiamen Port', coord: [118.1, 24.5], color: '#4ade80', labelPos: 'right' },
+    { name: 'Shenzhen Port', coord: [114.1, 22.5], color: '#4ade80', labelPos: 'right' }
 ];
 
 const portInfo = {
@@ -747,12 +747,12 @@ fetch('./china.json')
         
         industryCenters.forEach(center => {
             const circlePoints = generateCirclePoints(center.coord, 320, 100);
-            series.push({ type: 'scatter', coordinateSystem: 'geo', data: circlePoints.map(p => ({ value: p, itemStyle: { color: center.color, opacity: 0.35 } })), symbolSize: 4, silent: true, z: 2 });
+            series.push({ type: 'scatter', coordinateSystem: 'geo', data: circlePoints.map(p => ({ value: p, itemStyle: { color: center.color, opacity: 0.5 } })), symbolSize: 4, silent: true, z: 2 });
         });
         
         industryCenters.forEach(center => {
             const circlePoints = generateCirclePoints(center.coord, 260, 80);
-            series.push({ type: 'scatter', coordinateSystem: 'geo', data: circlePoints.map(p => ({ value: p, itemStyle: { color: center.color, opacity: 0.25 } })), symbolSize: 3, silent: true, z: 2 });
+            series.push({ type: 'scatter', coordinateSystem: 'geo', data: circlePoints.map(p => ({ value: p, itemStyle: { color: center.color, opacity: 0.4 } })), symbolSize: 3, silent: true, z: 2 });
         });
         
         series.push({
@@ -772,11 +772,18 @@ fetch('./china.json')
         
         chart.setOption({
             backgroundColor: 'transparent',
-            geo: { map: 'china', roam: true, zoom: 1.5, center: [105, 32], label: { show: false }, itemStyle: { areaColor: 'rgba(30, 41, 59, 0.35)', borderColor: 'rgba(56, 189, 248, 0.12)', borderWidth: 1 }, emphasis: { itemStyle: { areaColor: 'rgba(51, 65, 85, 0.5)' } } },
-            tooltip: { trigger: 'item', confine: true, backgroundColor: 'rgba(15, 23, 42, 0.95)', borderColor: 'rgba(56, 189, 248, 0.2)', borderWidth: 1, textStyle: { color: '#e2e8f0', fontSize: 13 }, padding: [14, 18], extraCssText: 'border-radius: 10px; max-width: 260px; word-wrap: break-word; white-space: normal;', formatter: function(params) {
+            geo: { map: 'china', roam: true, zoom: 1.5, center: [105, 32], label: { show: false }, itemStyle: { areaColor: 'rgba(148, 163, 184, 0.25)', borderColor: 'rgba(56, 189, 248, 0.3)', borderWidth: 1.5 }, emphasis: { itemStyle: { areaColor: 'rgba(148, 163, 184, 0.45)' } } },
+            trigger: 'item', 
+    　　　　confine: true, 
+   　　　　 backgroundColor: 'rgba(248, 250, 252, 0.95)',  // 改浅灰白
+   　　　　 borderColor: 'rgba(30, 58, 95, 0.15)',          // 改深蓝边框
+   　　　　 borderWidth: 1, 
+    　　　　textStyle: { color: '#1e3a5f', fontSize: 13 },  // 文字改深蓝
+    　　　　padding: [14, 18], 
+   　　　　 extraCssText: 'border-radius: 10px; max-width: 260px; word-wrap: break-word; white-space: normal;',  formatter: function(params) {
                 const name = params.name;
-                if (industryInfo[name]) { const info = industryInfo[name]; let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#94a3b8;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; }
-                if (portInfo[name]) { const info = portInfo[name]; let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#94a3b8;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; }
+                if (industryInfo[name]) { const info = industryInfo[name]; let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#475569;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; }
+                if (portInfo[name]) { const info = portInfo[name]; let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#475569;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; }
                 return params.name;
             }},
             series: series
