@@ -771,23 +771,50 @@ fetch('./china.json')
         });
         
         chart.setOption({
-            backgroundColor: 'transparent',
-            geo: { map: 'china', roam: true, zoom: 1.5, center: [105, 32], label: { show: false }, itemStyle: { areaColor: 'rgba(148, 163, 184, 0.25)', borderColor: 'rgba(56, 189, 248, 0.3)', borderWidth: 1.5 }, emphasis: { itemStyle: { areaColor: 'rgba(148, 163, 184, 0.45)' } } },
-            trigger: 'item', 
-    　　　　confine: true, 
-   　　　　 backgroundColor: 'rgba(248, 250, 252, 0.95)',  // 改浅灰白
-   　　　　 borderColor: 'rgba(30, 58, 95, 0.15)',          // 改深蓝边框
-   　　　　 borderWidth: 1, 
-    　　　　textStyle: { color: '#1e3a5f', fontSize: 13 },  // 文字改深蓝
-    　　　　padding: [14, 18], 
-   　　　　 extraCssText: 'border-radius: 10px; max-width: 260px; word-wrap: break-word; white-space: normal;',  formatter: function(params) {
-                const name = params.name;
-                if (industryInfo[name]) { const info = industryInfo[name]; let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#475569;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; }
-                if (portInfo[name]) { const info = portInfo[name]; let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#475569;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; }
-                return params.name;
-            }},
-            series: series
-        });
+    backgroundColor: 'transparent',
+    geo: { 
+        map: 'china', 
+        roam: true, 
+        zoom: 1.5, 
+        center: [105, 32], 
+        label: { show: false }, 
+        itemStyle: { 
+            areaColor: 'rgba(148, 163, 184, 0.25)', 
+            borderColor: 'rgba(56, 189, 248, 0.3)', 
+            borderWidth: 1.5 
+        }, 
+        emphasis: { 
+            itemStyle: { 
+                areaColor: 'rgba(148, 163, 184, 0.45)' 
+            } 
+        } 
+    },
+    tooltip: {
+        trigger: 'item',
+        confine: true,
+        backgroundColor: 'rgba(248, 250, 252, 0.95)',
+        borderColor: 'rgba(30, 58, 95, 0.15)',
+        borderWidth: 1,
+        textStyle: { color: '#1e3a5f', fontSize: 13 },
+        padding: [14, 18],
+        extraCssText: 'border-radius: 10px; max-width: 260px; word-wrap: break-word; white-space: normal;',
+        formatter: function(params) {
+            const name = params.name;
+            if (industryInfo[name]) { 
+                const info = industryInfo[name]; 
+                let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); 
+                return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#475569;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; 
+            }
+            if (portInfo[name]) { 
+                const info = portInfo[name]; 
+                let tagsHtml = info.tags.map(tag => `<span style="display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;margin:3px 3px 0 0;background:${params.color}22;color:${params.color}">${tag}</span>`).join(''); 
+                return `<div style="font-weight:700;font-size:15px;margin-bottom:8px;color:${params.color}">${info.title}</div><div style="color:#475569;font-size:12px;line-height:1.7;margin-bottom:8px">${info.desc}</div><div>${tagsHtml}</div>`; 
+            }
+            return params.name;
+        }
+    },
+    series: series
+});
     })
     .catch(err => { console.error('Map load failed:', err); document.getElementById('supply-map').innerHTML = '<div style="color:#64748b;text-align:center;padding-top:200px">Map loading failed. Please ensure echarts.min.js and china.json are in the same folder.</div>'; });
 
