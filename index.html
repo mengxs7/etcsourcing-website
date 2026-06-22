@@ -80,7 +80,7 @@
 </head>
 <body class="bg-white">
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-blue/95 backdrop-blur-sm">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-deep-blue/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="flex items-center justify-between h-16">
         <a href="index.html" class="flex items-center gap-3">
@@ -131,63 +131,70 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="pt-24 pb-16 bg-gradient-to-br from-deep-blue via-[#1a5a9e] to-deep-blue relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px;"></div>
-    </div>
+    <!-- Hero Section -->
+  <section class="relative h-screen min-h-[600px] overflow-hidden">
+    <!-- 背景视频 -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+      <source src="images/Qingdao-port-bg.mp4" type="video/mp4">
+    </video>
     
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="text-center py-12">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-          <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
-          <span data-i18n="hero_badge" class="text-white/90 text-sm font-medium">你的中国供应链整合伙伴</span>
-        </div>
-        
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-        <span data-i18n="hero_title1">从中国采购，不必自己跑工厂</span>
-        <span data-i18n="hero_title2" class="block text-vibrant-orange mt-2 text-3xl md:text-4xl">我们帮你整合全国供应网络</span>
-       </h1>
-        
-        <p class="text-lg text-white/80 max-w-3xl mx-auto mb-10">
-        <span data-i18n="hero_desc">跨品类 · 跨产业带 · 多港口出口</span><br>
-        <span data-i18n="hero_desc2">轻资产整合模式，为你匹配最优产地与物流方案</span>
-       </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href="contact.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-8 py-4 rounded-xl font-semibold transition-colors inline-flex items-center justify-center gap-2">
-  <span data-i18n="hero_cta1">免费获取采购方案</span>
-           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+    <!-- 渐变遮罩层（让文字更清晰） -->
+    <div class="absolute inset-0 bg-gradient-to-b from-deep-blue/70 via-deep-blue/50 to-deep-blue/80 z-10"></div>
+    
+    <!-- 内容层 -->
+    <div class="relative z-20 h-full flex items-center">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full pt-16">
+        <div class="text-center py-12">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
+            <svg class="w-4 h-4 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
-          </a>
-          <a href="network.html" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-colors inline-flex items-center justify-center gap-2">
-  <span data-i18n="hero_cta2">查看采购网络</span>
-           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-            </svg>
-         </a>
-        </div>
-        
-        <!-- Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-          <div class="text-center">
-            <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1" data-count="4">0</div>
-            <div data-i18n="stat_belt" class="text-white/70 text-sm">大核心产业带</div>
+            <span data-i18n="hero_badge" class="text-white/90 text-sm font-medium">你的中国供应链整合伙伴</span>
           </div>
-          <div class="text-center">
-            <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1" data-count="200">0</div>
-            <div data-i18n="stat_factory" class="text-white/70 text-sm">+合作工厂</div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            <span data-i18n="hero_title1">从中国采购，不必自己跑工厂</span>
+            <span data-i18n="hero_title2" class="block text-vibrant-orange mt-2 text-3xl md:text-4xl drop-shadow-lg">我们帮你整合全国供应网络</span>
+          </h1>
+          
+          <p class="text-lg text-white/90 max-w-3xl mx-auto mb-10 drop-shadow-md">
+            <span data-i18n="hero_desc">跨品类 · 跨产业带 · 多港口出口</span><br>
+            <span data-i18n="hero_desc2">轻资产整合模式，为你匹配最优产地与物流方案</span>
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a href="contact.html" class="bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-8 py-4 rounded-xl font-semibold transition-colors inline-flex items-center justify-center gap-2">
+              <span data-i18n="hero_cta1">免费获取采购方案</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="network.html" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-colors inline-flex items-center justify-center gap-2 backdrop-blur-sm">
+              <span data-i18n="hero_cta2">查看采购网络</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              </svg>
+            </a>
           </div>
-          <div class="text-center">
-            <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1" data-count="7">0</div>
-            <div data-i18n="stat_port" class="text-white/70 text-sm">大出口港口</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1" data-count="50">0</div>
-            <div data-i18n="stat_client" class="text-white/70 text-sm">+服务客户</div>
+          
+          <!-- Stats -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1 drop-shadow-md" data-count="4">0</div>
+              <div data-i18n="stat_belt" class="text-white/80 text-sm drop-shadow">大核心产业带</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1 drop-shadow-md" data-count="200">0</div>
+              <div data-i18n="stat_factory" class="text-white/80 text-sm drop-shadow">+合作工厂</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1 drop-shadow-md" data-count="7">0</div>
+              <div data-i18n="stat_port" class="text-white/80 text-sm drop-shadow">大出口港口</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl md:text-4xl font-bold text-vibrant-orange mb-1 drop-shadow-md" data-count="50">0</div>
+              <div data-i18n="stat_client" class="text-white/80 text-sm drop-shadow">+服务客户</div>
+            </div>
           </div>
         </div>
       </div>
