@@ -371,91 +371,63 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section id="cta" class="py-20 bg-gradient-to-br from-deep-blue via-[#1a5a9e] to-deep-blue">
-    <div class="max-w-4xl mx-auto px-6 lg:px-12">
-      <div class="text-center mb-10">
-        <h2 data-i18n="cta_title" class="text-3xl md:text-4xl font-bold text-white mb-4">准备好开始你的采购项目了吗？</h2>
-        <p data-i18n="cta_desc" class="text-white/80">填写下方表单，我们的采购专家将在24小时内与你联系</p>
-      </div>
-      
-      <div class="bg-white rounded-3xl p-8 shadow-2xl">
-        <form class="space-y-6" onsubmit="event.preventDefault(); alert('感谢您的咨询，我们的采购专家将在24小时内与您联系！');">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label data-i18n="form_name" class="block text-sm font-medium text-gray-700 mb-2">姓名 *</label>
-              <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-vibrant-orange focus:ring-2 focus:ring-vibrant-orange/20" placeholder="您的姓名"data-i18n-placeholder="placeholder_name">
-            </div>
-            <div>
-              <label data-i18n="form_email" class="block text-sm font-medium text-gray-700 mb-2">邮箱 *</label>
-              <input type="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-vibrant-orange focus:ring-2 focus:ring-vibrant-orange/20" placeholder="your@email.com" data-i18n-placeholder="placeholder_email">
-            </div>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label data-i18n="form_company" class="block text-sm font-medium text-gray-700 mb-2">公司名</label>
-              <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-vibrant-orange focus:ring-2 focus:ring-vibrant-orange/20" placeholder="您的公司名称" data-i18n-placeholder="placeholder_company">
-            </div>
-            <div>
-              <label data-i18n="form_contact" class="block text-sm font-medium text-gray-700 mb-2">微信/WhatsApp</label>
-              <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-vibrant-orange focus:ring-2 focus:ring-vibrant-orange/20" placeholder="+86 或微信号" data-i18n-placeholder="placeholder_contact">
-            </div>
-          </div>
-          
-          <div>
-            <label data-i18n="form_product" class="block text-sm font-medium text-gray-700 mb-2">产品需求描述 *</label>
-            <textarea required rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-vibrant-orange focus:ring-2 focus:ring-vibrant-orange/20" placeholder="请描述您需要采购的产品、数量、规格要求等" data-i18n-placeholder="placeholder_product"></textarea>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label data-i18n="form_market" class="block text-sm font-medium text-gray-700 mb-2">目标市场</label>
-              <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-vibrant-orange focus:ring-2 focus:ring-vibrant-orange/20">
-                <option value="" data-i18n="select_default">请选择</option>
-                <option value="europe" data-i18n="market_europe">欧洲</option>
-                <option value="usa" data-i18n="market_usa">美国</option>
-                <option value="japan-korea" data-i18n="market_japan_korea">日韩</option>
-                <option value="sea" data-i18n="market_sea">东南亚</option>
-                <option value="other" data-i18n="market_other">其他</option>
-              </select>
-            </div>
-            <div>
-              <label data-i18n="form_quantity" class="block text-sm font-medium text-gray-700 mb-2">预计采购量</label>
-              <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-vibrant-orange focus:ring-2 focus:ring-vibrant-orange/20">
-                <option value="" data-i18n="select_default">请选择</option>
-                <option value="sample" data-i18n="qty_sample">样品</option>
-                <option value="small" data-i18n="qty_small">小批量（<<100件）</option>
-                <option value="medium" data-i18n="qty_medium">中批量（100-1000件）</option>
-                <option value="large" data-i18n="qty_large">大批量（>1000件）</option>
-              </select>
-            </div>
-          </div>
-          
-          <button type="submit" class="w-full bg-vibrant-orange hover:bg-vibrant-orange/90 text-white py-4 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2">
-            <span data-i18n="form_submit">提交需求，获取免费方案</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </button>
-        </form>
+    <!-- CTA Section -->
+  <section id="cta" class="py-20 bg-gradient-to-br from-deep-blue via-[#1a5a9e] to-deep-blue relative overflow-hidden">
+    <!-- 背景装饰 -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
+      <div class="text-center">
+        <h2 data-i18n="cta_title" class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">准备好开始你的采购项目了吗？</h2>
+        <p data-i18n="cta_desc" class="text-white/80 text-lg mb-10">填写下方表单，我们的采购专家将在24小时内与你联系</p>
         
-        <div class="mt-6 pt-6 border-t border-gray-100 text-center">
-          <p data-i18n="form_or_contact" class="text-sm text-gray-500">或直接联系我们：</p>
-          <div class="flex flex-wrap justify-center gap-4 mt-3">
-            <a href="mailto:contact@etcsourcing.cn" class="flex items-center gap-2 text-deep-blue hover:text-vibrant-orange transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        <!-- 主 CTA 按钮 -->
+        <a href="contact.html" class="inline-flex items-center gap-3 bg-vibrant-orange hover:bg-vibrant-orange/90 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all hover:scale-105 hover:shadow-2xl shadow-lg mb-12">
+          <span data-i18n="cta_button">免费获取采购方案</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        
+        <!-- 信任元素 -->
+        <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+          <div class="flex items-center gap-2 text-white/90">
+            <div class="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
-              contact@etcsourcing.cn
-            </a>
-            <span class="text-gray-300">|</span>
-            <span class="flex items-center gap-2 text-deep-blue">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </div>
+            <div class="text-left">
+              <div data-i18n="trust_1_title" class="font-semibold text-sm">24小时内回复</div>
+              <div data-i18n="trust_1_desc" class="text-white/60 text-xs">快速响应你的需求</div>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-2 text-white/90">
+            <div class="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
-              WeChat: 0086 18766270137
-            </span>
+            </div>
+            <div class="text-left">
+              <div data-i18n="trust_2_title" class="font-semibold text-sm">"灵活起订量"</div>
+              <div data-i18n="trust_2_desc" class="text-white/60 text-xs">"根据产品匹配最优方案"</div>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-2 text-white/90">
+            <div class="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+              </svg>
+            </div>
+            <div class="text-left">
+              <div data-i18n="trust_3_title" class="font-semibold text-sm">"二次下单返首次验货费"</div>
+              <div data-i18n="trust_3_desc" class="text-white/60 text-xs">"长期合作更划算"</div>
+            </div>
           </div>
         </div>
       </div>
