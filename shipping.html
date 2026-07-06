@@ -408,6 +408,129 @@
             <tr class="border-b border-gray-100">
               <td class="px-4 py-4 font-semibold text-gray-900 sticky left-0 bg-white z-10" data-i18n="shenzhenName">深圳港</td>
               <td class="px-4 py-4 text
+                            <tr class="bg-gray-50 border-b border-gray-100">
+              <td class="px-4 py-4 font-semibold text-gray-900 sticky left-0 bg-gray-50 z-10" data-i18n="xiamenName">厦门港</td>
+              <td class="px-4 py-4 text-center">25-29天</td>
+              <td class="px-4 py-4 text-center">15-18天</td>
+              <td class="px-4 py-4 text-center">5-7天</td>
+              <td class="px-4 py-4 text-center font-bold text-vibrant-orange">5-7天 ⭐</td>
+              <td class="px-4 py-4 text-center">-</td>
+              <td class="px-4 py-4 text-center">15-19天</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-4 font-semibold text-gray-900 sticky left-0 bg-white z-10" data-i18n="tianjinName">天津港</td>
+              <td class="px-4 py-4 text-center">23-27天</td>
+              <td class="px-4 py-4 text-center">16-19天</td>
+              <td class="px-4 py-4 text-center">4-6天</td>
+              <td class="px-4 py-4 text-center">10-12天</td>
+              <td class="px-4 py-4 text-center">8-10天</td>
+              <td class="px-4 py-4 text-center">19-23天</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="px-4 py-4 font-semibold text-gray-900 sticky left-0 bg-gray-50 z-10" data-i18n="dalianName">大连港</td>
+              <td class="px-4 py-4 text-center">24-28天</td>
+              <td class="px-4 py-4 text-center">16-20天</td>
+              <td class="px-4 py-4 text-center font-bold text-vibrant-orange">3-4天 ⭐</td>
+              <td class="px-4 py-4 text-center">10-13天</td>
+              <td class="px-4 py-4 text-center">7-9天</td>
+              <td class="px-4 py-4 text-center">20-24天</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+        <p class="text-xs text-gray-500 flex items-center gap-2">
+          <span class="text-vibrant-orange">⭐</span>
+          <span data-i18n="routeNote">标记为该航线最优选择。实际时效受船公司、季节、港口拥堵影响，具体以ETC报价为准。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 模块三：物流成本计算器 ===== -->
+<section class="py-16 bg-white">
+  <div class="max-w-4xl mx-auto px-6 lg:px-12">
+    <div class="bg-gradient-to-br from-deep-blue to-[#1a5a9e] rounded-3xl p-8 lg:p-12 shadow-2xl">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-2" data-i18n="calcTitle">物流成本快速估算</h2>
+        <p class="text-white/70" data-i18n="calcSubtitle">输入基本信息，获取大致成本区间（仅供参考，具体以报价为准）</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div>
+          <label class="block text-white/80 text-sm mb-2" data-i18n="calcPort">出发港口</label>
+          <select id="calc-port" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange" onchange="calculateCost()">
+            <option value="" class="text-gray-900" data-i18n="selectPort">选择港口</option>
+            <option value="qingdao" class="text-gray-900" data-i18n="qingdaoName">青岛港</option>
+            <option value="ningbo" class="text-gray-900" data-i18n="ningboName">宁波港</option>
+            <option value="shanghai" class="text-gray-900" data-i18n="shanghaiName">上海港</option>
+            <option value="shenzhen" class="text-gray-900" data-i18n="shenzhenName">深圳港</option>
+            <option value="xiamen" class="text-gray-900" data-i18n="xiamenName">厦门港</option>
+            <option value="tianjin" class="text-gray-900" data-i18n="tianjinName">天津港</option>
+            <option value="dalian" class="text-gray-900" data-i18n="dalianName">大连港</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-white/80 text-sm mb-2" data-i18n="calcDest">目的地</label>
+          <select id="calc-dest" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange" onchange="calculateCost()">
+            <option value="" class="text-gray-900" data-i18n="selectDest">选择目的地</option>
+            <option value="europe" class="text-gray-900" data-i18n="optEurope">欧洲</option>
+            <option value="usa" class="text-gray-900" data-i18n="optUSA">美国</option>
+            <option value="japan-korea" class="text-gray-900" data-i18n="optJapanKorea">日韩</option>
+            <option value="sea" class="text-gray-900" data-i18n="optSEA">东南亚</option>
+            <option value="central-asia" class="text-gray-900" data-i18n="optCentralAsia">中亚</option>
+            <option value="middle-east" class="text-gray-900" data-i18n="optMiddleEast">中东</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-white/80 text-sm mb-2" data-i18n="calcContainer">柜型</label>
+          <select id="calc-container" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-vibrant-orange" onchange="calculateCost()">
+            <option value="" class="text-gray-900" data-i18n="selectContainer">选择柜型</option>
+            <option value="20gp" class="text-gray-900" data-i18n="opt20GP">20尺柜</option>
+            <option value="40gp" class="text-gray-900" data-i18n="opt40GP">40尺柜</option>
+            <option value="40hq" class="text-gray-900" data-i18n="opt40HQ">40尺高柜</option>
+            <option value="lcl" class="text-gray-900" data-i18n="optLCL">拼箱（1CBM）</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="calc-result" class="hidden">
+        <div class="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div>
+              <p class="text-white/60 text-sm mb-1" data-i18n="estCost">预估海运费</p>
+              <p id="calc-sea-freight" class="text-2xl font-bold text-white">-</p>
+            </div>
+            <div>
+              <p class="text-white/60 text-sm mb-1" data-i18n="estLocal">本地费用</p>
+              <p id="calc-local-fee" class="text-2xl font-bold text-white">-</p>
+            </div>
+            <div>
+              <p class="text-white/60 text-sm mb-1" data-i18n="estTotal">预估总成本</p>
+              <p id="calc-total" class="text-2xl font-bold text-vibrant-orange">-</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-white/20">
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-white/70" data-i18n="estTime">预估时效</span>
+              <span id="calc-time" class="text-white font-semibold">-</span>
+            </div>
+            <div class="flex items-center justify-between text-sm mt-2">
+              <span class="text-white/70" data-i18n="estFreq">船期</span>
+              <span id="calc-freq" class="text-white font-semibold">-</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-white/50 text-xs mt-3 text-center" data-i18n="calcDisclaimer">* 以上为参考区间，实际费用受市场波动、旺季、货物类型影响，请联系ETC获取准确报价</p>
+      </div>
+
+      <div id="calc-placeholder" class="text-center py-8">
+        <p class="text-white/40 text-sm" data-i18n="calcHint">选择上方三项，自动计算预估成本</p>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Smart Port Recommendation Tool -->
   <section class="py-16 bg-white">
@@ -764,8 +887,8 @@
         footerAbout: "关于我们",
         footerJoin: "加入我们",
         alertSelect: "请选择产品产地和目的地",
-        alertThanks: "感谢您的咨询，我们的物流专家将在24小时内与您联系！"
-                compareBadge: "七大核心港口对比",
+        alertThanks: "感谢您的咨询，我们的物流专家将在24小时内与您联系！",
+        compareBadge: "七大核心港口对比",
         compareTitle: "选择最适合你的出口港",
         compareSubtitle: "根据产品产地、目的地、时效要求，快速对比各港口优势",
         qingdaoRecommend: "推荐",
@@ -936,7 +1059,7 @@
         footerAbout: "About Us",
         footerJoin: "Join Us",
         alertSelect: "Please select product origin and destination",
-        alertThanks: "Thank you for your inquiry. Our logistics expert will contact you within 24 hours!"
+        alertThanks: "Thank you for your inquiry. Our logistics expert will contact you within 24 hours!",
               compareBadge: "Seven Core Ports Comparison",
         compareTitle: "Choose Your Best Export Port",
         compareSubtitle: "Quickly compare ports based on origin, destination, and delivery requirements",
