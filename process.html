@@ -718,10 +718,10 @@
           {
             icon: "fa-shield-halved",
             num: "4",
-            title: "第三方质检",
+            title: "第三方品控",
             time: "2-3天",
-            desc: "SGS/BV/Intertek 全检或抽检，出具权威报告，不合格协调返工。",
-            tag: "1-2%货值"
+            desc: "合作国内专业第三方检测机构，或按客户指定机构执行质检，确保产品质量。",
+            tag: ""
           },
           {
             icon: "fa-ship",
@@ -891,8 +891,8 @@
             num: "4",
             title: "Third-Party QC",
             time: "2-3 Days",
-            desc: "SGS/BV/Intertek full or sampling inspection with authoritative reports. Non-conforming items coordinated for rework.",
-            tag: "1-2% Value"
+            desc: "Partner with domestic professional third-party inspection agencies, or conduct QC per client's designated agency to ensure product quality.",
+            tag: ""
           },
           {
             icon: "fa-ship",
@@ -1071,7 +1071,7 @@
         const card = document.createElement('div');
         card.className = 'step-card-new';
         
-        const tagClass = step.tag ? (step.tag.includes('1-2%') || step.tag.includes('货值') || step.tag.includes('Value') ? 'step-tag paid' : 'step-tag') : '';
+        const tagClass = step.tag ? 'step-tag' : '';
         const tagHtml = step.tag ? `<span class="${tagClass}">${step.tag}</span>` : '';
         
         card.innerHTML = `
